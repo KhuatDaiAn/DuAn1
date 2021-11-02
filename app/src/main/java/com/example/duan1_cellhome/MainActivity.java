@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.duan1_cellhome.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
+//test
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
