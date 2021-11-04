@@ -16,7 +16,7 @@ public class Database extends SQLiteOpenHelper {
 
         String sql="CREATE TABLE  ThanhVien(maTV TEXT PRIMARY KEY, hoTen TEXT NOT NULL, tenTK TEXT NOT NULL, matKhau TEXT, namSinh TEXT, soDT INTEGER, vaiTro INTEGER)";
         db.execSQL(sql);
-        sql="CREATE TABLE  NhaDat(maNhaDat TEXT PRIMARY KEY, tenGT TEXT NOT NULL, hinh BLOB REFERENCES Hinh(hinh), tinhThanh TEXT,ngayDang DATE, diaChi TEXT, giaTien INTEGER, dienTich TEXT, moTa TEXT)";
+        sql="CREATE TABLE  NhaDat(maNhaDat TEXT PRIMARY KEY, tenGT TEXT NOT NULL, hinh BLOB REFERENCES Hinh(hinh), tinhThanh TEXT,ngayDang DATE, diaChi TEXT, giaTien INTEGER, dienTich TEXT, moTa TEXT, vaitro INTEGER)";
         db.execSQL(sql);
         sql="CREATE TABLE  Hinh(hinh BLOB PRIMARY KEY)";
         db.execSQL(sql);
