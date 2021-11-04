@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/activity_chao.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/activity_chi_tiet_nha.xml" value="0.16" />
+        <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/activity_chi_tiet_nha_dat.xml" value="0.1" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/item_photo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/layout_nhadat.xml" value="0.536" />
       </map>
     </option>
   </component>
