@@ -11,6 +11,8 @@
         android:layout_width="377dp"
         android:layout_height="535dp"
         android:layout_marginStart="8dp"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
         android:background="#D3CBB8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

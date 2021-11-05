@@ -11,12 +11,13 @@ import android.widget.TextView;
 import com.example.duan1_cellhome.Model.NhaDat;
 import com.example.duan1_cellhome.R;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class NhaDatAdapter extends BaseAdapter {
     Context context;
     List<NhaDat> nhaDatList;
-
+    SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
     public NhaDatAdapter(Context context, List<NhaDat> loaiSachList) {
         this.context = context;
         this.nhaDatList = loaiSachList;
@@ -49,11 +50,13 @@ public class NhaDatAdapter extends BaseAdapter {
         TextView txttinhThanh=view.findViewById(R.id.txttinhThanh);
         TextView txtdienTich=view.findViewById(R.id.txtdienTich);
         TextView txtgiaTien=view.findViewById(R.id.txtgiaTien);
+        TextView txtngayDang=view.findViewById(R.id.txtngayDang);
         ImageView imgHinh=(ImageView) view.findViewById(R.id.imghinh);
         txttenGT.setText(nhaDat.getTenGT());
         txttinhThanh.setText(nhaDat.getTinhThanh());
         txtdienTich.setText(nhaDat.getDienTich());
         txtgiaTien.setText(nhaDat.getGiaTien()+"");
+        txtngayDang.setText(sdf.format(nhaDat.getNgayDang()));
         byte[] imageArray=nhaDat.getHinh();
         if(imageArray==null){
             imgHinh.setImageResource(R.drawable.thesinhvien);
