@@ -6,10 +6,13 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Layout;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.duan1_cellhome.Adapter.PhotoAdapter;
 import com.example.duan1_cellhome.Model.Photo;
@@ -22,6 +25,7 @@ import me.relex.circleindicator.CircleIndicator3;
 public class ChaoActivity extends AppCompatActivity {
     private ViewPager2 vp2;
     private CircleIndicator3 ci3;
+    private TextView txtTenAPP, txtXinChao;
     private List<Photo> mlist;
     private Handler handler = new Handler(Looper.getMainLooper());
     private Runnable runnable = new Runnable() {
@@ -41,6 +45,8 @@ public class ChaoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chao);
         vp2 = findViewById(R.id.vp2);
         ci3 = findViewById(R.id.Ci3);
+        txtTenAPP = findViewById(R.id.txtTenApp);
+        txtXinChao = findViewById(R.id.txtXinChao);
         mlist = getListPhoto();
 
         //setting ViewPager2
@@ -70,6 +76,34 @@ public class ChaoActivity extends AppCompatActivity {
                 handler.postDelayed(runnable,3000);
             }
         });
+
+        txtXinChao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChaoActivity.this, DangNhapActivity.class);
+                startActivity(intent);
+            }
+        });
+        txtTenAPP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChaoActivity.this, DangNhapActivity.class);
+                startActivity(intent);
+            }
+        });
+        Thread gio = new Thread(){
+            public void run(){
+                try {
+                    sleep(18000);
+                }catch (Exception e){
+
+                }finally {
+                    Intent intent = new Intent(ChaoActivity.this, DangNhapActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
+        gio.start();
     }
     private List<Photo> getListPhoto(){
         List<Photo> list = new ArrayList<>();
