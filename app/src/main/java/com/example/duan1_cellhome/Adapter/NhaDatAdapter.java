@@ -59,7 +59,7 @@ public class NhaDatAdapter extends BaseAdapter {
         txtngayDang.setText(sdf.format(nhaDat.getNgayDang()));
         byte[] imageArray=nhaDat.getHinh();
         if(imageArray==null){
-            imgHinh.setImageResource(R.drawable.thesinhvien);
+            imgHinh.setImageResource(R.drawable.nha1);
         }else{
             imgHinh.setImageBitmap(BitmapFactory.decodeByteArray(imageArray,0,imageArray.length));
         }
