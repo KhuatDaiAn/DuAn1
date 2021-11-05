@@ -2,13 +2,21 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@color/white"
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/imghinh"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="166dp"
+        android:layout_height="126dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -17,9 +25,12 @@
         android:id="@+id/txttenGT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="#050505"
+        android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imghinh" />
 
@@ -27,8 +38,8 @@
         android:id="@+id/txttinhThanh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txttenGT" />
@@ -37,8 +48,8 @@
         android:id="@+id/txtdienTich"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txttenGT" />
@@ -47,9 +58,12 @@
         android:id="@+id/txtgiaTien"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="#FB0303"
+        android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtdienTich" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
