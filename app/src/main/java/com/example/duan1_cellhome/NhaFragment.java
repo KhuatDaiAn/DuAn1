@@ -1,9 +1,11 @@
 package com.example.duan1_cellhome;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 
@@ -31,7 +33,13 @@ public class NhaFragment extends Fragment {
         gridViewNhaDat.setNumColumns(2);
         gridViewNhaDat.setAdapter(adapter);
 
-
+        gridViewNhaDat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getContext(), ChiTietNhaDatActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
