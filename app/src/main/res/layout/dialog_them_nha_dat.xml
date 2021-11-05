@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D3CBB8">
+
+    <EditText
+        android:id="@+id/edtTenNhaDat"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/custem_edittext"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Tên giới thiệu"
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="15dp"
+        android:singleLine="false"
+        android:textAlignment="viewStart"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtTinhThanh"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custem_edittext"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Tỉnh thành"
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="15dp"
+        android:singleLine="false"
+        android:textAlignment="viewStart"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtTenNhaDat"
+        app:layout_constraintTop_toBottomOf="@+id/edtTenNhaDat" />
+
+    <EditText
+        android:id="@+id/edtDiaChi"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custem_edittext"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Địa chỉ"
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="15dp"
+        android:singleLine="false"
+        android:textAlignment="viewStart"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtTinhThanh"
+        app:layout_constraintTop_toBottomOf="@+id/edtTinhThanh" />
+
+    <EditText
+        android:id="@+id/edtGiaTien"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custem_edittext"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Giá tiền"
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="15dp"
+        android:singleLine="false"
+        android:textAlignment="viewStart"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtDiaChi"
+        app:layout_constraintTop_toBottomOf="@+id/edtDiaChi" />
+
+    <EditText
+        android:id="@+id/edtDienTich"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custem_edittext"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Diện tích"
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="15dp"
+        android:singleLine="false"
+        android:textAlignment="viewStart"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtGiaTien"
+        app:layout_constraintTop_toBottomOf="@+id/edtGiaTien" />
+
+    <EditText
+        android:id="@+id/edtMoTa"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custem_edittext"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Mô tả"
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="15dp"
+        android:singleLine="false"
+        android:textAlignment="viewStart"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtDienTich"
+        app:layout_constraintTop_toBottomOf="@+id/edtDienTich" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="Thêm nhà đất"
+        android:textColor="#050505"
+        android:textSize="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtThemHinh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Thêm hình"
+        android:textColor="#0459FF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/edtMoTa"
+        app:layout_constraintTop_toBottomOf="@+id/edtMoTa" />
+
+    <Button
+        android:id="@+id/btnThemNhaDat"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_buttom_them_nha_dat"
+        android:text="Thêm"
+        app:layout_constraintStart_toStartOf="@+id/edtMoTa"
+        app:layout_constraintTop_toBottomOf="@+id/txtThemHinh" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/custom_buttom_them_nha_dat"
+        android:text="Cancel"
+        app:layout_constraintEnd_toEndOf="@+id/edtMoTa"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnThemNhaDat"
+        app:layout_constraintTop_toBottomOf="@+id/edtMoTa" />
+</androidx.constraintlayout.widget.ConstraintLayout>
