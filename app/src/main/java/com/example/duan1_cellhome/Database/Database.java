@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.duan1_cellhome.R;
+
 public class Database extends SQLiteOpenHelper {
     public Database(Context context) {
         super(context, "BDSDB", null, 1);
@@ -28,6 +30,12 @@ public class Database extends SQLiteOpenHelper {
                 "hinhND BLOB," +
                 "diaChiND TEXT NOT NULL, giaTienND INTEGER, trangThai INTEGER)";
         db.execSQL(sql);
+
+        db.execSQL("INSERT INTO NhaDat VALUES('01','Nhà hẻm 4',null,'Gò Vấp','05/11/2021','5/9 NTS',1000000000,'10m2','Rất tốt',0)");
+        db.execSQL("INSERT INTO NhaDat VALUES('02','Nhà hẻm 4',null,'Gò Vấp','05/11/2021','5/9 NTS',1000000000,'10m2','Rất tốt',0)");
+        db.execSQL("INSERT INTO NhaDat VALUES('03','Nhà hẻm 4',null,'Gò Vấp','05/11/2021','5/9 NTS',1000000000,'10m2','Rất tốt',0)");
+        db.execSQL("INSERT INTO NhaDat VALUES('04','Nhà hẻm 4',null,'Gò Vấp','05/11/2021','5/9 NTS',1000000000,'10m2','Rất tốt',0)");
+
 
 
     }
