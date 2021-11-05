@@ -9,32 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn1_CellHome">
+        <activity android:name=".DangNhapActivity"></activity>
         <activity
             android:name=".ChiTietNhaDatActivity"
             android:exported="false" />
         <activity
             android:name=".ChaoActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DuAn1_CellHome.NoActionBar" >
-
-        </activity>
+            android:theme="@style/Theme.DuAn1_CellHome.NoActionBar"></activity>
         <activity
             android:name=".MenuNguoiDung"
             android:exported="true"
             android:label="Menu"
-            android:theme="@style/Theme.DuAn1_CellHome.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.DuAn1_CellHome.NoActionBar"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
