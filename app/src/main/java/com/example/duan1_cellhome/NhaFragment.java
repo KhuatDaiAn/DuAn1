@@ -36,7 +36,9 @@ public class NhaFragment extends Fragment {
         gridViewNhaDat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                NhaDat nhaDat= (NhaDat) adapter.getItem(i);
                 Intent intent = new Intent(getContext(), ChiTietNhaDatActivity.class);
+                intent.putExtra("maNhaDat",nhaDat.getMaNhaDat());
                 startActivity(intent);
             }
         });
