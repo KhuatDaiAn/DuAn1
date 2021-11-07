@@ -82,6 +82,39 @@ public class NhaDatDAO implements INhaDatDAO{
         cursor.close();
         return list;
     }
+
+    public List<NhaDat> getHinh(String manhadat) {
+        List<NhaDat> list=new ArrayList<>();
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE maNhaDat=?",new String[]{manhadat});
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            String maNhaDat=cursor.getString(0);
+            String tenGT=cursor.getString(1);
+            byte[] hinh=cursor.getBlob(2);
+            String tinhThanh=cursor.getString(3);
+            Date ngayDang = null;
+            try {
+                ngayDang = sdf.parse(cursor.getString(4));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            String diaChi=cursor.getString(5);
+            int giaTien=cursor.getInt(6);
+            String dienTich=cursor.getString(7);
+            String moTa=cursor.getString(8);
+            int vaitro=cursor.getInt(9);
+            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,vaitro);
+            list.add(nhaDat);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
+
+
+
+
     public NhaDat getMa(String manhadat) {
         NhaDat nhaDat=null;
         SQLiteDatabase database=mydatabase.getReadableDatabase();
@@ -128,6 +161,7 @@ public class NhaDatDAO implements INhaDatDAO{
 
     }
 
+
     @Override
     public void update(NhaDat nhaDat) {
         SQLiteDatabase database=mydatabase.getReadableDatabase();
@@ -146,7 +180,13 @@ public class NhaDatDAO implements INhaDatDAO{
         database.update("NhaDat",values,"maNhaDat = ?",params);
 
     }
-
+    public void updateHinh(NhaDat nhaDat) {
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        ContentValues values=new ContentValues();
+        String[] params=new String[]{nhaDat.getMaNhaDat()};
+        values.put("hinh",nhaDat.getHinh());
+        database.update("NhaDat",values,"maNhaDat = ?",params);
+    }
     @Override
     public void delete(String maNhaDat) {
         SQLiteDatabase database=mydatabase.getReadableDatabase();

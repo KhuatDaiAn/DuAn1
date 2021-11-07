@@ -28,7 +28,7 @@ import java.sql.Date;
 import java.util.List;
 import java.util.Random;
 
-public class NhaFragment extends Fragment {
+public class DatFragment extends Fragment {
     List<NhaDat> list;
     GridView gridViewNhaDat;
     NhaDatAdapter adapter;
@@ -39,7 +39,7 @@ public class NhaFragment extends Fragment {
         View view=inflater.inflate(R.layout.layout_list_nhadat,container,false);
         gridViewNhaDat=view.findViewById(R.id.gvNhaDat);
         imgThem=view.findViewById(R.id.imgThemNhaDat);
-        list=new NhaDatDAO(getContext()).getNha();
+        list=new NhaDatDAO(getContext()).getDat();
         adapter=new NhaDatAdapter(getContext(),list);
         gridViewNhaDat.setNumColumns(2);
         gridViewNhaDat.setAdapter(adapter);
@@ -99,11 +99,11 @@ public class NhaFragment extends Fragment {
                 int giaTien = Integer.parseInt(giatien);
                 Random random=new Random();
                 int manhaDat=random.nextInt(61);
-                Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
-                NhaDat nhaDat = new NhaDat(manhaDat+"", tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,0);
+                Date ngayDang= Date.valueOf(String.valueOf(now()));
+                NhaDat nhaDat = new NhaDat(manhaDat+"", tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,1);
                 NhaDatDAO dao = new NhaDatDAO(getContext());
                 dao.insert(nhaDat);
-                list=new NhaDatDAO(getContext()).getNha();
+                list=new NhaDatDAO(getContext()).getDat();
                 adapter=new NhaDatAdapter(getContext(),list);
                 gridViewNhaDat.setNumColumns(2);
                 gridViewNhaDat.setAdapter(adapter);
