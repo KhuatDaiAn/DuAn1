@@ -38,14 +38,14 @@ public class DonHangAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup viewGroup) {
-        View view = convertView;
-        if (convertView == null) {
+    public View getView(int position, View view, ViewGroup viewGroup) {
+        if (view == null) {
             view = View.inflate(viewGroup.getContext(), R.layout.layout_item_donhang, null);
 
         }
 
         DonHang donHang= (DonHang) getItem(position);
+
         TextView txtMaDonhang = view.findViewById(R.id.txtMaDonHang);
         TextView txtMaNhaDat=view.findViewById(R.id.txtMaNhaDat);
         TextView txtTenGT=view.findViewById(R.id.txtTenGT);
@@ -67,6 +67,7 @@ public class DonHangAdapter extends BaseAdapter {
         }else{
             imgHinhND.setImageBitmap(BitmapFactory.decodeByteArray(img,0,img.length));
         }
+
         return view;
     }
 

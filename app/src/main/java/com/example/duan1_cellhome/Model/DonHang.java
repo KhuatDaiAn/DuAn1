@@ -9,9 +9,9 @@ public class DonHang {
     byte[] hinhND;
     String diaChiND;
     int giaTienND;
-    String trangThai;
+    int trangThai;
 
-    public DonHang(String maDonHang, String maTV, String maNhaDat, int soDTNM, String tenGTND, byte[] hinhND, String diaChiND, int giaTienND, String trangThai) {
+    public DonHang(String maDonHang, String maTV, String maNhaDat, int soDTNM, String tenGTND, byte[] hinhND, String diaChiND, int giaTienND, int trangThai) {
         this.maDonHang = maDonHang;
         this.maTV = maTV;
         this.maNhaDat = maNhaDat;
@@ -55,7 +55,7 @@ public class DonHang {
         return giaTienND;
     }
 
-    public String getTrangThai() {
+    public int getTrangThai() {
         return trangThai;
     }
 
@@ -91,7 +91,7 @@ public class DonHang {
         this.giaTienND = giaTienND;
     }
 
-    public void setTrangThai(String trangThai) {
+    public void setTrangThai(int trangThai) {
         this.trangThai = trangThai;
     }
 }
