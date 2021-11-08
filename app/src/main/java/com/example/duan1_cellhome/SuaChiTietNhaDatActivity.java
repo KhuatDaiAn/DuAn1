@@ -52,6 +52,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
     UpNhiuHinhAdapter adapter;
     HinhAdapter upHinhAdapter;
     GridView gvHinh;
+    String maNhaDat;
     TextView txttenGT,txtmaNhaDat,txtmoTa,txtgiaTien,txtdiaChi;
     ImageView imgHinh,imgUpNhieuHinh,imgThoat;
     List<Hinh> list;
@@ -76,7 +77,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
 
     private void ganDuLieu() {
         Intent intent=getIntent();
-        String maNhaDat=intent.getStringExtra("maNhaDat");
+        maNhaDat=intent.getStringExtra("maNhaDat");
         NhaDat nhaDat=new NhaDatDAO(this).getMa(maNhaDat);
         txttenGT.setText(nhaDat.getTenGT());
         txtmaNhaDat.setText(nhaDat.getMaNhaDat());
@@ -131,7 +132,6 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
             @Override
             public void onPermissionGranted() {
                 openBottomPicker();
-
             }
 
             @Override
@@ -153,6 +153,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
             @Override
             public void onImagesSelected(ArrayList<Uri> uriList) {
                 adapter.setData((ArrayList<Uri>) uriList);
+
             }
         };
 

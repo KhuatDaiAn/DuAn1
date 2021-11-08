@@ -35,7 +35,7 @@
     <item android:title="Bảo mật">
         <menu>
             <item
-                android:id="@+id/nav_taotaikhoan"
+                android:id="@+id/nav_thanhvien"
 
                 android:title="Thành Viên" />
             <item

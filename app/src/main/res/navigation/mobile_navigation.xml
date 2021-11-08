@@ -22,5 +22,10 @@
         android:name="com.example.duan1_cellhome.DatFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_thanhvien"
+        android:name="com.example.duan1_cellhome.ThanhVienFragment"
+        android:label="Quản lý thành viên"
+        tools:layout="@layout/fragment_slideshow" />
 
 </navigation>
