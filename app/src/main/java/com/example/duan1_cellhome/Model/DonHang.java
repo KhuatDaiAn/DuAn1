@@ -27,68 +27,68 @@ public class DonHang {
         return maDonHang;
     }
 
-    public String getMaTV() {
-        return maTV;
-    }
-
-    public String getMaNhaDat() {
-        return maNhaDat;
-    }
-
-    public int getSoDTNM() {
-        return soDTNM;
-    }
-
-    public String getTenGTND() {
-        return tenGTND;
-    }
-
-    public byte[] getHinhND() {
-        return hinhND;
-    }
-
-    public String getDiaChiND() {
-        return diaChiND;
-    }
-
-    public int getGiaTienND() {
-        return giaTienND;
-    }
-
-    public int getTrangThai() {
-        return trangThai;
-    }
-
     public void setMaDonHang(String maDonHang) {
         this.maDonHang = maDonHang;
+    }
+
+    public String getMaTV() {
+        return maTV;
     }
 
     public void setMaTV(String maTV) {
         this.maTV = maTV;
     }
 
+    public String getMaNhaDat() {
+        return maNhaDat;
+    }
+
     public void setMaNhaDat(String maNhaDat) {
         this.maNhaDat = maNhaDat;
+    }
+
+    public int getSoDTNM() {
+        return soDTNM;
     }
 
     public void setSoDTNM(int soDTNM) {
         this.soDTNM = soDTNM;
     }
 
+    public String getTenGTND() {
+        return tenGTND;
+    }
+
     public void setTenGTND(String tenGTND) {
         this.tenGTND = tenGTND;
+    }
+
+    public byte[] getHinhND() {
+        return hinhND;
     }
 
     public void setHinhND(byte[] hinhND) {
         this.hinhND = hinhND;
     }
 
+    public String getDiaChiND() {
+        return diaChiND;
+    }
+
     public void setDiaChiND(String diaChiND) {
         this.diaChiND = diaChiND;
     }
 
+    public int getGiaTienND() {
+        return giaTienND;
+    }
+
     public void setGiaTienND(int giaTienND) {
         this.giaTienND = giaTienND;
+    }
+
+    public int getTrangThai() {
+        return trangThai;
     }
 
     public void setTrangThai(int trangThai) {
