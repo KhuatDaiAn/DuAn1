@@ -38,18 +38,7 @@
         android:layout_marginTop="10dp"/>
 
     <TextView
-        android:id="@+id/txtMaNhaDat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ma nha dat"
-        android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@id/txtTenGT"
-        app:layout_constraintTop_toBottomOf="@id/txtMaDonHang"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:id="@+id/txtDiaChi"
+        android:id="@+id/txtTinhThanh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/txtTenGT"
@@ -64,7 +53,7 @@
         android:id="@+id/txtGiaTien"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txtDiaChi"
+        app:layout_constraintTop_toBottomOf="@id/txtTinhThanh"
         app:layout_constraintStart_toEndOf="@id/imgHinhND"
         android:layout_marginLeft="10dp"
         android:text="1.000.000.000"

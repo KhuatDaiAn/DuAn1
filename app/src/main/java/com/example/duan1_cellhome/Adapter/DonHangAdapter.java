@@ -47,21 +47,16 @@ public class DonHangAdapter extends BaseAdapter {
 
         DonHang donHang= (DonHang) getItem(position);
         TextView txtMaDonhang = view.findViewById(R.id.txtMaDonHang);
-        TextView txtMaNhaDat=view.findViewById(R.id.txtMaNhaDat);
         TextView txtTenGT=view.findViewById(R.id.txtTenGT);
-        TextView txtDiaChi=view.findViewById(R.id.txtDiaChi);
+        TextView txtTinhThanh=view.findViewById(R.id.txtTinhThanh);
         TextView txtGiaTien=view.findViewById(R.id.txtGiaTien);
         ImageView imgHinhND =(ImageView) view.findViewById(R.id.imgHinhND);
 
         txtMaDonhang.setText(donHang.getMaDonHang());
         txtTenGT.setText(donHang.getTenGTND());
-        txtMaNhaDat.setText(donHang.getMaNhaDat());
-        txtDiaChi.setText(donHang.getDiaChiND());
+        txtTinhThanh.setText(donHang.getDiaChiND());
         txtGiaTien.setText(donHang.getGiaTienND()+"");
-
-
         byte[] img=donHang.getHinhND();
-
         if(img == null){
             imgHinhND.setImageResource(R.drawable.nha1);
         }else{
