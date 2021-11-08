@@ -31,7 +31,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
         NhaDat nhaDat=new NhaDatDAO(this).getMa(maNhaDat);
         txttenGT.setText(nhaDat.getTenGT());
         txtmaNhaDat.setText(nhaDat.getMaNhaDat());
-        txtmoTa.setText(nhaDat.getDienTich());
+        txtmoTa.setText(nhaDat.getMoTa());
         txtgiaTien.setText(nhaDat.getGiaTien()+"");
         txtdiaChi.setText(nhaDat.getDiaChi());
         byte[] imageArray=nhaDat.getHinh();

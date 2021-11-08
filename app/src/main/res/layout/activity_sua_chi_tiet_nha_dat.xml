@@ -15,12 +15,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgHinhChiTiet" />
 
-    <GridView
-        android:id="@+id/gvNhieuHinh"
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgHinhChiTiet" />
+        app:layout_constraintTop_toBottomOf="@+id/imgHinhChiTiet">
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/linearLayout_gridtableLayout"
+                android:layout_width="800dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <GridView
+                    android:id="@+id/gvNhieuHinh"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    />
+
+            </LinearLayout>
+        </FrameLayout>
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/txtmaNhaDat"
@@ -35,7 +54,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgThoat"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
@@ -65,7 +84,7 @@
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gvNhieuHinh" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -139,7 +158,7 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gvNhieuHinh" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
 
     <ImageView
         android:id="@+id/imgChonHinh"
@@ -148,7 +167,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="246dp"
         app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/gvNhieuHinh"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
         app:srcCompat="@drawable/open_folder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
