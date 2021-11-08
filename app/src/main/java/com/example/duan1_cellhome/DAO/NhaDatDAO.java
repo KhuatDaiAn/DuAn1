@@ -190,7 +190,6 @@ public class NhaDatDAO implements INhaDatDAO{
     @Override
     public void delete(String maNhaDat) {
         SQLiteDatabase database=mydatabase.getReadableDatabase();
-
         String[] params=new String[]{maNhaDat};
         database.delete("NhaDat","maNhaDat = ?",params);
 

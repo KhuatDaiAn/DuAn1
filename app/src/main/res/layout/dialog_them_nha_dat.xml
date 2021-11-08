@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="340dp"
-    android:layout_height="580dp"
+    android:layout_height="560dp"
     android:background="#D3CBB8">
 
     <EditText
@@ -47,7 +47,7 @@
         android:id="@+id/btnThemNhaDat"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
         android:text="Thêm"
         app:layout_constraintStart_toStartOf="@+id/edtMoTa"
@@ -75,7 +75,7 @@
         android:id="@+id/btnCancel"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
         android:text="Cancel"
         app:layout_constraintEnd_toEndOf="@+id/edtMoTa"
@@ -116,18 +116,6 @@
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="@+id/edtDienTich"
         app:layout_constraintTop_toBottomOf="@+id/edtDienTich" />
-
-    <TextView
-        android:id="@+id/txtThemHinh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Thêm hình"
-        android:textColor="#0459FF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/edtMoTa"
-        app:layout_constraintTop_toBottomOf="@+id/edtMoTa" />
 
     <EditText
         android:id="@+id/edtTinhThanh"
