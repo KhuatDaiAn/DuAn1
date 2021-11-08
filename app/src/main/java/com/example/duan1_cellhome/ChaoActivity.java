@@ -73,28 +73,13 @@ public class ChaoActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 handler.removeCallbacks(runnable);
-                handler.postDelayed(runnable,3000);
-            }
-        });
-
-        txtXinChao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChaoActivity.this, DangNhapActivity.class);
-                startActivity(intent);
-            }
-        });
-        txtTenAPP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChaoActivity.this, DangNhapActivity.class);
-                startActivity(intent);
+                handler.postDelayed(runnable,1500);
             }
         });
         Thread gio = new Thread(){
             public void run(){
                 try {
-                    sleep(18000);
+                    sleep(7000);
                 }catch (Exception e){
 
                 }finally {
@@ -112,7 +97,6 @@ public class ChaoActivity extends AppCompatActivity {
         list.add(new Photo(R.drawable.img_3));
         list.add(new Photo(R.drawable.img_4));
         list.add(new Photo(R.drawable.img_5));
-        list.add(new Photo(R.drawable.img_6));
 
         return list;
     }
@@ -126,6 +110,6 @@ public class ChaoActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        handler.postDelayed(runnable,3000);
+        handler.postDelayed(runnable,1000);
     }
 }
