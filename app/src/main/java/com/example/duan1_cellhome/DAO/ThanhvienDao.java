@@ -1,6 +1,7 @@
 package com.example.duan1_cellhome.DAO;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -13,6 +14,10 @@ import java.util.List;
 public class ThanhvienDao implements IThanhVienDAO {
     Database myDatabase;
 
+    public ThanhvienDao(Context context) {
+        myDatabase = new Database(context);
+
+    }
 
     @Override
     public List<Thanhvien> getAll() {
