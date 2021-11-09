@@ -23,7 +23,7 @@ public class DonHangDAO implements IDonHang{
     public List<DonHang> getDonHang() {
         List<DonHang> donHangList = new ArrayList<>();
         SQLiteDatabase database = mydatabase.getReadableDatabase();
-        Cursor cursor = database.rawQuery("SELECT * FROM donHang WHERE maDonHang = ?", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM donHang", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             String maDonHang = cursor.getString(0);
@@ -52,10 +52,13 @@ public class DonHangDAO implements IDonHang{
             values.put("maNhaDat",donHang.getMaNhaDat());
             values.put("soDTNM",donHang.getSoDTNM());
             values.put("tenGTND",donHang.getTenGTND());
-            values.put("hinh",donHang.getHinhND());
+            values.put("hinhND",donHang.getHinhND());
             values.put("diaChiND",donHang.getDiaChiND());
-            values.put("giaTien",donHang.getGiaTienND());
+            values.put("giaTienND",donHang.getGiaTienND());
             values.put("trangThai",donHang.getTrangThai());
             database.insert("donHang",null,values);
     }
+
+
+
 }
