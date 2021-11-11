@@ -4,55 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3CBB8"
+    android:background="@drawable/gradient"
     tools:context=".DangKyActivity">
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="412dp"
-        android:layout_height="262dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_3" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/sacramento"
-        android:text="FPT LAND"
-        android:textColor="#FB0101"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/rokkitt"
-        android:text="Đăng ký"
-        android:textColor="#070707"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <EditText
         android:id="@+id/edtUserNameDK"
         android:layout_width="303dp"
         android:layout_height="58dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/custem_edittext"
-        android:drawableLeft="@drawable/icons8_name_26px"
+        android:drawableLeft="@drawable/icons8_name_24px"
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="UserName"
@@ -62,8 +23,9 @@
         android:singleLine="false"
         android:textAlignment="viewStart"
         android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintEnd_toEndOf="@+id/edtNamSinhDK"
+        app:layout_constraintStart_toStartOf="@+id/edtNamSinhDK"
+        app:layout_constraintTop_toBottomOf="@+id/edtNamSinhDK" />
 
     <EditText
         android:id="@+id/edtPaswordDK"
@@ -71,14 +33,15 @@
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/custem_edittext"
-        android:drawableStart="@drawable/icons8_password_26px"
+        android:drawableStart="@drawable/icons8_password_24px"
+        android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Password"
-        android:drawablePadding="15dp"
         android:inputType="textPassword"
         android:paddingLeft="15dp"
         android:textAlignment="viewStart"
         android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/edtUserNameDK"
         app:layout_constraintStart_toStartOf="@+id/edtUserNameDK"
         app:layout_constraintTop_toBottomOf="@+id/edtUserNameDK" />
 
@@ -88,7 +51,7 @@
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/custem_edittext"
-        android:drawableStart="@drawable/icons8_password_26px"
+        android:drawableStart="@drawable/icons8_password_24px"
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Nhập lại Password"
@@ -96,6 +59,7 @@
         android:paddingLeft="15dp"
         android:textAlignment="viewStart"
         android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/edtPaswordDK"
         app:layout_constraintStart_toStartOf="@+id/edtPaswordDK"
         app:layout_constraintTop_toBottomOf="@+id/edtPaswordDK" />
 
@@ -113,4 +77,91 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNhapLaiPaswordDK" />
+
+    <EditText
+        android:id="@+id/edtHoTen"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="208dp"
+        android:background="@drawable/custem_edittext"
+        android:drawableLeft="@drawable/icons8_name_tag_24px"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Họ và Tên"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtSoDienThoai"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custem_edittext"
+        android:drawableLeft="@drawable/icons8_cell_phone_24px"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Số Điện Thoại"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/edtHoTen"
+        app:layout_constraintStart_toStartOf="@+id/edtHoTen"
+        app:layout_constraintTop_toBottomOf="@+id/edtHoTen" />
+
+    <EditText
+        android:id="@+id/edtNamSinhDK"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custem_edittext"
+        android:drawableLeft="@drawable/icons8_calendar_24px"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Năm Sinh"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/edtSoDienThoai"
+        app:layout_constraintStart_toStartOf="@+id/edtSoDienThoai"
+        app:layout_constraintTop_toBottomOf="@+id/edtSoDienThoai" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="411dp"
+        android:layout_height="160dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banner" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="213dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sacramento"
+        android:text="FPT LAND"
+        android:textColor="#FB0101"
+        android:textSize="28dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="110dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="113dp"
+        android:fontFamily="@font/rokkitt"
+        android:text="Đăng ký"
+        android:textColor="#070707"
+        android:textSize="30dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
