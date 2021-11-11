@@ -66,7 +66,7 @@ public class Thanhvien {
         return soDT;
     }
 
-    public void setSoDT(int soDT) {
+    public void setSoDT(String soDT) {
         this.soDT = soDT;
     }
 
