@@ -62,11 +62,8 @@ public class ThanhvienDao implements IThanhVienDAO {
         ContentValues values = new ContentValues();
         String []params = new String[]{thanhvien.getMatv()};
         values.put("hoTen",thanhvien.hoTen);
-        values.put("tenTK",thanhvien.tenTK);
-        values.put("matKhau",thanhvien.Mk);
         values.put(" namSinh",thanhvien.namSinh);
         values.put("soDT",thanhvien.soDT);
-        values.put(" vaiTro",thanhvien.vaitro);
         database.update("ThanhVien",values,"maTV=?",params);
 
 
