@@ -54,7 +54,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
     GridView gvHinh;
     String maNhaDat;
     TextView txttenGT,txtmaNhaDat,txtmoTa,txtgiaTien,txtdiaChi;
-    ImageView imgHinh,imgUpNhieuHinh,imgThoat;
+    ImageView imgHinh,imgUpNhieuHinh,imgThoat,imgReload;
     List<Hinh> list;
     Animation animationZoom;
     @Override
@@ -71,7 +71,12 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
             }
         });
 
-
+        imgReload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              ganDuLieu();
+            }
+        });
 
     }
 
@@ -86,7 +91,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
         txtdiaChi.setText(nhaDat.getDiaChi());
         byte[] imageArray=nhaDat.getHinh();
         if(imageArray==null){
-            imgHinh.setImageResource(R.drawable.ic_launcher_background);
+            imgHinh.setImageResource(R.drawable.no_image);
         }else{
             imgHinh.setImageBitmap(BitmapFactory.decodeByteArray(imageArray,0,imageArray.length));
         }
@@ -191,6 +196,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
         txtgiaTien=findViewById(R.id.txtgiaTienChiTiet);
         txtdiaChi=findViewById(R.id.txtdiaChi);
         imgHinh=(ImageView) findViewById(R.id.imgHinhChiTiet);
+        imgReload=(ImageView) findViewById(R.id.imgReload);
         imgUpNhieuHinh=(ImageView) findViewById(R.id.imgChonHinh);
         recyclerView=findViewById(R.id.recyclerViewNhieuHinh);
         gvHinh=findViewById(R.id.gvNhieuHinh);
