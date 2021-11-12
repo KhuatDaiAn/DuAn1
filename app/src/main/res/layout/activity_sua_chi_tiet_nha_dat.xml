@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3CBB8"
+    android:background="@drawable/gradient"
     tools:context=".ChiTietNhaDatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -22,20 +22,22 @@
         android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgHinhChiTiet">
+
         <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
                 android:id="@+id/linearLayout_gridtableLayout"
                 android:layout_width="800dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
+
                 <GridView
                     android:id="@+id/gvNhieuHinh"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:layout_marginStart="15dp"
-                    />
+                    android:layout_marginStart="15dp" />
 
             </LinearLayout>
         </FrameLayout>

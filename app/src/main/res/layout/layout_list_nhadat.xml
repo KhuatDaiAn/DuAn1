@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3CBB8">
+    android:background="@drawable/gradient">
 
     <ImageView
         android:id="@+id/imgThemNhaDat"
@@ -21,7 +21,7 @@
         android:layout_width="383dp"
         android:layout_height="546dp"
         android:layout_marginBottom="92dp"
-        android:background="#D3CBB8"
+        android:background="@drawable/gradient"
         android:horizontalSpacing="10dp"
         android:verticalSpacing="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

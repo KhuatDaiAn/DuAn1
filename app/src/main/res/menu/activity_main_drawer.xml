@@ -6,49 +6,44 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/icons8_home_32px"
             android:title="Trang chủ" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/icons8_home_64px"
             android:title="Quản lý nhà" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/icons8_field_26px"
             android:title="Quản lý đất" />
     </group>
     <item android:title="Thống kê">
         <menu>
             <item
                 android:id="@+id/nav_thongkedoanhthu"
-
-                android:title="Thống kê doanh thu" />
+                android:icon="@drawable/icons8_analytics_50px_2"
+                android:title="Doanh thu" />
             <item
                 android:id="@+id/nav_top10"
-
-                android:title="Thống kê top 10 nhà/đất có giá bán cao" />
+                android:icon="@drawable/icons8_ios_10_50px_1"
+                android:title="Top 10 tỉnh thành" />
 
         </menu>
-
-
     </item>
     <item android:title="Bảo mật">
         <menu>
             <item
                 android:id="@+id/nav_thanhvien"
-
+                android:icon="@drawable/icons8_people_50px"
                 android:title="Thành Viên" />
             <item
                 android:id="@+id/nav_doimatkhau"
-
+                android:icon="@drawable/icons8_password_reset_50px"
                 android:title="Đổi mật khẩu" />
             <item
                 android:id="@+id/nav_thoat"
-
+                android:icon="@drawable/icons8_shutdown_32px"
                 android:title="Thoát" />
-
         </menu>
-
-
     </item>
 </menu>
