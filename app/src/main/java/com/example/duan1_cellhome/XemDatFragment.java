@@ -28,7 +28,7 @@ import java.sql.Date;
 import java.util.List;
 import java.util.Random;
 
-public class XemNhaFragment extends Fragment {
+public class XemDatFragment extends Fragment {
     List<NhaDat> list;
     GridView gridViewNhaDat;
     NhaDatAdapter adapter;
@@ -39,7 +39,7 @@ public class XemNhaFragment extends Fragment {
         View view=inflater.inflate(R.layout.layout_xem_list_nhadat,container,false);
         gridViewNhaDat=view.findViewById(R.id.gvNhaDat);
         imgThem=view.findViewById(R.id.imgThemNhaDat);
-        list=new NhaDatDAO(getContext()).getNha();
+        list=new NhaDatDAO(getContext()).getDat();
         adapter=new NhaDatAdapter(getContext(),list);
         gridViewNhaDat.setNumColumns(2);
         gridViewNhaDat.setAdapter(adapter);
@@ -53,6 +53,10 @@ public class XemNhaFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
+
+
         return view;
 
     }

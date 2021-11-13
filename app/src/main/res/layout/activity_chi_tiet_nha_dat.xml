@@ -8,13 +8,32 @@
     tools:context=".ChiTietNhaDatActivity">
 
 
-    <GridView
-        android:id="@+id/gvHinh"
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="1dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgHinhChiTiet" />
+        app:layout_constraintTop_toBottomOf="@+id/imgHinhChiTiet">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_gridtableLayout"
+                android:layout_width="800dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <GridView
+                    android:id="@+id/gvNhieuHinh"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp" />
+
+            </LinearLayout>
+        </FrameLayout>
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/txtmaNhaDat"
@@ -53,13 +72,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="11dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gvHinh" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -125,7 +144,7 @@
         android:layout_width="144dp"
         android:layout_height="55dp"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="240dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
         android:fontFamily="@font/rokkitt"
         android:text="Mua"
@@ -133,6 +152,6 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgHinhChiTiet" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,7 +34,7 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO ThanhVien VALUES('abc','Khuat Dai An','an','123','1999','0198139131','1')");
         db.execSQL("INSERT INTO ThanhVien VALUES('abc1','Khuat Dai An','an','123','1999','0198139131','1')");
         db.execSQL("INSERT INTO ThanhVien VALUES('abc2','Khuat Dai An','an','123','1999','0198139131','1')");
-
+        db.execSQL("INSERT INTO ThanhVien VALUES('1','Khuat Dai An','admin','123','1999','0198139131','0')");
     }
 
     @Override

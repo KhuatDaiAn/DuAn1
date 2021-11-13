@@ -40,6 +40,25 @@ public class ThanhvienDao implements IThanhVienDAO {
         cursor.close();
         return thanhvienList;
     }
+    public Thanhvien getVaiTro(String username) {
+        Thanhvien thanhvien=null;
+        SQLiteDatabase database = myDatabase.getReadableDatabase();
+        Cursor cursor = database.rawQuery("select * from ThanhVien where tenTK=?",new String[]{username});
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            String maTV = cursor.getString(0);
+            String hoTen = cursor.getString(1);
+            String tenTK = cursor.getString(2);
+            String MK = cursor.getString(3);
+            String namSinh = cursor.getString(4);
+            int soDT = cursor.getInt(5);
+            int VaiTro = cursor.getInt(6);
+            thanhvien= new Thanhvien(maTV,hoTen,tenTK,MK,namSinh,soDT,VaiTro);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return thanhvien;
+    }
 
     @Override
     public void insert(Thanhvien thanhvien) {
@@ -85,5 +104,14 @@ public class ThanhvienDao implements IThanhVienDAO {
         String []params = new String[]{thanhvien.getMatv()};
         values.put("matKhau",thanhvien.getMk());
         database.update("ThanhVien",values,"maTV=?",params);
+    }
+
+    public Boolean login(String userName, String password) {
+        SQLiteDatabase database=myDatabase.getReadableDatabase();
+        String sql = "SELECT * FROM ThanhVien WHERE tenTK = ? AND matKhau = ?";
+        Cursor cursor=database.rawQuery(sql,new String[]{userName,password});
+        int count=cursor.getCount();
+        cursor.close();
+        return count>0;
     }
 }
