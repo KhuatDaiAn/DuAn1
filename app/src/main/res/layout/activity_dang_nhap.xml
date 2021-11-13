@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3CBB8"
+    android:background="@drawable/gradient"
     tools:context=".DangNhapActivity">
 
     <ImageView
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <EditText
-        android:id="@+id/edtUserNameDK"
+        android:id="@+id/edtUserNameDN"
         android:layout_width="303dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
@@ -65,15 +65,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
-        android:id="@+id/edtPaswordDK"
+        android:id="@+id/edtPaswordDN"
         android:layout_width="303dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/custem_edittext"
         android:drawableStart="@drawable/icons8_password_26px"
+        android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Password"
-        android:drawablePadding="15dp"
         android:inputType="textPassword"
         android:paddingLeft="15dp"
         android:textAlignment="viewStart"
