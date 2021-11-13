@@ -25,12 +25,14 @@ public class DangNhapActivity extends AppCompatActivity {
         boolean check=new ThanhvienDao(getApplicationContext()).login(edtUsername.getText().toString(),edtPassword.getText().toString());
         if (check==true){
             String username=edtUsername.getText().toString();
-            Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getVaiTro(username);
+            Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(username);
             if (thanhvien.getVaitro()==0){
                 Intent intent = new Intent(DangNhapActivity.this, MainActivity.class);
+                intent.putExtra("tentk",username);
                 startActivity(intent);
             }else{
                 Intent intent = new Intent(DangNhapActivity.this, MenuNguoiDung.class);
+                intent.putExtra("tentk",username);
                 startActivity(intent);
             }
 

@@ -44,12 +44,12 @@
         app:layout_constraintTop_toBottomOf="@+id/edtDiaChi" />
 
     <Button
-        android:id="@+id/btnThemNhaDat"
+        android:id="@+id/btnSuaNhaDat"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
-        android:text="Thêm"
+        android:text="Sửa"
         app:layout_constraintStart_toStartOf="@+id/edtMoTa"
         app:layout_constraintTop_toBottomOf="@+id/edtMoTa" />
 

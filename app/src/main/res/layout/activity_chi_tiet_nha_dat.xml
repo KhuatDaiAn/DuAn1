@@ -140,7 +140,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnMua"
         android:layout_width="144dp"
         android:layout_height="55dp"
         android:layout_marginStart="132dp"

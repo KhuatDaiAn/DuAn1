@@ -17,10 +17,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,11 +34,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.duan1_cellhome.Adapter.HinhAdapter;
 import com.example.duan1_cellhome.Adapter.NhaDatAdapter;
+import com.example.duan1_cellhome.Adapter.TinhThanhSpinnerAdapter;
 import com.example.duan1_cellhome.Adapter.UpNhiuHinhAdapter;
 import com.example.duan1_cellhome.DAO.HinhDAO;
 import com.example.duan1_cellhome.DAO.NhaDatDAO;
 import com.example.duan1_cellhome.Model.Hinh;
 import com.example.duan1_cellhome.Model.NhaDat;
+import com.example.duan1_cellhome.Model.TinhThanh;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.normal.TedPermission;
 
@@ -56,7 +60,11 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
     TextView txttenGT,txtmaNhaDat,txtmoTa,txtgiaTien,txtdiaChi;
     ImageView imgHinh,imgUpNhieuHinh,imgThoat,imgReload;
     List<Hinh> list;
+    Button btnSua;
     Animation animationZoom;
+    Spinner spinnerTinhThanh;
+    String selectedTinhThanh=null;
+    List<TinhThanh> tinhThanhList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +85,12 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
               ganDuLieu();
             }
         });
+        btnSua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            dialogSuaNhaDat();
+            }
+        });
 
     }
 
@@ -95,6 +109,8 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
         }else{
             imgHinh.setImageBitmap(BitmapFactory.decodeByteArray(imageArray,0,imageArray.length));
         }
+
+
 
         imgHinh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +145,9 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
                 dialogHienThiHinh(hinh.getHinh());
             }
         });
+
+
+
     }
 
 
@@ -201,6 +220,8 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerViewNhieuHinh);
         gvHinh=findViewById(R.id.gvNhieuHinh);
         imgThoat=findViewById(R.id.imgThoat);
+        btnSua=findViewById(R.id.btnSua);
+
         animationZoom= AnimationUtils.loadAnimation(this,R.anim.animation_zoom_in);
     }
 
@@ -216,6 +237,69 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
             imgHienThi.setImageBitmap(BitmapFactory.decodeByteArray(hinh,0,hinh.length));
         }
         dialog.show();
+    }
+
+
+    public void dialogSuaNhaDat() {
+        Dialog dialog = new Dialog(SuaChiTietNhaDatActivity.this);
+        dialog.setContentView(R.layout.dialog_sua_nha_dat);
+        dialog.setCanceledOnTouchOutside(false);
+        EditText edtTenNhaDat=dialog.findViewById(R.id.edtTenNhaDat);
+        spinnerTinhThanh=dialog.findViewById(R.id.spinnerTinhThanh);
+        EditText edtdiaChi=dialog.findViewById(R.id.edtDiaChi);
+        EditText edtGiaTien=dialog.findViewById(R.id.edtGiaTien);
+        EditText edtDienTich=dialog.findViewById(R.id.edtDienTich);
+        EditText edtmoTa=dialog.findViewById(R.id.edtMoTa);
+        Button btnSua=dialog.findViewById(R.id.btnSuaNhaDat);
+        addTinhThanh();
+        btnSua.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+                String tenNhaDat=edtTenNhaDat.getText().toString();
+                String tinhThanh=selectedTinhThanh;
+                String diachi=edtdiaChi.getText().toString();
+                String giatien=edtGiaTien.getText().toString();
+                String dientich=edtDienTich.getText().toString();
+                String mota=edtmoTa.getText().toString();
+                int giaTien = Integer.parseInt(giatien);
+                Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
+                NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,0);
+                NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
+                dao.update(nhaDat);
+                dialog.dismiss();
+                ganDuLieu();
+            }
+        });
+
+        dialog.show();
+    }
+    public void addTinhThanh(){
+        tinhThanhList=new ArrayList<>();
+        tinhThanhList.add(new TinhThanh("An Giang"));
+        tinhThanhList.add(new TinhThanh("Bà Rịa-Vũng Tàu"));
+        tinhThanhList.add(new TinhThanh("Bạc Liêu"));
+        tinhThanhList.add(new TinhThanh("Bắc Kạn"));
+        tinhThanhList.add(new TinhThanh("Bắc Giang"));
+        tinhThanhList.add(new TinhThanh("Bắc Ninh"));
+        tinhThanhList.add(new TinhThanh("Bến Tre"));
+        tinhThanhList.add(new TinhThanh("Bình Dương"));
+        tinhThanhList.add(new TinhThanh("Bình Định"));
+        tinhThanhList.add(new TinhThanh("Bình Phước"));
+        TinhThanhSpinnerAdapter tinhThanhspinner=new TinhThanhSpinnerAdapter(getApplicationContext(),tinhThanhList);
+        spinnerTinhThanh.setAdapter(tinhThanhspinner);
+        spinnerTinhThanh.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                TinhThanh tinhThanh = (TinhThanh) tinhThanhspinner.getItem(position);
+                selectedTinhThanh=tinhThanh.getTenTinhThanh();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                selectedTinhThanh=null;
+            }
+        });
     }
 
 }

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,10 +21,14 @@ import android.widget.TextView;
 
 import com.example.duan1_cellhome.Adapter.HinhAdapter;
 import com.example.duan1_cellhome.Adapter.UpNhiuHinhAdapter;
+import com.example.duan1_cellhome.DAO.DonHangDAO;
 import com.example.duan1_cellhome.DAO.HinhDAO;
 import com.example.duan1_cellhome.DAO.NhaDatDAO;
+import com.example.duan1_cellhome.DAO.ThanhvienDao;
+import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.Model.Hinh;
 import com.example.duan1_cellhome.Model.NhaDat;
+import com.example.duan1_cellhome.Model.Thanhvien;
 
 import java.util.List;
 
@@ -35,6 +40,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
     ImageView imgHinh,imgUpNhieuHinh,imgThoat,imgReload;
     List<Hinh> list;
     Animation animationZoom;
+    Button btnMua;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +84,18 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
                 dialogHienThiHinh(hinh.getHinh());
             }
         });
+        btnMua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String username=intent.getStringExtra("tentk");
+                Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(username);
+                DonHangDAO dao=new DonHangDAO(getApplicationContext());
+                DonHang donHang=new DonHang("1",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1);
+                dao.insert(donHang);
+
+
+            }
+        });
     }
     public void AnhXa(){
         txttenGT=findViewById(R.id.txttenGTChiTiet);
@@ -90,6 +108,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
         imgUpNhieuHinh=(ImageView) findViewById(R.id.imgChonHinh);
         gvHinh=findViewById(R.id.gvNhieuHinh);
         imgThoat=findViewById(R.id.imgThoat);
+        btnMua=findViewById(R.id.btnMua);
         animationZoom= AnimationUtils.loadAnimation(this,R.anim.animation_zoom_in);
     }
 

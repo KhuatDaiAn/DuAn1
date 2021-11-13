@@ -40,7 +40,7 @@ public class ThanhvienDao implements IThanhVienDAO {
         cursor.close();
         return thanhvienList;
     }
-    public Thanhvien getVaiTro(String username) {
+    public Thanhvien getDuLieu(String username) {
         Thanhvien thanhvien=null;
         SQLiteDatabase database = myDatabase.getReadableDatabase();
         Cursor cursor = database.rawQuery("select * from ThanhVien where tenTK=?",new String[]{username});

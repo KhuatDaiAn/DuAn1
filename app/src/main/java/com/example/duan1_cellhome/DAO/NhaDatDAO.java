@@ -83,10 +83,10 @@ public class NhaDatDAO implements INhaDatDAO{
         return list;
     }
 
-    public List<NhaDat> getHinh(String manhadat) {
+    public List<NhaDat> hienThiTheoTinhThanh(String tentinhthanh) {
         List<NhaDat> list=new ArrayList<>();
         SQLiteDatabase database=mydatabase.getReadableDatabase();
-        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE maNhaDat=?",new String[]{manhadat});
+        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE tinhThanh=?",new String[]{tentinhthanh});
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             String maNhaDat=cursor.getString(0);

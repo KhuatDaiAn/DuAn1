@@ -48,7 +48,7 @@ public class DonHangDAO implements IDonHang{
             SQLiteDatabase database=mydatabase.getReadableDatabase();
             ContentValues values=new ContentValues();
             values.put("maDonHang",donHang.getMaDonHang());
-            values.put("maThanhVien",donHang.getMaTV());
+            values.put("maTV",donHang.getMaTV());
             values.put("maNhaDat",donHang.getMaNhaDat());
             values.put("soDTNM",donHang.getSoDTNM());
             values.put("tenGTND",donHang.getTenGTND());
