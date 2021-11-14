@@ -35,7 +35,6 @@ public class DonHangDAO implements IDonHang{
             String diaChiND = cursor.getString(6);
             int giaTien = cursor.getInt(7);
             int trangThai = cursor.getInt(8);
-
             donHangList.add( new DonHang(maDonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai));
             cursor.moveToNext();
         }

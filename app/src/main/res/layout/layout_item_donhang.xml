@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/hoa_don"
-    android:padding="10dp"
-    >
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/imgHinhND"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/thesinhvien"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/thesinhvien"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtMaDonHang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imgHinhND"
+        android:layout_marginLeft="10dp"
         android:text="ma don hang"
         android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@id/imgHinhND"
 
-        android:layout_marginLeft="10dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtTenGT"
@@ -42,22 +41,21 @@
         android:id="@+id/txtTinhThanh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txtTenGT"
-        app:layout_constraintStart_toEndOf="@id/imgHinhND"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="tinh thanh"
         android:textSize="10dp"
-        android:layout_marginTop="10dp"
-        />
+        app:layout_constraintStart_toEndOf="@id/imgHinhND"
+        app:layout_constraintTop_toBottomOf="@id/txtTenGT" />
 
     <TextView
         android:id="@+id/txtGiaTien"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txtTinhThanh"
-        app:layout_constraintStart_toEndOf="@id/imgHinhND"
         android:layout_marginLeft="10dp"
-        android:text="1.000.000.000"
         android:layout_marginTop="10dp"
-        android:textSize="12dp"/>
+        android:text="1.000.000.000"
+        android:textSize="12dp"
+        app:layout_constraintStart_toEndOf="@id/imgHinhND"
+        app:layout_constraintTop_toBottomOf="@id/txtTinhThanh" />
 </androidx.constraintlayout.widget.ConstraintLayout>

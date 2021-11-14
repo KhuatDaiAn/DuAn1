@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/nha_dat"
-    android:padding="10dp">
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/imghinh"
@@ -23,20 +23,20 @@
         android:layout_marginTop="10dp"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imghinh" />
 
     <TextView
-        android:textColor="@color/black"
-
         android:id="@+id/txttinhThanh"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="5dp"
         android:text="TextView"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txttenGT" />
 
@@ -44,7 +44,7 @@
         android:id="@+id/txtdienTich"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@color/black"
@@ -59,7 +59,7 @@
         android:layout_marginTop="10dp"
         android:text="TextView"
         android:textColor="#FB0303"
-        android:textSize="18dp"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtdienTich" />
 

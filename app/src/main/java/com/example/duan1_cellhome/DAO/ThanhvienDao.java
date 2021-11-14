@@ -68,9 +68,9 @@ public class ThanhvienDao implements IThanhVienDAO {
         values.put("hoTen",thanhvien.hoTen);
         values.put("tenTK",thanhvien.tenTK);
         values.put("matKhau",thanhvien.Mk);
-        values.put(" namSinh",thanhvien.namSinh);
+        values.put("namSinh",thanhvien.namSinh);
         values.put("soDT",thanhvien.soDT);
-        values.put(" vaiTro",thanhvien.vaitro);
+        values.put("vaiTro",thanhvien.vaitro);
         database.insert("ThanhVien",null,values);
 
     }
@@ -81,7 +81,7 @@ public class ThanhvienDao implements IThanhVienDAO {
         ContentValues values = new ContentValues();
         String []params = new String[]{thanhvien.getMatv()};
         values.put("hoTen",thanhvien.hoTen);
-        values.put(" namSinh",thanhvien.namSinh);
+        values.put("namSinh",thanhvien.namSinh);
         values.put("soDT",thanhvien.soDT);
         database.update("ThanhVien",values,"maTV=?",params);
 
@@ -106,10 +106,10 @@ public class ThanhvienDao implements IThanhVienDAO {
         database.update("ThanhVien",values,"maTV=?",params);
     }
 
-    public Boolean login(String userName, String password) {
+    public Boolean login(String tenTK, String matKhau) {
         SQLiteDatabase database=myDatabase.getReadableDatabase();
         String sql = "SELECT * FROM ThanhVien WHERE tenTK = ? AND matKhau = ?";
-        Cursor cursor=database.rawQuery(sql,new String[]{userName,password});
+        Cursor cursor=database.rawQuery(sql,new String[]{tenTK,matKhau});
         int count=cursor.getCount();
         cursor.close();
         return count>0;

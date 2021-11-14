@@ -44,7 +44,7 @@ public class ThanhvienAdapter extends BaseAdapter {
         }
         Thanhvien thanhvien = (Thanhvien)getItem(i) ;
         TextView txtMaTv = view.findViewById(R.id.txtMaTV);
-        TextView txtNamSinh=view.findViewById(R.id.txtNamSinh);
+        TextView txtNamSinh= view.findViewById(R.id.txtNamSinh);
         TextView txtHoTen = view.findViewById(R.id.txtHoTen);
         TextView txtSoDT = view.findViewById(R.id.txtSoDT);
 

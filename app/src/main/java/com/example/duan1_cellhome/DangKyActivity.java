@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import java.util.Random;
 public class DangKyActivity extends AppCompatActivity {
 
     EditText edtUserNameDK, edtPaswordDK, edtNhapLaiPaswordDK,edtHoTen,edtSoDienThoai,edtNamSinhDK;
+    Button btnDangKy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +27,13 @@ public class DangKyActivity extends AppCompatActivity {
         edtHoTen = findViewById(R.id.edtHoTen);
         edtSoDienThoai = findViewById(R.id.edtSoDienThoai);
         edtNamSinhDK = findViewById(R.id.edtNamSinhDK);
-
-       dangKy();
+        btnDangKy = findViewById(R.id.btnDangKy);
+        btnDangKy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dangKy();
+            }
+        });
 
 
 

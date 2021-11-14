@@ -3,8 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/txtTenTV"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/thanh_vien"
+    android:paddingRight="15dp"
+    android:paddingBottom="15dp">
 
     <TextView
         android:id="@+id/txtMaTV"
@@ -22,6 +25,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="#040404"
+        android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMaTV" />
 
@@ -39,7 +44,7 @@
         android:id="@+id/txtNamSinh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="260dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="52dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/txtHoTen"

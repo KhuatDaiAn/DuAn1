@@ -31,6 +31,7 @@ import com.example.duan1_cellhome.Model.NhaDat;
 import com.example.duan1_cellhome.Model.Thanhvien;
 
 import java.util.List;
+import java.util.Random;
 
 public class ChiTietNhaDatActivity extends AppCompatActivity {
     HinhAdapter upHinhAdapter;
@@ -87,10 +88,12 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
         btnMua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username=intent.getStringExtra("tentk");
+                String username=intent.getStringExtra("tenTK");
                 Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(username);
                 DonHangDAO dao=new DonHangDAO(getApplicationContext());
-                DonHang donHang=new DonHang("1",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1);
+                Random random=new Random();
+                int maDonHang=random.nextInt(61);
+                DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1);
                 dao.insert(donHang);
 
 

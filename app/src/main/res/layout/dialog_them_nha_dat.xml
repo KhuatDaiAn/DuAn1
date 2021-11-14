@@ -68,8 +68,8 @@
         android:singleLine="false"
         android:textAlignment="viewStart"
         android:textSize="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTinhThanh"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="@+id/spinnerTinhThanh"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTinhThanh" />
 
     <Button
         android:id="@+id/btnCancel"
@@ -132,10 +132,11 @@
 
     <Spinner
         android:id="@+id/spinnerTinhThanh"
-        android:layout_width="match_parent"
+        android:layout_width="303dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edtTenNhaDat"
+        app:layout_constraintStart_toStartOf="@+id/edtTenNhaDat"
         app:layout_constraintTop_toBottomOf="@+id/edtTenNhaDat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
