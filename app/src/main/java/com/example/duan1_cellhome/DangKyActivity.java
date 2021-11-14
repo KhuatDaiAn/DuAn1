@@ -42,7 +42,7 @@ public class DangKyActivity extends AppCompatActivity {
             Toast.makeText(this, "Ho ten invalid", Toast.LENGTH_SHORT).show();
             return;
         }
-        String soDT = edtSoDienThoai.getText().toString();
+        int soDT = Integer.parseInt(edtSoDienThoai.getText().toString());
         String namSinh = edtNamSinhDK.getText().toString();
 
 

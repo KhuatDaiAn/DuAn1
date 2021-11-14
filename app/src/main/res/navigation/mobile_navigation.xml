@@ -27,5 +27,9 @@
         android:name="com.example.duan1_cellhome.ThanhVienFragment"
         android:label="Quản lý thành viên"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_donHang"
+        android:name="com.example.duan1_cellhome.DonHangFragment"
+        android:label="DonHangFragment" />
 
 </navigation>

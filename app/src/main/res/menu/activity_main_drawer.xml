@@ -16,6 +16,10 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/icons8_field_26px"
             android:title="Quản lý đất" />
+        <item
+            android:id="@+id/nav_donHang"
+            android:icon="@drawable/icons8_field_26px"
+            android:title="Đơn Hàng" />
     </group>
     <item android:title="Thống kê">
         <menu>

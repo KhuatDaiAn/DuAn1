@@ -77,11 +77,6 @@ public class DatFragment extends Fragment {
     }
 
 
-
-
-
-
-
     public void dialogThemNha() {
         Dialog dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.dialog_them_nha_dat);

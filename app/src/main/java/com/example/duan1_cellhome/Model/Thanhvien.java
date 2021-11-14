@@ -17,7 +17,7 @@ public class Thanhvien {
         this.hoTen = hoTen;
         this.namSinh = namSinh;
         this.tenTK = tenTK;
-        Mk = mk;
+        this.Mk = mk;
         this.soDT = soDT;
         this.vaitro = vaitro;
     }
@@ -66,7 +66,7 @@ public class Thanhvien {
         return soDT;
     }
 
-    public void setSoDT(String soDT) {
+    public void setSoDT(int soDT) {
         this.soDT = soDT;
     }
 
