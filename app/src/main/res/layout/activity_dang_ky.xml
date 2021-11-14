@@ -72,7 +72,6 @@
         android:background="@drawable/costom_button"
         android:fontFamily="serif-monospace"
         android:text="Đăng ký"
-        android:onClick="onRegister"
         android:textAllCaps="false"
         android:textSize="24dp"
         android:textStyle="bold"
