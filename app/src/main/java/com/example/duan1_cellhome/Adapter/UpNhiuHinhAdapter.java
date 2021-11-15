@@ -24,6 +24,7 @@ import com.example.duan1_cellhome.R;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class UpNhiuHinhAdapter extends RecyclerView.Adapter<UpNhiuHinhAdapter.HinhViewHolder>{
     Context context;
@@ -56,7 +57,9 @@ public class UpNhiuHinhAdapter extends RecyclerView.Adapter<UpNhiuHinhAdapter.Hi
         try {
             Bitmap bitmap= MediaStore.Images.Media.getBitmap(context.getContentResolver(),uri);
             holder.imgHinh.setImageBitmap(bitmap);
-            Hinh hinh=new Hinh(imageViewToByte(holder.imgHinh),maNhaDat);
+            Random random=new Random();
+            int maHinh=random.nextInt(61);
+            Hinh hinh=new Hinh(maHinh+"",maNhaDat,imageViewToByte(holder.imgHinh));
             HinhDAO daohinh=new HinhDAO(context);
             daohinh.insert(hinh);
 

@@ -25,9 +25,10 @@ public class HinhDAO {
         Cursor cursor=database.rawQuery("SELECT * FROM Hinh WHERE maNhaDat = ?",new String[]{manhadat});
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
-            byte[] hinh=cursor.getBlob(0);
+            String maHinh=cursor.getString(0);
             String maNhaDat=cursor.getString(1);
-            Hinh hinh1=new Hinh(hinh,maNhaDat);
+            byte[] hinh=cursor.getBlob(2);
+            Hinh hinh1=new Hinh(maHinh,maNhaDat,hinh);
             list.add(hinh1);
             cursor.moveToNext();
         }
@@ -40,9 +41,10 @@ public class HinhDAO {
         Cursor cursor=database.rawQuery("SELECT * FROM Hinh WHERE maNhaDat = ?",new String[]{manhadat});
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
-            byte[] hinh=cursor.getBlob(0);
+            String maHinh=cursor.getString(0);
             String maNhaDat=cursor.getString(1);
-            Hinh hinh1=new Hinh(hinh,maNhaDat);
+            byte[] hinh=cursor.getBlob(2);
+            Hinh hinh1=new Hinh(maHinh,maNhaDat,hinh);
             list.add(hinh1);
             cursor.moveToNext();
         }

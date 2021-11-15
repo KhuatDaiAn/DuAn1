@@ -1,12 +1,15 @@
 package com.example.duan1_cellhome.Model;
 
 public class Hinh {
-    byte[] hinh;
+    String maHinh;
     String maNhaDat;
+    byte[] hinh;
 
-    public Hinh(byte[] hinh, String maNhaDat) {
-        this.hinh = hinh;
+
+    public Hinh(String maHinh, String maNhaDat, byte[] hinh) {
+        this.maHinh = maHinh;
         this.maNhaDat = maNhaDat;
+        this.hinh = hinh;
     }
 
     public byte[] getHinh() {
@@ -23,5 +26,14 @@ public class Hinh {
 
     public void setMaNhaDat(String maNhaDat) {
         this.maNhaDat = maNhaDat;
+    }
+
+
+    public String getMaHinh() {
+        return maHinh;
+    }
+
+    public void setMaHinh(String maHinh) {
+        this.maHinh = maHinh;
     }
 }
