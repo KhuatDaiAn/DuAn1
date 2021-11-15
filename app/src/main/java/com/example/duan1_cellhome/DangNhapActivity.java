@@ -33,26 +33,27 @@ public class DangNhapActivity extends AppCompatActivity {
                 password = edtPassword.getText().toString();
                 if (username.equals("")&& password.equals("")){
                     Toast.makeText(DangNhapActivity.this, "Không được để trống", Toast.LENGTH_SHORT).show();
-                }else if (username.equals("")){
+                }else if(username.equals("")){
                     Toast.makeText(DangNhapActivity.this, "Không được để trống username", Toast.LENGTH_SHORT).show();
-                }else if (password.equals("")){
+                }else if(password.equals("")){
                     Toast.makeText(DangNhapActivity.this, "Không được để trống password", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                }else{
                     Boolean check=(new ThanhvienDao(DangNhapActivity.this)).login(username,password);
                     if (check==true){
                         Thanhvien thanhvien = new ThanhvienDao(getApplicationContext()).getDuLieu(username);
                         int vaiTro = thanhvien.getVaitro();
-                        Intent intent;
                         if (vaiTro==0){
-                            intent = new Intent(DangNhapActivity.this, MainActivity.class);
+                            Intent intent = new Intent(DangNhapActivity.this, MainActivity.class);
                             intent.putExtra("tenTK",username);
                             intent.putExtra("matKhau",password);
+                            startActivity(intent);
                         }else{
-                            intent = new Intent(DangNhapActivity.this, MenuNguoiDung.class);
+                            Intent intent = new Intent(DangNhapActivity.this, MenuNguoiDung.class);
                             intent.putExtra("tenTK",username);
+                            intent.putExtra("matKhau",password);
+                            startActivity(intent);
                         }
-                        startActivity(intent);
+
                     }else{
                         Toast.makeText(getApplicationContext(), "Tên tài khoản hoặc mật khẩu đã sai", Toast.LENGTH_SHORT).show();
                     }
