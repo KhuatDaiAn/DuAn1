@@ -21,9 +21,9 @@ public class ThanhvienDao implements IThanhVienDAO {
 
     @Override
     public List<Thanhvien> getAll() {
-        List<Thanhvien> thanhvienList = new ArrayList<>();
+        List<Thanhvien>thanhvienList = new ArrayList<>();
         SQLiteDatabase database = myDatabase.getReadableDatabase();
-        Cursor cursor = database.rawQuery("select * from ThanhVien where vaiTro == 1",null);
+        Cursor cursor = database.rawQuery("select * from ThanhVien where vaiTro==1",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             String maTV = cursor.getString(0);

@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Random;
 
 public class ThanhVienFragment extends Fragment {
-    List<Thanhvien> thanhvienList;
+    List<Thanhvien>thanhvienList;
     GridView gridViewThanhVien;
     ThanhvienAdapter adapter;
     @Nullable
@@ -45,6 +45,8 @@ public class ThanhVienFragment extends Fragment {
         adapter = new ThanhvienAdapter(getContext(),thanhvienList);
         gridViewThanhVien.setNumColumns(1);
         gridViewThanhVien.setAdapter(adapter);
+
+
 
         return view;
 

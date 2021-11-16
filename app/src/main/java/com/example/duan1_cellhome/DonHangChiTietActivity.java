@@ -28,7 +28,7 @@ import java.util.Random;
 
 public class DonHangChiTietActivity extends AppCompatActivity {
     TextView txtTenGTNhaDat,txtDiaChi,txtMoTa,txtTien,txtMaTVMuaHang,txtSDTKhachHang;
-    ImageView imgHinh;
+    ImageView imgHinh, imgQuayLai;
     String maDonHang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,13 @@ public class DonHangChiTietActivity extends AppCompatActivity {
         txtMaTVMuaHang = findViewById(R.id.txtMaTVMuaHang);
         txtSDTKhachHang = findViewById(R.id.txtSDTKhachHang);
         imgHinh = findViewById(R.id.imgHinh);
+        imgQuayLai = findViewById(R.id.imgQuayLai);
+        imgQuayLai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         ganDuLieuDonHang();
 
     }
