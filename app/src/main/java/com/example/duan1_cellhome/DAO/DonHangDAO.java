@@ -9,7 +9,9 @@ import com.example.duan1_cellhome.Database.Database;
 import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.Model.NhaDat;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DonHangDAO implements IDonHang{
@@ -63,7 +65,28 @@ public class DonHangDAO implements IDonHang{
         cursor.close();
         return donHangList;
     }
+    public DonHang getMaDonHang(String maDonHang) {
+        DonHang donHang=null;
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        Cursor cursor=database.rawQuery("SELECT * FROM donHang WHERE maDonHang= ?",new String[]{maDonHang});
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            String madonHang = cursor.getString(0);
+            String maThanhVien = cursor.getString(1);
+            String maNhaDat = cursor.getString(2);
+            int soDTNM = cursor.getInt(3);
+            String tenGTND = cursor.getString(4);
+            byte[] hinh = cursor.getBlob(5);
+            String diaChiND = cursor.getString(6);
+            int giaTien = cursor.getInt(7);
+            int trangThai = cursor.getInt(8);
+            donHang = new DonHang(madonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai);
+            cursor.moveToNext();
+        }
 
+        cursor.close();
+        return donHang;
+    }
     @Override
     public void insert(DonHang donHang) {
             SQLiteDatabase database=mydatabase.getReadableDatabase();

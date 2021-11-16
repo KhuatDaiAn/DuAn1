@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.example.duan1_cellhome.Adapter.DonHangAdapter;
 import com.example.duan1_cellhome.DAO.DonHangDAO;
 import com.example.duan1_cellhome.Model.DonHang;
+import com.example.duan1_cellhome.Model.NhaDat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -34,6 +36,15 @@ public class DonHangFragment extends Fragment {
         gridViewDonHang.setNumColumns(1);
         gridViewDonHang.setAdapter(adapter);
 
+        gridViewDonHang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                DonHang donHang= (DonHang) adapter.getItem(i);
+                Intent intent = new Intent(getContext(), DonHangChiTietActivity.class);
+                intent.putExtra("maDonHang",donHang.getMaDonHang());
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

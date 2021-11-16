@@ -41,7 +41,7 @@ public class ThanhvienDao implements IThanhVienDAO {
         return thanhvienList;
     }
     public Thanhvien getDuLieu(String username) {
-        Thanhvien thanhvien=null;
+        Thanhvien thanhvien = null;
         SQLiteDatabase database = myDatabase.getReadableDatabase();
         Cursor cursor = database.rawQuery("select * from ThanhVien where tenTK=?",new String[]{username});
         cursor.moveToFirst();
