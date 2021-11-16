@@ -23,7 +23,29 @@ public class DonHangDAO implements IDonHang{
     public List<DonHang> getDonHang() {
         List<DonHang> donHangList = new ArrayList<>();
         SQLiteDatabase database = mydatabase.getReadableDatabase();
-        Cursor cursor = database.rawQuery("SELECT * FROM donHang", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM donHang WHERE trangThai==1", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            String maDonHang = cursor.getString(0);
+            String maThanhVien = cursor.getString(1);
+            String maNhaDat = cursor.getString(2);
+            int soDTNM = cursor.getInt(3);
+            String tenGTND = cursor.getString(4);
+            byte[] hinh = cursor.getBlob(5);
+            String diaChiND = cursor.getString(6);
+            int giaTien = cursor.getInt(7);
+            int trangThai = cursor.getInt(8);
+            donHangList.add( new DonHang(maDonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return donHangList;
+    }
+
+    public List<DonHang> getDonHangGiaoDichThanhCong() {
+        List<DonHang> donHangList = new ArrayList<>();
+        SQLiteDatabase database = mydatabase.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM donHang WHERE trangThai==0", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             String maDonHang = cursor.getString(0);

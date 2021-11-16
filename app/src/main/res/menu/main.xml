@@ -4,6 +4,7 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="Reset"
+        android:icon="@drawable/icons8_password_reset_50px"
+        app:showAsAction="always" />
 </menu>

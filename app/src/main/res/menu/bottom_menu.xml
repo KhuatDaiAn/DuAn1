@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="Danh sách đơn hàng"
+
+    android:id="@+id/bottomDonHang">
+</item>
+
+    <item android:title="Đơn hàng giao dịch thành công"
+        android:id="@+id/bottomGiaoDich">
+    </item>
+
+
+</menu>

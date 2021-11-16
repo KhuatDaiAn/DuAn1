@@ -10,7 +10,9 @@ import android.widget.GridView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
 
 import com.example.duan1_cellhome.Adapter.DonHangAdapter;
 import com.example.duan1_cellhome.DAO.DonHangDAO;
@@ -20,7 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DonHangFragment extends Fragment {
+public class DonHangGiaoDichThanhCongActivityFragment extends Fragment {
     List<DonHang> donHangList = new ArrayList<>();
     GridView gridViewDonHang;
     DonHangAdapter adapter;
