@@ -54,13 +54,15 @@ public class XemNhaFragment extends Fragment {
         gridViewNhaDat.setNumColumns(2);
         gridViewNhaDat.setAdapter(adapter);
         addTinhThanh();
-
+        Intent intent=getActivity().getIntent();
+        String username=intent.getStringExtra("tenTK");
         gridViewNhaDat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 NhaDat nhaDat= (NhaDat) adapter.getItem(i);
                 Intent intent = new Intent(getContext(), ChiTietNhaDatActivity.class);
                 intent.putExtra("maNhaDat",nhaDat.getMaNhaDat());
+                intent.putExtra("tenTK",username);
                 startActivity(intent);
             }
         });

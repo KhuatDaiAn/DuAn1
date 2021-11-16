@@ -8,7 +8,7 @@ import com.example.duan1_cellhome.R;
 
 public class Database extends SQLiteOpenHelper {
     public Database(Context context) {
-        super(context, "BDSDB", null, 2);
+        super(context, "BDSDB", null, 1);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Database extends SQLiteOpenHelper {
                 "diaChiND TEXT NOT NULL, giaTienND INTEGER, trangThai INTEGER)";
         db.execSQL(sql);
 
-        db.execSQL("INSERT INTO ThanhVien VALUES('abc','Khuat Dai An','an1','123','1999',0198139131,1)");
+        db.execSQL("INSERT INTO ThanhVien VALUES('abc','Khuat Dai An','an1','123','1999',10198139131,1)");
         db.execSQL("INSERT INTO ThanhVien VALUES('abc1','Khuat Dai An','an2','123','1999',0198139131,1)");
         db.execSQL("INSERT INTO ThanhVien VALUES('abc2','Khuat Dai An','an3','123','1999',0198139131,1)");
         db.execSQL("INSERT INTO ThanhVien VALUES('1','Khuat Dai An','admin','123','1999',0198139131,0)");
