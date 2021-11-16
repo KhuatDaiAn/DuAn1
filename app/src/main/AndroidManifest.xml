@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn1_CellHome">
+<<<<<<< Updated upstream
         <activity android:name=".DonHangChiTietActivity"></activity>
+=======
+        <activity android:name=".ChiTietDonHangActivity"></activity>
+>>>>>>> Stashed changes
         <activity android:name=".DangKyActivity" />
         <activity
             android:name=".DangNhapActivity"

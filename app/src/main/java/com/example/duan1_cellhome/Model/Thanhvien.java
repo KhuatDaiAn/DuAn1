@@ -2,9 +2,10 @@ package com.example.duan1_cellhome.Model;
 
 public class Thanhvien {
     public String matv ;
-    public String hoTen,namSinh;
+    public String hoTen;
     public String tenTK;
     public String Mk;
+    public String namSinh;
     public int soDT;
     public int vaitro;
 
@@ -12,12 +13,12 @@ public class Thanhvien {
 
     }
 
-    public Thanhvien(String matv, String hoTen, String namSinh, String tenTK, String mk, int soDT, int vaitro) {
+    public Thanhvien(String matv, String hoTen, String tenTK, String mk, String namSinh, int soDT, int vaitro) {
         this.matv = matv;
         this.hoTen = hoTen;
-        this.namSinh = namSinh;
         this.tenTK = tenTK;
         this.Mk = mk;
+        this.namSinh = namSinh;
         this.soDT = soDT;
         this.vaitro = vaitro;
     }
@@ -38,14 +39,6 @@ public class Thanhvien {
         this.hoTen = hoTen;
     }
 
-    public String getNamSinh() {
-        return namSinh;
-    }
-
-    public void setNamSinh(String namSinh) {
-        this.namSinh = namSinh;
-    }
-
     public String getTenTK() {
         return tenTK;
     }
@@ -60,6 +53,14 @@ public class Thanhvien {
 
     public void setMk(String mk) {
         Mk = mk;
+    }
+
+    public String getNamSinh() {
+        return namSinh;
+    }
+
+    public void setNamSinh(String namSinh) {
+        this.namSinh = namSinh;
     }
 
     public int getSoDT() {
