@@ -9,7 +9,7 @@
     android:paddingBottom="20dp">
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/chkHoanTatGD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -19,4 +19,26 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLuuGD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_buttom_them_nha_dat"
+        android:text="Lưu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chkHoanTatGD" />
+
+    <Button
+        android:id="@+id/btnBo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_buttom_them_nha_dat"
+        android:text="Cancel"
+        app:layout_constraintStart_toEndOf="@+id/btnLuuGD"
+        app:layout_constraintTop_toBottomOf="@+id/chkHoanTatGD" />
 </androidx.constraintlayout.widget.ConstraintLayout>

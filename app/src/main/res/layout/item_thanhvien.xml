@@ -15,6 +15,9 @@
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +29,8 @@
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textColor="#040404"
-        android:textSize="18dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMaTV" />
 
@@ -34,9 +38,24 @@
         android:id="@+id/txtSoDT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/txtHoTen" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtHoTen" />
 
@@ -47,6 +66,8 @@
         android:layout_marginStart="150dp"
         android:layout_marginTop="52dp"
         android:text="TextView"
+        android:textColor="#050505"
+        android:textSize="18dp"
         app:layout_constraintStart_toEndOf="@+id/txtHoTen"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

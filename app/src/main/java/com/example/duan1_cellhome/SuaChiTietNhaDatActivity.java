@@ -145,6 +145,12 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
                 dialogHienThiHinh(hinh.getHinh());
             }
         });
+        imgThoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
 

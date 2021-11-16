@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 public class DonHangDAO implements IDonHang{
+
     Database mydatabase;
 
     public DonHangDAO(Context context){
@@ -65,6 +66,7 @@ public class DonHangDAO implements IDonHang{
         cursor.close();
         return donHangList;
     }
+    @Override
     public DonHang getMaDonHang(String maDonHang) {
         DonHang donHang=null;
         SQLiteDatabase database=mydatabase.getReadableDatabase();
@@ -87,6 +89,16 @@ public class DonHangDAO implements IDonHang{
         cursor.close();
         return donHang;
     }
+
+    @Override
+    public void updateTrangThai(DonHang donHang) {
+        SQLiteDatabase database = mydatabase.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        String []params = new String[]{donHang.getMaDonHang()};
+        values.put("trangThai",donHang.getTrangThai());
+        database.update("donHang",values,"maDonHang=?",params);
+    }
+
     @Override
     public void insert(DonHang donHang) {
             SQLiteDatabase database=mydatabase.getReadableDatabase();
@@ -103,6 +115,11 @@ public class DonHangDAO implements IDonHang{
             database.insert("donHang",null,values);
     }
 
-
+    @Override
+    public void delete(String maDonHang) {
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        String[] params=new String[]{maDonHang};
+        database.delete("donHang","maDonHang = ?",params);
+    }
 
 }

@@ -91,12 +91,18 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
                 String username=intent.getStringExtra("tenTK");
                 Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(username);
                 DonHangDAO dao=new DonHangDAO(getApplicationContext());
+                NhaDatDAO datDAO = new NhaDatDAO(getApplicationContext());
                 Random random=new Random();
                 int maDonHang=random.nextInt(61);
                 DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1);
                 dao.insert(donHang);
 
-
+            }
+        });
+        imgThoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
@@ -110,6 +116,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
         imgReload=(ImageView) findViewById(R.id.imgReload);
         imgUpNhieuHinh=(ImageView) findViewById(R.id.imgChonHinh);
         gvHinh=findViewById(R.id.gvNhieuHinh);
+
         imgThoat=findViewById(R.id.imgThoat);
         btnMua=findViewById(R.id.btnMua);
         animationZoom= AnimationUtils.loadAnimation(this,R.anim.animation_zoom_in);

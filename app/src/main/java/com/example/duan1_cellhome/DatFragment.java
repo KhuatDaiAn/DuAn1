@@ -88,7 +88,14 @@ public class DatFragment extends Fragment {
         EditText edtDienTich=dialog.findViewById(R.id.edtDienTich);
         EditText edtmoTa=dialog.findViewById(R.id.edtMoTa);
         Button btnThem=dialog.findViewById(R.id.btnThemNhaDat);
+        Button btnCancel=dialog.findViewById(R.id.btnCancel);
         addTinhThanh();
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
         btnThem.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override

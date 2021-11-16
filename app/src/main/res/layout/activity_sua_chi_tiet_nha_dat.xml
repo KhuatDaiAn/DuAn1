@@ -87,13 +87,13 @@
 
     <TextView
         android:id="@+id/txttenGTChiTiet"
-        android:layout_width="wrap_content"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="11dp"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
@@ -116,7 +116,7 @@
         android:layout_marginTop="20dp"
         android:text="TextView"
         android:textColor="@color/purple_500"
-        android:textSize="16dp"
+        android:textSize="18dp"
         android:textStyle="italic"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/txttenGTChiTiet" />
@@ -129,7 +129,7 @@
         android:layout_marginTop="24dp"
         android:text="TextView"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="16sp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
@@ -142,6 +142,7 @@
         android:layout_marginTop="19dp"
         android:text="Mô tả"
         android:textColor="@color/black"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtgiaTienChiTiet" />
@@ -153,6 +154,7 @@
         android:layout_marginStart="19dp"
         android:layout_marginTop="18dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -162,7 +164,7 @@
         android:layout_width="144dp"
         android:layout_height="55dp"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
         android:fontFamily="@font/rokkitt"
         android:text="Sửa"
@@ -170,7 +172,7 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtmoTa" />
 
     <ImageView
         android:id="@+id/imgChonHinh"

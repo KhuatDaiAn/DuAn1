@@ -19,14 +19,14 @@
         <item
             android:id="@+id/nav_donHang"
             android:icon="@drawable/icons8_field_26px"
-            android:title="DonHang" />
+            android:title="Đơn hàng" />
     </group>
     <item android:title="Thống kê">
         <menu>
             <item
                 android:id="@+id/nav_top10"
                 android:icon="@drawable/icons8_ios_10_50px_1"
-                android:title="Top 10 tỉnh thành" />
+                android:title="Top 10 tỉnh thành"/>
 
         </menu>
     </item>

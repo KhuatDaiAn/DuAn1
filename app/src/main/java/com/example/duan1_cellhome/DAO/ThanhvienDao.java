@@ -85,8 +85,6 @@ public class ThanhvienDao implements IThanhVienDAO {
         values.put("soDT",thanhvien.soDT);
         database.update("ThanhVien",values,"maTV=?",params);
 
-
-
     }
 
     @Override

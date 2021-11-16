@@ -10,6 +10,7 @@
         android:id="@+id/imgHinhND"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/thesinhvien"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,11 +19,13 @@
         android:id="@+id/txtMaDonHang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="16dp"
         android:text="ma don hang"
-        android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@id/imgHinhND"
+        android:textColor="#020202"
 
+        android:textSize="18dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@id/imgHinhND"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -30,10 +33,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="tenGT"
         android:textColor="#020202"
-        android:textSize="20dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/imgHinhND"
         app:layout_constraintTop_toBottomOf="@id/txtMaDonHang" />
 
@@ -44,7 +48,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:text="tinh thanh"
-        android:textSize="10dp"
+        android:textColor="#040404"
+        android:textSize="18dp"
         app:layout_constraintStart_toEndOf="@id/imgHinhND"
         app:layout_constraintTop_toBottomOf="@id/txtTenGT" />
 
@@ -55,7 +60,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:text="1.000.000.000"
-        android:textSize="12dp"
+        android:textColor="#FA0303"
+        android:textSize="18dp"
         app:layout_constraintStart_toEndOf="@id/imgHinhND"
         app:layout_constraintTop_toBottomOf="@id/txtTinhThanh" />
 </androidx.constraintlayout.widget.ConstraintLayout>
