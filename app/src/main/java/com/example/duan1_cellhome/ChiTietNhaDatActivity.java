@@ -89,7 +89,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String username=intent.getStringExtra("tenTK");
-                Thanhvien thanhvien=new Thanhvien();
+                Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(username);
                 DonHangDAO dao=new DonHangDAO(getApplicationContext());
                 Random random=new Random();
                 int maDonHang=random.nextInt(61);

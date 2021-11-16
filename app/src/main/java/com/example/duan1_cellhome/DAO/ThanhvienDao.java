@@ -65,12 +65,12 @@ public class ThanhvienDao implements IThanhVienDAO {
         SQLiteDatabase database = myDatabase.getReadableDatabase();
         ContentValues values = new ContentValues();
         values.put("maTV",thanhvien.getMatv());
-        values.put("hoTen",thanhvien.hoTen);
-        values.put("tenTK",thanhvien.tenTK);
-        values.put("matKhau",thanhvien.Mk);
-        values.put("namSinh",thanhvien.namSinh);
-        values.put("soDT",thanhvien.soDT);
-        values.put("vaiTro",thanhvien.vaitro);
+        values.put("hoTen",thanhvien.getHoTen());
+        values.put("tenTK",thanhvien.getTenTK());
+        values.put("matKhau",thanhvien.getMk());
+        values.put("namSinh",thanhvien.getNamSinh());
+        values.put("soDT",thanhvien.getSoDT());
+        values.put("vaiTro",thanhvien.getVaitro());
         database.insert("ThanhVien",null,values);
 
     }
