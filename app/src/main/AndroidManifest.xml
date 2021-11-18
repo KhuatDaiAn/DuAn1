@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn1_CellHome">
-        <activity android:name=".DonHangChiTietActivity"></activity>
+        <activity android:name=".DonHangNguoiDung"></activity>
+        <activity android:name=".DonHangChiTietActivity" />
         <activity android:name=".DangKyActivity" />
         <activity
             android:name=".DangNhapActivity"
@@ -32,17 +33,17 @@
             android:exported="true" />
         <activity
             android:name=".ChaoActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DuAn1_CellHome.NoActionBar"></activity>
+            android:theme="@style/Theme.DuAn1_CellHome.NoActionBar" />
         <activity
             android:name=".MenuNguoiDung"
             android:exported="true"
             android:label="Menu"
-            android:theme="@style/Theme.DuAn1_CellHome.NoActionBar"></activity>
+            android:theme="@style/Theme.DuAn1_CellHome.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

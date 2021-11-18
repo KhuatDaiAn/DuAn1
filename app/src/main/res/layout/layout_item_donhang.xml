@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/hoa_don"
@@ -20,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="ma don hang"
+        android:text="50"
         android:textColor="#020202"
 
         android:textSize="18dp"
@@ -64,4 +65,13 @@
         android:textSize="18dp"
         app:layout_constraintStart_toEndOf="@id/imgHinhND"
         app:layout_constraintTop_toBottomOf="@id/txtTinhThanh" />
+
+    <ImageView
+        android:id="@+id/imgSua"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="170dp"
+        app:layout_constraintStart_toEndOf="@+id/txtMaDonHang"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_ball_point_pen_50px" />
 </androidx.constraintlayout.widget.ConstraintLayout>

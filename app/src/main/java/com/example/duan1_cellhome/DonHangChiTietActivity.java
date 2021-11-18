@@ -26,7 +26,7 @@ public class DonHangChiTietActivity extends AppCompatActivity {
     TextView txtTenGTNhaDat,txtDiaChi,txtMoTa,txtTien,txtMaTVMuaHang,txtSDTKhachHang;
     ImageView imgHinh, imgQuayLai;
     String maDonHang;
-    Button btnHoanTatGD;
+//    ImageView imgSua;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,13 +38,14 @@ public class DonHangChiTietActivity extends AppCompatActivity {
         txtSDTKhachHang = findViewById(R.id.txtSDTKhachHang);
         imgHinh = findViewById(R.id.imgHinh);
         imgQuayLai = findViewById(R.id.imgQuayLai);
-        btnHoanTatGD = findViewById(R.id.btnHoanTatGD);
-        btnHoanTatGD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialogHoanTatGD();
-            }
-        });
+
+//        imgSua = findViewById(R.id.imgSua);
+//        imgSua.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                dialogHoanTatGD();
+//            }
+//        });
         imgQuayLai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,19 +90,6 @@ public class DonHangChiTietActivity extends AppCompatActivity {
                 }else {
                 }
 
-//                String tenNhaDat=edtTenNhaDat.getText().toString();
-//                String tinhThanh=selectedTinhThanh;
-//                String diachi=edtdiaChi.getText().toString();
-//                String giatien=edtGiaTien.getText().toString();
-//                String dientich=edtDienTich.getText().toString();
-//                String mota=edtmoTa.getText().toString();
-//                int giaTien = Integer.parseInt(giatien);
-//                Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
-//                NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,0);
-//                NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
-//                dao.update(nhaDat);
-//                dialog.dismiss();
-//                ganDuLieu();
             }
         });
 
