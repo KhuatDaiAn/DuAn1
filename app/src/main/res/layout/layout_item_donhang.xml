@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
     android:background="@drawable/hoa_don"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:paddingRight="15dp">
 
     <ImageView
         android:id="@+id/imgHinhND"
@@ -35,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="8dp"
+        android:paddingRight="15dp"
         android:text="tenGT"
         android:textColor="#020202"
         android:textSize="24dp"
@@ -70,7 +73,7 @@
         android:id="@+id/imgSua"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="170dp"
+        android:layout_marginStart="180dp"
         app:layout_constraintStart_toEndOf="@+id/txtMaDonHang"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icons8_ball_point_pen_50px" />
@@ -79,9 +82,9 @@
         android:id="@+id/txtTrangThai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="250dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtGiaTien"
         app:layout_constraintTop_toBottomOf="@+id/txtTinhThanh" />
 </androidx.constraintlayout.widget.ConstraintLayout>
