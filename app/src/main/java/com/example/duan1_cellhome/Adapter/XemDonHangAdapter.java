@@ -14,18 +14,14 @@ import com.example.duan1_cellhome.R;
 
 import java.util.List;
 
-public class DonHangAdapter extends BaseAdapter {
-    DonHangFragment donHangFragment;
+public class XemDonHangAdapter extends BaseAdapter {
+
     Context context;
     List<DonHang> donHangList;
-   
 
-    public DonHangAdapter(DonHangFragment donHangFragment, List<DonHang> donHangList) {
-        this.donHangFragment = donHangFragment;
-        this.donHangList = donHangList;
-    }
 
-    public DonHangAdapter(Context context, List<DonHang> donHangList) {
+
+    public XemDonHangAdapter(Context context, List<DonHang> donHangList) {
         this.context = context;
         this.donHangList = donHangList;
     }
@@ -61,11 +57,12 @@ public class DonHangAdapter extends BaseAdapter {
         TextView txtGiaTien=view.findViewById(R.id.txtGiaTien);
         TextView txtTrangThai=view.findViewById(R.id.txtTrangThai);
         ImageView imgHinhND =(ImageView) view.findViewById(R.id.imgHinhND);
-        ImageView imgSua =(ImageView) view.findViewById(R.id.imgSua);
         txtMaDonhang.setText(donHang.getMaDonHang());
         txtTenGT.setText(donHang.getTenGTND());
         txtTinhThanh.setText(donHang.getDiaChiND());
         txtGiaTien.setText(donHang.getGiaTienND()+"");
+        ImageView imgSua =(ImageView) view.findViewById(R.id.imgSua);
+        imgSua.setVisibility(view.GONE);
         byte[] img=donHang.getHinhND();
         if(img == null){
             imgHinhND.setImageResource(R.drawable.nha1);
@@ -78,15 +75,8 @@ public class DonHangAdapter extends BaseAdapter {
 
 
         if (donHang.getTrangThai()==0){
-            imgSua.setVisibility(view.GONE);
             txtTrangThai.setText("Đã giao dịch");
         }
-        imgSua.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                donHangFragment.dialogHoanTatGD(donHang.getMaDonHang());
-            }
-        });
 
         return view;
     }

@@ -18,6 +18,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.duan1_cellhome.Adapter.HinhAdapter;
 import com.example.duan1_cellhome.Adapter.UpNhiuHinhAdapter;
@@ -91,11 +92,17 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
                 String username=intent.getStringExtra("tenTK");
                 Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(username);
                 DonHangDAO dao=new DonHangDAO(getApplicationContext());
-                NhaDatDAO datDAO = new NhaDatDAO(getApplicationContext());
+
                 Random random=new Random();
                 int maDonHang=random.nextInt(61);
-                DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1);
-                dao.insert(donHang);
+                Boolean check=new DonHangDAO(getApplicationContext()).kiemtradangkyDonHang(thanhvien.getMatv(),nhaDat.getMaNhaDat());
+                if (check==true){
+                    Toast.makeText(getApplicationContext(), "Bạn đã đăng ký mua nhà này rồi. Xin vui lòng đợi giao dịch ", Toast.LENGTH_SHORT).show();
+                }else{
+                    DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1);
+                    dao.insert(donHang);
+                }
+
 
             }
         });

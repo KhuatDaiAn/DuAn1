@@ -31,7 +31,7 @@ public class DonHangGiaoDichThanhCongActivityFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.layout_list_donhang,container,false);
         gridViewDonHang=view.findViewById(R.id.gvDonHang);
-        donHangList=new DonHangDAO(getContext()).getDonHang();
+        donHangList=new DonHangDAO(getContext()).getDonHangGiaoDichThanhCong();
         adapter=new DonHangAdapter(getContext(),donHangList);
         gridViewDonHang.setNumColumns(1);
         gridViewDonHang.setAdapter(adapter);

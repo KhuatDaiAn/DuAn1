@@ -64,35 +64,5 @@ public class DonHangChiTietActivity extends AppCompatActivity {
         txtMaTVMuaHang.setText(donHang.getMaTV());
         txtSDTKhachHang.setText(donHang.getSoDTNM()+"");
     }
-    public void dialogHoanTatGD() {
-        Dialog dialog = new Dialog(DonHangChiTietActivity.this);
-        dialog.setContentView(R.layout.dialog_sua_don_hang);
-        dialog.setCanceledOnTouchOutside(false);
-        CheckBox chkHoaThanh = dialog.findViewById(R.id.chkHoanTatGD);
-        Button btnLuuGD=dialog.findViewById(R.id.btnLuuGD);
-        Button btnCancel = dialog.findViewById(R.id.btnBo);
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
-        btnLuuGD.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View v) {
-                int check ;
-                Intent intent=getIntent();
-                maDonHang=intent.getStringExtra("maDonHang");
-                DonHang donHang=new DonHangDAO(DonHangChiTietActivity.this).getMaDonHang(maDonHang);
-                DonHangDAO donHangDAO = new DonHangDAO(getApplicationContext());
-                if (chkHoaThanh.isChecked()){
-                }else {
-                }
 
-            }
-        });
-
-        dialog.show();
-    }
 }

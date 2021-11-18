@@ -12,8 +12,11 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.duan1_cellhome.Adapter.DonHangAdapter;
+import com.example.duan1_cellhome.Adapter.XemDonHangAdapter;
 import com.example.duan1_cellhome.DAO.DonHangDAO;
+import com.example.duan1_cellhome.DAO.ThanhvienDao;
 import com.example.duan1_cellhome.Model.DonHang;
+import com.example.duan1_cellhome.Model.Thanhvien;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +24,7 @@ import java.util.List;
 public class DonHangNguoiDungFragment extends Fragment {
     List<DonHang> donHangList = new ArrayList<>();
     GridView gridViewDonHangNguoiDung;
-    DonHangAdapter adapter;
+    XemDonHangAdapter adapter;
 
     public DonHangNguoiDungFragment() {
         // Required empty public constructor
@@ -41,8 +44,12 @@ public class DonHangNguoiDungFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_list_don_hang_nguoi_dung, container, false);
-//        donHangList=new DonHangDAO(getContext()).getMaDonHang();
-        adapter=new DonHangAdapter(getContext(),donHangList);
+        Intent intent=getActivity().getIntent();
+        String username=intent.getStringExtra("tenTK");
+        Thanhvien thanhvien=new ThanhvienDao(getContext()).getDuLieu(username);
+        donHangList=new DonHangDAO(getContext()).getDonHangCaNhan(thanhvien.getMatv());
+        gridViewDonHangNguoiDung=view.findViewById(R.id.gvDonHangNguoiDung);
+        adapter=new XemDonHangAdapter(getContext(),donHangList);
         gridViewDonHangNguoiDung.setNumColumns(1);
         gridViewDonHangNguoiDung.setAdapter(adapter);
         gridViewDonHangNguoiDung.setOnItemClickListener(new AdapterView.OnItemClickListener() {
