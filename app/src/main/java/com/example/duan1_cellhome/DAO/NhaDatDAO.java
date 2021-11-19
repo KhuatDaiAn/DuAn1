@@ -44,8 +44,8 @@ public class NhaDatDAO implements INhaDatDAO{
             int giaTien=cursor.getInt(6);
             String dienTich=cursor.getString(7);
             String moTa=cursor.getString(8);
-            int vaitro=cursor.getInt(9);
-            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,vaitro);
+            int loainha=cursor.getInt(9);
+            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,loainha);
             list.add(nhaDat);
             cursor.moveToNext();
         }
@@ -74,8 +74,8 @@ public class NhaDatDAO implements INhaDatDAO{
             int giaTien=cursor.getInt(6);
             String dienTich=cursor.getString(7);
             String moTa=cursor.getString(8);
-            int vaitro=cursor.getInt(9);
-            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,vaitro);
+            int loainha=cursor.getInt(9);
+            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,loainha);
             list.add(nhaDat);
             cursor.moveToNext();
         }
@@ -103,8 +103,8 @@ public class NhaDatDAO implements INhaDatDAO{
             int giaTien=cursor.getInt(6);
             String dienTich=cursor.getString(7);
             String moTa=cursor.getString(8);
-            int vaitro=cursor.getInt(9);
-            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,vaitro);
+            int loainha=cursor.getInt(9);
+            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,loainha);
             list.add(nhaDat);
             cursor.moveToNext();
         }
@@ -135,8 +135,8 @@ public class NhaDatDAO implements INhaDatDAO{
             int giaTien=cursor.getInt(6);
             String dienTich=cursor.getString(7);
             String moTa=cursor.getString(8);
-            int vaitro=cursor.getInt(9);
-            nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,vaitro);
+            int loainha=cursor.getInt(9);
+            nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,loainha);
             cursor.moveToNext();
         }
         cursor.close();
@@ -156,7 +156,7 @@ public class NhaDatDAO implements INhaDatDAO{
         values.put("giaTien",nhaDat.getGiaTien());
         values.put("dienTich",nhaDat.getDienTich());
         values.put("moTa",nhaDat.getMoTa());
-        values.put("vaitro",nhaDat.getLoaiNha());
+        values.put("loaiNha",nhaDat.getLoaiNha());
         database.insert("NhaDat",null,values);
 
     }
@@ -176,7 +176,7 @@ public class NhaDatDAO implements INhaDatDAO{
         values.put("giaTien",nhaDat.getGiaTien());
         values.put("dienTich",nhaDat.getDienTich());
         values.put("moTa",nhaDat.getMoTa());
-        values.put("vaitro",nhaDat.getLoaiNha());
+        values.put("loaiNha",nhaDat.getLoaiNha());
         database.update("NhaDat",values,"maNhaDat = ?",params);
 
     }
