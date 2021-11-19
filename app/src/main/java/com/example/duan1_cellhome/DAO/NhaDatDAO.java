@@ -27,7 +27,7 @@ public class NhaDatDAO implements INhaDatDAO{
     public List<NhaDat> getNha() {
         List<NhaDat> list=new ArrayList<>();
         SQLiteDatabase database=mydatabase.getReadableDatabase();
-        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE vaitro==0",null);
+        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE loaiNha==0",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             String maNhaDat=cursor.getString(0);
@@ -57,7 +57,7 @@ public class NhaDatDAO implements INhaDatDAO{
     public List<NhaDat> getDat() {
         List<NhaDat> list=new ArrayList<>();
         SQLiteDatabase database=mydatabase.getReadableDatabase();
-        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE vaitro==1",null);
+        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE loaiNha==1",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             String maNhaDat=cursor.getString(0);
@@ -156,7 +156,7 @@ public class NhaDatDAO implements INhaDatDAO{
         values.put("giaTien",nhaDat.getGiaTien());
         values.put("dienTich",nhaDat.getDienTich());
         values.put("moTa",nhaDat.getMoTa());
-        values.put("vaitro",nhaDat.getVaitro());
+        values.put("vaitro",nhaDat.getLoaiNha());
         database.insert("NhaDat",null,values);
 
     }
@@ -176,7 +176,7 @@ public class NhaDatDAO implements INhaDatDAO{
         values.put("giaTien",nhaDat.getGiaTien());
         values.put("dienTich",nhaDat.getDienTich());
         values.put("moTa",nhaDat.getMoTa());
-        values.put("vaitro",nhaDat.getVaitro());
+        values.put("vaitro",nhaDat.getLoaiNha());
         database.update("NhaDat",values,"maNhaDat = ?",params);
 
     }
