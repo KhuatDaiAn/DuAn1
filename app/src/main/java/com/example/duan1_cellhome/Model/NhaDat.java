@@ -12,9 +12,9 @@ public class NhaDat {
     int giaTien;
     String dienTich;
     String moTa;
-    int vaitro;
+    int loaiNha;
 
-    public NhaDat(String maNhaDat, String tenGT, byte[] hinh, String tinhThanh, Date ngayDang, String diaChi, int giaTien, String dienTich, String moTa, int vaitro) {
+    public NhaDat(String maNhaDat, String tenGT, byte[] hinh, String tinhThanh, Date ngayDang, String diaChi, int giaTien, String dienTich, String moTa, int loaiNha) {
         this.maNhaDat = maNhaDat;
         this.tenGT = tenGT;
         this.hinh = hinh;
@@ -24,7 +24,7 @@ public class NhaDat {
         this.giaTien = giaTien;
         this.dienTich = dienTich;
         this.moTa = moTa;
-        this.vaitro = vaitro;
+        this.loaiNha = loaiNha;
     }
 
     public String getMaNhaDat() {
@@ -99,11 +99,11 @@ public class NhaDat {
         this.moTa = moTa;
     }
 
-    public int getVaitro() {
-        return vaitro;
+    public int getLoaiNha() {
+        return loaiNha;
     }
 
-    public void setVaitro(int vaitro) {
-        this.vaitro = vaitro;
+    public void setLoaiNha(int loaiNha) {
+        this.loaiNha = loaiNha;
     }
 }
