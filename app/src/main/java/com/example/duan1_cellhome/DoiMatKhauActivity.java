@@ -18,6 +18,10 @@ public class DoiMatKhauActivity extends AppCompatActivity {
     Button btnDMK;
     String oldPass, newPass, confirmPass;
 
+    Intent intent = getIntent();
+//    final String username = intent.getStringExtra("tenTK");
+    final String pass = intent.getStringExtra("matKhau");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +41,14 @@ public class DoiMatKhauActivity extends AppCompatActivity {
 
                 if (oldPass.equals("") || newPass.equals("") || confirmPass.equals("")) {
                     Toast.makeText(DoiMatKhauActivity.this, "Không được để trống", Toast.LENGTH_SHORT).show();
-                } else if (!newPass.equals(confirmPass)) {
-                    Toast.makeText(DoiMatKhauActivity.this, "Mật khẩu xác nhận không đúng", Toast.LENGTH_SHORT).show();
-
+                } else if (!pass.equals(oldPass)) {
+                    Toast.makeText(DoiMatKhauActivity.this, "Mật khẩu hiện tại không đúng", Toast.LENGTH_SHORT).show();
+                } else if (newPass.equals(pass)) {
+                    Toast.makeText(DoiMatKhauActivity.this, "Mật khẩu mới không được trùng mật khẩu cũ", Toast.LENGTH_SHORT).show();
+                }  else if (!newPass.equals(confirmPass)) {
+                    Toast.makeText(DoiMatKhauActivity.this, "Xác nhận mật khẩu mới không đúng", Toast.LENGTH_SHORT).show();
+                } else {
+                    Thanhvien thanhvien = new Thanhvien();
                 }
             }
 

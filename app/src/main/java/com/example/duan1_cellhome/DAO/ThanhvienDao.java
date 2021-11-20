@@ -101,7 +101,7 @@ public class ThanhvienDao implements IThanhVienDAO {
         ContentValues values = new ContentValues();
         String []params = new String[]{thanhvien.getMatv()};
         values.put("matKhau",thanhvien.getMk());
-        database.update("ThanhVien",values,"maTV=?",params);
+//        database.update("ThanhVien",values,"maTV=?",params);
     }
 
     public Boolean login(String tenTK, String matKhau) {
