@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".DangNhapActivity"
+
+    >
+
+    <ImageView
+        android:id="@+id/imgDMK"
+        android:layout_width="match_parent"
+        android:layout_height="308dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_5" />
+
+    <TextView
+        android:id="@+id/txtNameAppDMK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sacramento"
+        android:text="FPT LAND"
+        android:textColor="#FB0101"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTitleDMK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/rokkitt"
+        android:textAlignment="center"
+        android:text="Đổi mật khẩu"
+        android:textColor="#070707"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgDMK" />
+
+
+
+    <EditText
+        android:id="@+id/edtOldPasswordDMK"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custem_edittext"
+        android:drawableStart="@drawable/icons8_password_26px"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Old Password"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        android:textAlignment="viewStart"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleDMK" />
+
+    <EditText
+        android:id="@+id/edtNewPasswordDMK"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custem_edittext"
+        android:drawableStart="@drawable/icons8_password_26px"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="New Password"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        android:textAlignment="viewStart"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtOldPasswordDMK"
+        app:layout_constraintTop_toBottomOf="@+id/edtOldPasswordDMK" />
+
+    <EditText
+        android:id="@+id/edtConfirmPaswordDMK"
+        android:layout_width="303dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custem_edittext"
+        android:drawableStart="@drawable/icons8_password_26px"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        android:textAlignment="viewStart"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtOldPasswordDMK"
+        app:layout_constraintTop_toBottomOf="@+id/edtNewPasswordDMK" />
+
+
+    <Button
+        android:id="@+id/btnDMK"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/costom_button"
+        android:fontFamily="serif-monospace"
+        android:text="Confirm"
+        android:textAllCaps="false"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtConfirmPaswordDMK" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
