@@ -47,6 +47,7 @@ public class XemDatFragment extends Fragment {
         View view=inflater.inflate(R.layout.layout_xem_list_nhadat,container,false);
         gridViewNhaDat=view.findViewById(R.id.gvNhaDat);
         imgThem=view.findViewById(R.id.imgThemNhaDat);
+        spinnerTimKiem=view.findViewById(R.id.spinnerTimKiemTinhThanh);
         list=new NhaDatDAO(getContext()).getDat();
         adapter=new NhaDatAdapter(getContext(),list);
         gridViewNhaDat.setNumColumns(2);

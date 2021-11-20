@@ -53,7 +53,7 @@ public class DangKyActivity extends AppCompatActivity {
         }else{
             if (Repassword.equals(password)){
                 int soDT=Integer.parseInt(sodt);
-                Thanhvien thanhvien=new Thanhvien(maTV+"",hoTen,namSinh,username,password,soDT,1);
+                Thanhvien thanhvien=new Thanhvien(maTV+"",hoTen,username,password,namSinh,soDT,1);
                 ThanhvienDao dao=new ThanhvienDao(getApplicationContext());
                 dao.insert(thanhvien);
             }else{

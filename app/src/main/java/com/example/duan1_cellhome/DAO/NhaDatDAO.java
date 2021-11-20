@@ -27,7 +27,7 @@ public class NhaDatDAO implements INhaDatDAO{
     public List<NhaDat> getNha() {
         List<NhaDat> list=new ArrayList<>();
         SQLiteDatabase database=mydatabase.getReadableDatabase();
-        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE vaitro==0",null);
+        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE loaiNha==0",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             String maNhaDat=cursor.getString(0);
@@ -44,8 +44,8 @@ public class NhaDatDAO implements INhaDatDAO{
             int giaTien=cursor.getInt(6);
             String dienTich=cursor.getString(7);
             String moTa=cursor.getString(8);
-            int vaitro=cursor.getInt(9);
-            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,vaitro);
+            int loainha=cursor.getInt(9);
+            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,loainha);
             list.add(nhaDat);
             cursor.moveToNext();
         }
@@ -57,7 +57,7 @@ public class NhaDatDAO implements INhaDatDAO{
     public List<NhaDat> getDat() {
         List<NhaDat> list=new ArrayList<>();
         SQLiteDatabase database=mydatabase.getReadableDatabase();
-        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE vaitro==1",null);
+        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE loaiNha==1",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             String maNhaDat=cursor.getString(0);
@@ -74,8 +74,8 @@ public class NhaDatDAO implements INhaDatDAO{
             int giaTien=cursor.getInt(6);
             String dienTich=cursor.getString(7);
             String moTa=cursor.getString(8);
-            int vaitro=cursor.getInt(9);
-            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,vaitro);
+            int loainha=cursor.getInt(9);
+            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,loainha);
             list.add(nhaDat);
             cursor.moveToNext();
         }
@@ -103,8 +103,8 @@ public class NhaDatDAO implements INhaDatDAO{
             int giaTien=cursor.getInt(6);
             String dienTich=cursor.getString(7);
             String moTa=cursor.getString(8);
-            int vaitro=cursor.getInt(9);
-            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,vaitro);
+            int loainha=cursor.getInt(9);
+            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,loainha);
             list.add(nhaDat);
             cursor.moveToNext();
         }
@@ -135,8 +135,8 @@ public class NhaDatDAO implements INhaDatDAO{
             int giaTien=cursor.getInt(6);
             String dienTich=cursor.getString(7);
             String moTa=cursor.getString(8);
-            int vaitro=cursor.getInt(9);
-            nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,vaitro);
+            int loainha=cursor.getInt(9);
+            nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,loainha);
             cursor.moveToNext();
         }
         cursor.close();
@@ -156,7 +156,7 @@ public class NhaDatDAO implements INhaDatDAO{
         values.put("giaTien",nhaDat.getGiaTien());
         values.put("dienTich",nhaDat.getDienTich());
         values.put("moTa",nhaDat.getMoTa());
-        values.put("vaitro",nhaDat.getVaitro());
+        values.put("loaiNha",nhaDat.getLoaiNha());
         database.insert("NhaDat",null,values);
 
     }
@@ -176,7 +176,7 @@ public class NhaDatDAO implements INhaDatDAO{
         values.put("giaTien",nhaDat.getGiaTien());
         values.put("dienTich",nhaDat.getDienTich());
         values.put("moTa",nhaDat.getMoTa());
-        values.put("vaitro",nhaDat.getVaitro());
+        values.put("loaiNha",nhaDat.getLoaiNha());
         database.update("NhaDat",values,"maNhaDat = ?",params);
 
     }
