@@ -13,10 +13,6 @@ public class Thanhvien {
 
     }
 
-    public Thanhvien(String mk) {
-        Mk = mk;
-    }
-
     public Thanhvien(String matv, String hoTen, String tenTK, String mk, String namSinh, int soDT, int vaitro) {
         this.matv = matv;
         this.hoTen = hoTen;

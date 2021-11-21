@@ -103,17 +103,32 @@
 
     <Button
         android:id="@+id/btnDMK"
-        android:layout_width="150dp"
+        android:layout_width="144dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
+        android:layout_marginStart="54dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/costom_button"
         android:fontFamily="serif-monospace"
-        android:text="Confirm"
+        android:text="Đổi"
         android:textAllCaps="false"
         android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtConfirmPaswordDMK" />
+
+    <Button
+        android:id="@+id/btnHuyDMK"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/costom_button"
+        android:fontFamily="serif-monospace"
+        android:text="Hủy"
+        android:textAllCaps="false"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/btnDMK"
         app:layout_constraintTop_toBottomOf="@+id/edtConfirmPaswordDMK" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
