@@ -11,9 +11,10 @@
 
     <ImageView
         android:id="@+id/imgDMK"
-        android:layout_width="match_parent"
-        android:layout_height="308dp"
+        android:layout_width="420dp"
+        android:layout_height="307dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img_5" />
@@ -36,10 +37,10 @@
         android:id="@+id/txtTitleDMK"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/rokkitt"
-        android:textAlignment="center"
         android:text="Đổi mật khẩu"
+        android:textAlignment="center"
         android:textColor="#070707"
         android:textSize="28dp"
         android:textStyle="bold"
@@ -47,13 +48,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imgDMK" />
 
 
-
     <EditText
         android:id="@+id/edtOldPasswordDMK"
         android:layout_width="303dp"
         android:layout_height="58dp"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/custem_edittext"
         android:drawableStart="@drawable/icons8_password_26px"
         android:drawablePadding="15dp"
@@ -70,7 +70,7 @@
         android:id="@+id/edtNewPasswordDMK"
         android:layout_width="303dp"
         android:layout_height="58dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/custem_edittext"
         android:drawableStart="@drawable/icons8_password_26px"
         android:drawablePadding="15dp"
@@ -87,7 +87,7 @@
         android:id="@+id/edtConfirmPaswordDMK"
         android:layout_width="303dp"
         android:layout_height="58dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/custem_edittext"
         android:drawableStart="@drawable/icons8_password_26px"
         android:drawablePadding="15dp"
@@ -106,7 +106,7 @@
         android:layout_width="144dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="18dp"
         android:background="@drawable/costom_button"
         android:fontFamily="serif-monospace"
         android:text="Đổi"
@@ -121,7 +121,7 @@
         android:layout_width="144dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="18dp"
         android:background="@drawable/costom_button"
         android:fontFamily="serif-monospace"
         android:text="Hủy"
