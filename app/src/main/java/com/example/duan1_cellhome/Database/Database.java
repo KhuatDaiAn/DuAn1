@@ -22,13 +22,13 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL(sql);
         sql="CREATE TABLE  Hinh(maHinh TEXT PRIMARY KEY,maNhaDat TEXT REFERENCES NhaDat(maNhaDat),hinh BLOB )";
         db.execSQL(sql);
-        sql="CREATE TABLE  donHang(maDonHang TEXT PRIMARY KEY NOT NULL, " +
+        sql="CREATE TABLE  DonHang(maDonHang TEXT PRIMARY KEY NOT NULL, " +
                 "maTV TEXT REFERENCES ThanhVien(maTV)," +
                 "maNhaDat TEXT REFERENCES NhaDat(maNhaDat)," +
                 "soDTNM INTEGER," +
                 "tenGTND TEXT NOT NULL," +
                 "hinhND BLOB," +
-                "diaChiND TEXT NOT NULL, giaTienND INTEGER, trangThai INTEGER)";
+                "diaChiND TEXT NOT NULL, giaTienND INTEGER, trangThai INTEGER, ngay DATE)";
         db.execSQL(sql);
 
         db.execSQL("INSERT INTO ThanhVien VALUES('abc','Khuat Dai An','an1','123','1999',0198139131,1)");

@@ -34,7 +34,7 @@
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Giá tiền"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:lineSpacingExtra="8sp"
         android:paddingLeft="15dp"
         android:singleLine="false"

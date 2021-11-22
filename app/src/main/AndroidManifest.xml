@@ -13,10 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn1_CellHome" >
-        <activity
-            android:name=".DoiMatKhauActivity"
-            android:exported="false" />
-        <activity android:name=".DonHangNguoiDung" />
+
         <activity android:name=".DonHangChiTietActivity" />
         <activity android:name=".DangKyActivity" />
         <activity

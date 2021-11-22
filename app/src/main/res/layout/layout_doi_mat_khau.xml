@@ -87,7 +87,7 @@
         android:id="@+id/edtConfirmPaswordDMK"
         android:layout_width="303dp"
         android:layout_height="58dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/custem_edittext"
         android:drawableStart="@drawable/icons8_password_26px"
         android:drawablePadding="15dp"

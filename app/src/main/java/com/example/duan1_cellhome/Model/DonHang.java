@@ -1,5 +1,7 @@
 package com.example.duan1_cellhome.Model;
 
+import java.util.Date;
+
 public class DonHang {
     String maDonHang;
     String maTV;
@@ -10,8 +12,9 @@ public class DonHang {
     String diaChiND;
     int giaTienND;
     int trangThai;
+    Date ngay;
 
-    public DonHang(String maDonHang, String maTV, String maNhaDat, int soDTNM, String tenGTND, byte[] hinhND, String diaChiND, int giaTienND, int trangThai) {
+    public DonHang(String maDonHang, String maTV, String maNhaDat, int soDTNM, String tenGTND, byte[] hinhND, String diaChiND, int giaTienND, int trangThai, Date ngay) {
         this.maDonHang = maDonHang;
         this.maTV = maTV;
         this.maNhaDat = maNhaDat;
@@ -21,6 +24,7 @@ public class DonHang {
         this.diaChiND = diaChiND;
         this.giaTienND = giaTienND;
         this.trangThai = trangThai;
+        this.ngay = ngay;
     }
 
     public String getMaDonHang() {
@@ -93,5 +97,13 @@ public class DonHang {
 
     public void setTrangThai(int trangThai) {
         this.trangThai = trangThai;
+    }
+
+    public Date getNgay() {
+        return ngay;
+    }
+
+    public void setNgay(Date ngay) {
+        this.ngay = ngay;
     }
 }

@@ -1,5 +1,8 @@
 package com.example.duan1_cellhome;
 
+import static java.time.LocalDate.now;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -31,6 +35,7 @@ import com.example.duan1_cellhome.Model.Hinh;
 import com.example.duan1_cellhome.Model.NhaDat;
 import com.example.duan1_cellhome.Model.Thanhvien;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -87,19 +92,20 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
             }
         });
         btnMua.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 String username=intent.getStringExtra("tenTK");
                 Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(username);
                 DonHangDAO dao=new DonHangDAO(getApplicationContext());
-
+                Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
                 Random random=new Random();
                 int maDonHang=random.nextInt(61);
                 Boolean check=new DonHangDAO(getApplicationContext()).kiemtradangkyDonHang(thanhvien.getMatv(),nhaDat.getMaNhaDat());
                 if (check==true){
                     Toast.makeText(getApplicationContext(), "Bạn đã đăng ký mua nhà này rồi. Xin vui lòng đợi giao dịch ", Toast.LENGTH_SHORT).show();
                 }else{
-                    DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1);
+                    DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1,ngayDang);
                     dao.insert(donHang);
                 }
 

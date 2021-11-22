@@ -10,12 +10,13 @@ import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.Model.NhaDat;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class DonHangDAO implements IDonHang{
-
+    SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
     Database mydatabase;
 
     public DonHangDAO(Context context){
@@ -26,7 +27,7 @@ public class DonHangDAO implements IDonHang{
     public List<DonHang> getDonHang() {
         List<DonHang> donHangList = new ArrayList<>();
         SQLiteDatabase database = mydatabase.getReadableDatabase();
-        Cursor cursor = database.rawQuery("SELECT * FROM donHang WHERE trangThai==1", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM DonHang WHERE trangThai==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             String maDonHang = cursor.getString(0);
@@ -38,7 +39,13 @@ public class DonHangDAO implements IDonHang{
             String diaChiND = cursor.getString(6);
             int giaTien = cursor.getInt(7);
             int trangThai = cursor.getInt(8);
-            donHangList.add( new DonHang(maDonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai));
+            Date ngayDang = null;
+            try {
+                ngayDang = sdf.parse(cursor.getString(9));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            donHangList.add( new DonHang(maDonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai,ngayDang));
             cursor.moveToNext();
         }
         cursor.close();
@@ -48,7 +55,7 @@ public class DonHangDAO implements IDonHang{
     public List<DonHang> getDonHangGiaoDichThanhCong() {
         List<DonHang> donHangList = new ArrayList<>();
         SQLiteDatabase database = mydatabase.getReadableDatabase();
-        Cursor cursor = database.rawQuery("SELECT * FROM donHang WHERE trangThai==0", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM DonHang WHERE trangThai==0", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             String maDonHang = cursor.getString(0);
@@ -60,7 +67,13 @@ public class DonHangDAO implements IDonHang{
             String diaChiND = cursor.getString(6);
             int giaTien = cursor.getInt(7);
             int trangThai = cursor.getInt(8);
-            donHangList.add( new DonHang(maDonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai));
+            Date ngayDang = null;
+            try {
+                ngayDang = sdf.parse(cursor.getString(9));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            donHangList.add( new DonHang(maDonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai,ngayDang));
             cursor.moveToNext();
         }
         cursor.close();
@@ -69,7 +82,7 @@ public class DonHangDAO implements IDonHang{
     public List<DonHang> getDonHangCaNhan(String maTV) {
         List<DonHang> donHangList = new ArrayList<>();
         SQLiteDatabase database = mydatabase.getReadableDatabase();
-        Cursor cursor = database.rawQuery("SELECT * FROM donHang WHERE trangThai==1 AND maTV=?", new String[]{maTV});
+        Cursor cursor = database.rawQuery("SELECT * FROM DonHang WHERE trangThai==1 AND maTV=?", new String[]{maTV});
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             String maDonHang = cursor.getString(0);
@@ -81,7 +94,13 @@ public class DonHangDAO implements IDonHang{
             String diaChiND = cursor.getString(6);
             int giaTien = cursor.getInt(7);
             int trangThai = cursor.getInt(8);
-            donHangList.add( new DonHang(maDonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai));
+            Date ngayDang = null;
+            try {
+                ngayDang = sdf.parse(cursor.getString(9));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            donHangList.add( new DonHang(maDonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai,ngayDang));
             cursor.moveToNext();
         }
         cursor.close();
@@ -92,7 +111,7 @@ public class DonHangDAO implements IDonHang{
     public DonHang getMaDonHang(String maDonHang) {
         DonHang donHang=null;
         SQLiteDatabase database=mydatabase.getReadableDatabase();
-        Cursor cursor=database.rawQuery("SELECT * FROM donHang WHERE maDonHang= ?",new String[]{maDonHang});
+        Cursor cursor=database.rawQuery("SELECT * FROM DonHang WHERE maDonHang= ?",new String[]{maDonHang});
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             String madonHang = cursor.getString(0);
@@ -104,7 +123,13 @@ public class DonHangDAO implements IDonHang{
             String diaChiND = cursor.getString(6);
             int giaTien = cursor.getInt(7);
             int trangThai = cursor.getInt(8);
-            donHang = new DonHang(madonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai);
+            Date ngayDang = null;
+            try {
+                ngayDang = sdf.parse(cursor.getString(9));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            donHang = new DonHang(madonHang, maThanhVien, maNhaDat, soDTNM, tenGTND, hinh, diaChiND, giaTien, trangThai,ngayDang);
             cursor.moveToNext();
         }
 
@@ -118,7 +143,8 @@ public class DonHangDAO implements IDonHang{
         ContentValues values = new ContentValues();
         String []params = new String[]{donHang.getMaDonHang()};
         values.put("trangThai",donHang.getTrangThai());
-        database.update("donHang",values,"maDonHang=?",params);
+        values.put("ngay",sdf.format(donHang.getNgay()));
+        database.update("DonHang",values,"maDonHang=?",params);
     }
 
     @Override
@@ -134,19 +160,20 @@ public class DonHangDAO implements IDonHang{
             values.put("diaChiND",donHang.getDiaChiND());
             values.put("giaTienND",donHang.getGiaTienND());
             values.put("trangThai",donHang.getTrangThai());
-            database.insert("donHang",null,values);
+            values.put("ngay",sdf.format(donHang.getNgay()));
+            database.insert("DonHang",null,values);
     }
 
     @Override
     public void delete(String maDonHang) {
         SQLiteDatabase database=mydatabase.getReadableDatabase();
         String[] params=new String[]{maDonHang};
-        database.delete("donHang","maDonHang = ?",params);
+        database.delete("DonHang","maDonHang = ?",params);
     }
 
     public Boolean kiemtradangkyDonHang(String maTV, String maNhaDat) {
         SQLiteDatabase database=mydatabase.getReadableDatabase();
-        String sql = "SELECT * FROM donHang WHERE maTV = ? AND maNhaDat = ?";
+        String sql = "SELECT * FROM DonHang WHERE maTV = ? AND maNhaDat = ?";
         Cursor cursor=database.rawQuery(sql,new String[]{maTV,maNhaDat});
         int count=cursor.getCount();
         cursor.close();

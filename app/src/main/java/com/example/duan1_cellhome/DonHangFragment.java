@@ -1,5 +1,7 @@
 package com.example.duan1_cellhome;
 
+import static java.time.LocalDate.now;
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
@@ -24,6 +26,7 @@ import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.Model.NhaDat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,7 +80,8 @@ public class DonHangFragment extends Fragment {
                 }else {
                     trangThai=1;
                 }
-                DonHang donHang=new DonHang(maDonHang,null,null,03103123,"null",null,"null",1231,trangThai);
+                Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
+                DonHang donHang=new DonHang(maDonHang,null,null,03103123,"null",null,"null",1231,trangThai,ngayDang);
                 DonHangDAO dao=new DonHangDAO(getContext());
                 dao.updateTrangThai(donHang);
             }

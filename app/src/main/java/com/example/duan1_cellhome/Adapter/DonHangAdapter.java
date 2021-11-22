@@ -12,13 +12,15 @@ import com.example.duan1_cellhome.DonHangFragment;
 import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.R;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class DonHangAdapter extends BaseAdapter {
     DonHangFragment donHangFragment;
     Context context;
     List<DonHang> donHangList;
-   
+    SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
+
 
     public DonHangAdapter(DonHangFragment donHangFragment, List<DonHang> donHangList) {
         this.donHangFragment = donHangFragment;
@@ -60,12 +62,15 @@ public class DonHangAdapter extends BaseAdapter {
         TextView txtTinhThanh=view.findViewById(R.id.txtTinhThanh);
         TextView txtGiaTien=view.findViewById(R.id.txtGiaTien);
         TextView txtTrangThai=view.findViewById(R.id.txtTrangThai);
+        TextView txtngayDang=view.findViewById(R.id.txtNgay);
         ImageView imgHinhND =(ImageView) view.findViewById(R.id.imgHinhND);
         ImageView imgSua =(ImageView) view.findViewById(R.id.imgSua);
         txtMaDonhang.setText(donHang.getMaDonHang());
         txtTenGT.setText(donHang.getTenGTND());
         txtTinhThanh.setText(donHang.getDiaChiND());
         txtGiaTien.setText(donHang.getGiaTienND()+"");
+        txtngayDang.setText(sdf.format(donHang.getNgay()));
+
         byte[] img=donHang.getHinhND();
         if(img == null){
             imgHinhND.setImageResource(R.drawable.nha1);
