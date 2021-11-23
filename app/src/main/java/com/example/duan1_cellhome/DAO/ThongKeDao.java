@@ -41,14 +41,15 @@ public class ThongKeDao implements IThongKe{
         return list;
     }
 
+    @SuppressLint("Range")
     @Override
     public int getDoanhThu(String tuNgay, String denNgay) {
         SQLiteDatabase database=mydatabase.getReadableDatabase();
         List<Integer> list=new ArrayList<Integer>();
-        Cursor cursor=database.rawQuery("SELECT SUM(tienThue) as doanhThu FROM PhieuMuon WHERE ngay BETWEEN ? AND ? AND traSach=1",new String[]{tuNgay,denNgay});
+        Cursor cursor=database.rawQuery("SELECT SUM(giaTienND) as doanhThu FROM DonHang WHERE ngay BETWEEN ? AND ? AND trangThai==0",new String[]{tuNgay,denNgay});
        while(cursor.moveToNext()){
            try{
-
+               list.add(Integer.parseInt(cursor.getString(cursor.getColumnIndex("doanhThu"))));
            }catch (Exception e){
                list.add(0);
            }

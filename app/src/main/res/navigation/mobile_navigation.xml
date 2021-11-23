@@ -39,5 +39,8 @@
         android:id="@+id/nav_doimatkhau"
         android:name="com.example.duan1_cellhome.DoiMatKhauFragment"
         android:label="DoiMatKhauFragment" />
-
+    <fragment
+        android:id="@+id/nav_thongkedoanhthu"
+        android:name="com.example.duan1_cellhome.ThongKeDoanhThuFragment"
+        android:label="DoanhThu" />
 </navigation>
