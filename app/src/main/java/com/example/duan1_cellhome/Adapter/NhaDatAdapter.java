@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.duan1_cellhome.Model.NhaDat;
 import com.example.duan1_cellhome.R;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class NhaDatAdapter extends BaseAdapter {
         this.context = context;
         this.nhaDatList = loaiSachList;
     }
+    DecimalFormat formatter = new DecimalFormat("#,###,###");
 
     @Override
     public int getCount() {
@@ -55,7 +57,7 @@ public class NhaDatAdapter extends BaseAdapter {
         txttenGT.setText(nhaDat.getTenGT());
         txttinhThanh.setText(nhaDat.getTinhThanh());
         txtdienTich.setText(nhaDat.getDienTich());
-        txtgiaTien.setText(nhaDat.getGiaTien()+"");
+        txtgiaTien.setText(formatter.format(nhaDat.getGiaTien()));
         txtngayDang.setText(sdf.format(nhaDat.getNgayDang()));
         byte[] imageArray=nhaDat.getHinh();
         if(imageArray==null){

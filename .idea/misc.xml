@@ -39,7 +39,7 @@
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/layout_nhadat.xml" value="0.536" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/layout_spinner_tinhthanh.xml" value="0.25226449275362317" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/layout_xem_list_nhadat.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/nav_header_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/nav_header_main.xml" value="0.6" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/tablayout_donhang_giaodich.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/menu/activity_menunguoidung_drawer.xml" value="0.25416666666666665" />
@@ -70,5 +70,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.6" />
+      </ProjectState>
+    </option>
   </component>
 </project>

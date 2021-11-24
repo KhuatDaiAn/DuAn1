@@ -27,7 +27,7 @@ public class ThongKeDao implements IThongKe{
     public List<Top> getTop() {
         List<Top> list=new ArrayList<>();
         SQLiteDatabase database=mydatabase.getReadableDatabase();
-        Cursor cursor=database.rawQuery("SELECT tinhThanh,count(tinhThanh) as soLuong FROM NhaDat ORDER BY soLuong DESC LIMIT 10",null);
+        Cursor cursor=database.rawQuery("SELECT tinhThanh,count(tinhThanh) as soLuong FROM NhaDat GROUP BY tinhThanh ORDER BY soLuong DESC LIMIT 10",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             @SuppressLint("Range") String tinhThanh=cursor.getString(cursor.getColumnIndex("tinhThanh"));

@@ -107,6 +107,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
                 }else{
                     DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1,ngayDang);
                     dao.insert(donHang);
+                    finish();
                 }
 
 
