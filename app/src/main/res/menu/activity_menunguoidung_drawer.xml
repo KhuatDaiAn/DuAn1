@@ -18,7 +18,7 @@
             android:title="Đất" />
         <item
             android:id="@+id/nav_donHangNguoiDung"
-            android:icon="@drawable/icons8_field_26px"
+            android:icon="@drawable/icons8_purchase_order_50px_1"
             android:title="Đơn hàng" />
     </group>
     <item android:title="Thống kê">

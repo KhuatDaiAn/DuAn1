@@ -257,7 +257,14 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
         EditText edtDienTich=dialog.findViewById(R.id.edtDienTich);
         EditText edtmoTa=dialog.findViewById(R.id.edtMoTa);
         Button btnSua=dialog.findViewById(R.id.btnSuaNhaDat);
+        Button btnCancel = dialog.findViewById(R.id.btnCancel);
         addTinhThanh();
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
         btnSua.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -277,6 +284,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
                 ganDuLieu();
             }
         });
+
 
         dialog.show();
     }

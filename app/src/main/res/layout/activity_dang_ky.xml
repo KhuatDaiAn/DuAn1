@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@color/white"
     tools:context=".DangKyActivity">
 
     <EditText
         android:id="@+id/edtUserNameDK"
-        android:layout_width="303dp"
+        android:layout_width="344dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawableLeft="@drawable/icons8_name_24px"
         android:drawablePadding="15dp"
         android:ems="10"
@@ -29,10 +29,10 @@
 
     <EditText
         android:id="@+id/edtPaswordDK"
-        android:layout_width="303dp"
+        android:layout_width="344dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawableStart="@drawable/icons8_password_24px"
         android:drawablePadding="15dp"
         android:ems="10"
@@ -47,10 +47,10 @@
 
     <EditText
         android:id="@+id/edtNhapLaiPaswordDK"
-        android:layout_width="303dp"
+        android:layout_width="344dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawableStart="@drawable/icons8_password_24px"
         android:drawablePadding="15dp"
         android:ems="10"
@@ -68,23 +68,24 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/costom_button"
         android:fontFamily="serif-monospace"
         android:text="Đăng ký"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNhapLaiPaswordDK" />
+        app:layout_constraintTop_toBottomOf="@+id/txtVeDangNhap" />
 
     <EditText
         android:id="@+id/edtHoTen"
-        android:layout_width="303dp"
+        android:layout_width="344dp"
         android:layout_height="58dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="216dp"
-        android:background="@drawable/custem_edittext"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/custom_backgroud"
         android:drawableLeft="@drawable/icons8_name_tag_24px"
         android:drawablePadding="15dp"
         android:ems="10"
@@ -97,10 +98,10 @@
 
     <EditText
         android:id="@+id/edtSoDienThoai"
-        android:layout_width="303dp"
+        android:layout_width="344dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawableLeft="@drawable/icons8_cell_phone_24px"
         android:drawablePadding="15dp"
         android:ems="10"
@@ -114,10 +115,10 @@
 
     <EditText
         android:id="@+id/edtNamSinhDK"
-        android:layout_width="303dp"
+        android:layout_width="344dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawableLeft="@drawable/icons8_calendar_24px"
         android:drawablePadding="15dp"
         android:ems="10"
@@ -131,18 +132,19 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="411dp"
+        android:layout_width="150dp"
         android:layout_height="160dp"
+        android:layout_marginStart="250dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/banner" />
+        app:srcCompat="@drawable/nha_dk" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="213dp"
         android:layout_height="38dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/sacramento"
         android:text="FPT LAND"
         android:textColor="#FB0101"
@@ -156,7 +158,7 @@
         android:layout_width="110dp"
         android:layout_height="34dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="113dp"
+        android:layout_marginTop="63dp"
         android:fontFamily="@font/rokkitt"
         android:text="Đăng ký"
         android:textColor="#070707"
@@ -164,4 +166,25 @@
         android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/txtVeDangNhap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="32dp"
+        android:text="I have an account"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNhapLaiPaswordDK" />
+
+    <ImageView
+        android:id="@+id/imgQuayLaiDN"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 </androidx.constraintlayout.widget.ConstraintLayout>

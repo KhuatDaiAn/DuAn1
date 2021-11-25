@@ -12,6 +12,7 @@ import com.example.duan1_cellhome.DonHangFragment;
 import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.R;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class DonHangAdapter extends BaseAdapter {
     Context context;
     List<DonHang> donHangList;
     SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
+
 
 
     public DonHangAdapter(DonHangFragment donHangFragment, List<DonHang> donHangList) {

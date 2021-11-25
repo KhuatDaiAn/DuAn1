@@ -2,10 +2,13 @@ package com.example.duan1_cellhome;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.duan1_cellhome.DAO.ThanhvienDao;
@@ -17,6 +20,8 @@ public class DangKyActivity extends AppCompatActivity {
 
     EditText edtUserNameDK, edtPaswordDK, edtNhapLaiPaswordDK,edtHoTen,edtSoDienThoai,edtNamSinhDK;
     Button btnDangKy;
+    ImageView imgQuaylai;
+    TextView txtCoTaiKhoan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,21 @@ public class DangKyActivity extends AppCompatActivity {
         edtSoDienThoai = findViewById(R.id.edtSoDienThoai);
         edtNamSinhDK = findViewById(R.id.edtNamSinhDK);
         btnDangKy = findViewById(R.id.btnDangKy);
+        txtCoTaiKhoan = findViewById(R.id.txtVeDangNhap);
+        imgQuaylai = findViewById(R.id.imgQuayLaiDN);
+        imgQuaylai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        txtCoTaiKhoan = findViewById(R.id.txtVeDangNhap);
+        txtCoTaiKhoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

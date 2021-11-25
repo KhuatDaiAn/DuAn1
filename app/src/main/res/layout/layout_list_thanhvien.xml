@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:background="@drawable/custom_backgroud">
 
     <GridView
         android:id="@+id/gvThanhVien"
@@ -13,7 +13,7 @@
         android:layout_marginHorizontal="23dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/gradient"
+        android:background="@color/white"
         android:horizontalSpacing="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="25dp"

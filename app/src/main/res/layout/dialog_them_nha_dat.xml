@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="340dp"
     android:layout_height="560dp"
-    android:background="@drawable/gradient">
+    android:background="@color/white">
 
     <EditText
         android:id="@+id/edtTenNhaDat"
@@ -12,7 +12,7 @@
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="76dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Tên giới thiệu"
@@ -30,7 +30,7 @@
         android:layout_width="303dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Giá tiền"
@@ -48,8 +48,12 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:background="@drawable/custom_buttom_them_nha_dat"
+        android:background="@drawable/costom_button"
         android:text="Thêm"
+        android:textColor="@color/white"
+        android:fontFamily="@font/bree_serif"
+        android:textAllCaps="false"
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="@+id/edtMoTa"
         app:layout_constraintTop_toBottomOf="@+id/edtMoTa" />
 
@@ -58,7 +62,7 @@
         android:layout_width="303dp"
         android:layout_height="58dp"
         android:layout_marginTop="26dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Địa chỉ"
@@ -76,8 +80,12 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:background="@drawable/custom_buttom_them_nha_dat"
+        android:background="@drawable/costom_button"
         android:text="Cancel"
+        android:textColor="@color/white"
+        android:fontFamily="@font/bree_serif"
+        android:textAllCaps="false"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="@+id/edtMoTa"
         app:layout_constraintTop_toBottomOf="@+id/edtMoTa" />
 
@@ -86,7 +94,7 @@
         android:layout_width="303dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Diện tích"
@@ -104,7 +112,7 @@
         android:layout_width="303dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/custom_backgroud"
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Mô tả"
@@ -134,9 +142,10 @@
         android:id="@+id/spinnerTinhThanh"
         android:layout_width="303dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="@+id/edtTenNhaDat"
-        app:layout_constraintStart_toStartOf="@+id/edtTenNhaDat"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtTenNhaDat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

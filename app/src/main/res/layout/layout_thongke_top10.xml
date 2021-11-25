@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_backgroud"
+    android:paddingBottom="20dp">
 
     <TextView
         android:id="@+id/txtThongKeTenSach"
@@ -12,6 +14,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,9 +24,10 @@
         android:id="@+id/txtsoLuong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="260dp"
+        android:layout_marginStart="230dp"
         android:layout_marginTop="37dp"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

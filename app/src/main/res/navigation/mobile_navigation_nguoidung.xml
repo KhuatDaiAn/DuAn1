@@ -26,5 +26,18 @@
         android:id="@+id/nav_donHangNguoiDung"
         android:name="com.example.duan1_cellhome.DonHangNguoiDungFragment"
         android:label="Đơn Hàng" />
+    <fragment
+        android:id="@+id/nav_thongTinCaNhan"
+        android:name="com.example.duan1_cellhome.ThongTinCaNhanFragment"
+        android:label="Thông tin cá nhân"
+        tools:layout="@layout/fragment_thong_tin_ca_nhan" />
+    <fragment
+        android:id="@+id/nav_doimatkhau"
+        android:name="com.example.duan1_cellhome.DoiMatKhauFragment"
+        android:label="Đổi mật khẩu" />
+    <fragment
+        android:id="@+id/nav_top10"
+        android:name="com.example.duan1_cellhome.ThongKeTop10Fragment"
+        android:label="Top 10" />
 
 </navigation>

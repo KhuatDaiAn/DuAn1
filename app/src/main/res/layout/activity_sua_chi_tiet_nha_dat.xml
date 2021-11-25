@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@color/white"
     tools:context=".ChiTietNhaDatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -57,13 +57,13 @@
 
     <ImageView
         android:id="@+id/imgThoat"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icons8_back_to_64px" />
+        app:srcCompat="@drawable/back" />
 
     <ImageView
         android:id="@+id/imgReload"

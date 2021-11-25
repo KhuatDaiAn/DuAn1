@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aapt="http://schemas.android.com/aapt"
-    android:width="234dp"
-    android:height="97dp"
-    android:viewportWidth="234"
-    android:viewportHeight="97"
-    >
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient android:startColor="#E0FFFF"
+        android:endColor="#F0FFFF"></gradient>
+    <stroke android:color="@color/black"
+        android:width="2dp"></stroke>
+    <corners android:radius="20dp"></corners>
+    <size android:width="234dp"
+        android:height="97dp"></size>
 
-    <group>
+</shape>
+<!--<vector-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:aapt="http://schemas.android.com/aapt"-->
+<!--    android:width="234dp"-->
+<!--    android:height="97dp"-->
+<!--    android:viewportWidth="234"-->
+<!--    android:viewportHeight="97"-->
+<!--    >-->
 
-        <clip-path
-            android:pathData="M15 0H219C227.284 0 234 6.71573 234 15V82C234 90.2843 227.284 97 219 97H15C6.71573 97 0 90.2843 0 82V15C0 6.71573 6.71573 0 15 0Z"
-            />
+<!--    <group>-->
 
-        <path
-            android:pathData="M0 0V97H234V0"
-            android:fillColor="#FFFDFD"
-            />
+<!--        <clip-path-->
+<!--            android:pathData="M15 0H219C227.284 0 234 6.71573 234 15V82C234 90.2843 227.284 97 219 97H15C6.71573 97 0 90.2843 0 82V15C0 6.71573 6.71573 0 15 0Z"-->
+<!--            />-->
 
-        <path
-            android:pathData="M15 0H219C227.284 0 234 6.71573 234 15V82C234 90.2843 227.284 97 219 97H15C6.71573 97 0 90.2843 0 82V15C0 6.71573 6.71573 0 15 0Z"
-            android:strokeWidth="1"
-            android:strokeColor="#000000"
-            />
+<!--        <path-->
+<!--            android:pathData="M0 0V97H234V0"-->
+<!--            android:fillColor="#FFFDFD"-->
+<!--            />-->
 
-    </group>
+<!--        <path-->
+<!--            android:pathData="M15 0H219C227.284 0 234 6.71573 234 15V82C234 90.2843 227.284 97 219 97H15C6.71573 97 0 90.2843 0 82V15C0 6.71573 6.71573 0 15 0Z"-->
+<!--            android:strokeWidth="1"-->
+<!--            android:strokeColor="#000000"-->
+<!--            />-->
 
-</vector>
+<!--    </group>-->
+
+<!--</vector>-->
+

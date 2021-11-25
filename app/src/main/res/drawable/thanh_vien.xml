@@ -10,6 +10,7 @@
 
     <group>
 
+
         <clip-path
             android:pathData="M15 0H219C227.284 0 234 6.71573 234 15V82C234 90.2843 227.284 97 219 97H15C6.71573 97 0 90.2843 0 82V15C0 6.71573 6.71573 0 15 0Z"
             />
@@ -21,10 +22,9 @@
 
         <path
             android:pathData="M15 0H219C227.284 0 234 6.71573 234 15V82C234 90.2843 227.284 97 219 97H15C6.71573 97 0 90.2843 0 82V15C0 6.71573 6.71573 0 15 0Z"
-            android:strokeWidth="1"
+            android:strokeWidth="2"
             android:strokeColor="#000000"
             />
-
     </group>
 
 </vector>

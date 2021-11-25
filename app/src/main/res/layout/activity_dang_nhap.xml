@@ -4,24 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@color/white"
     tools:context=".DangNhapActivity">
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="412dp"
-        android:layout_height="308dp"
+        android:layout_width="290dp"
+        android:layout_height="266dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.991"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_5" />
+        app:srcCompat="@drawable/nha" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/sacramento"
         android:text="FPT LAND"
         android:textColor="#FB0101"
@@ -35,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/rokkitt"
         android:text="Đăng nhập"
         android:textColor="#070707"
@@ -46,15 +47,15 @@
 
     <EditText
         android:id="@+id/edtUserNameDN"
-        android:layout_width="303dp"
+        android:layout_width="343dp"
         android:layout_height="58dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/custem_edittext"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/custom_backgroud"
         android:drawableLeft="@drawable/icons8_name_26px"
         android:drawablePadding="15dp"
         android:ems="10"
-        android:hint="UserName"
+        android:hint="admin"
         android:inputType="textPersonName"
         android:lineSpacingExtra="8sp"
         android:paddingLeft="15dp"
@@ -66,14 +67,14 @@
 
     <EditText
         android:id="@+id/edtPaswordDN"
-        android:layout_width="303dp"
+        android:layout_width="343dp"
         android:layout_height="58dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/custem_edittext"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/custom_backgroud"
         android:drawableStart="@drawable/icons8_password_26px"
         android:drawablePadding="15dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="********"
         android:inputType="textPassword"
         android:paddingLeft="15dp"
         android:textAlignment="viewStart"
@@ -97,8 +98,9 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="55dp"
         android:background="@drawable/costom_button"
-        android:fontFamily="serif-monospace"
         android:text="Login"
+        android:textColor="@color/white"
+        android:fontFamily="serif-monospace"
         android:textAllCaps="false"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -112,9 +114,29 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
         android:text="Đăng ký"
-        android:textColor="@color/purple_500"
+        android:textColor="@android:color/holo_red_dark"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/btnDangNhap"
         app:layout_constraintTop_toBottomOf="@+id/btnDangNhap" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Your Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtUserNameDN" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:background="@color/white">
 
     <GridView
         android:id="@+id/gvNhaDat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="90dp"
-        android:background="@drawable/gradient"
+        android:background="@color/white"
         android:horizontalSpacing="10dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
@@ -27,7 +27,7 @@
         android:layout_height="57dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/custem_edittext"
+        android:background="@drawable/hoa_don"
         android:paddingLeft="10dp"
         android:paddingBottom="16dp"
         android:popupElevation="20dp"
@@ -41,7 +41,14 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/costom_button"
+        android:drawableLeft="@drawable/icons8_search_24px"
+        android:drawableTint="#FDFDFD"
+        android:fontFamily="@font/bree_serif"
+        android:paddingLeft="10dp"
         android:text="Tìm kiếm"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18dp"
         app:layout_constraintStart_toEndOf="@+id/spinnerTimKiemTinhThanh"
         app:layout_constraintTop_toTopOf="parent" />
 
