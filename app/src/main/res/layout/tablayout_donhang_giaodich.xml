@@ -11,8 +11,9 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout2"
         android:layout_width="match_parent"
+        app:tabTextColor="@color/white"
         android:layout_height="50dp"
-        android:background="@drawable/custom_backgroud" />
+        android:background="#00286B" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"

@@ -1,35 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<vector-->
-<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:aapt="http://schemas.android.com/aapt"-->
-<!--    android:width="126dp"-->
-<!--    android:height="166dp"-->
-<!--    android:viewportWidth="126"-->
-<!--    android:viewportHeight="166"-->
-<!--    android:left="0.5dp"-->
-<!--    android:right="0.5dp"-->
-<!--    android:top="0.5dp"-->
-<!--    android:bottom="2dp">-->
-<!--    <group>-->
-<!--        <clip-path-->
-<!--            android:pathData="M15 0H111C119.284 0 126 6.71573 126 15V151C126 159.284 119.284 166 111 166H15C6.71573 166 0 159.284 0 151V15C0 6.71573 6.71573 0 15 0Z"-->
-<!--            />-->
-<!--        <path-->
-<!--            android:pathData="M0 0V166H126V0"-->
-<!--            android:fillColor="#FFFBFB"-->
-<!--            />-->
-
-<!--        <path-->
-<!--            android:pathData="M15 0H111C119.284 0 126 6.71573 126 15V151C126 159.284 119.284 166 111 166H15C6.71573 166 0 159.284 0 151V15C0 6.71573 6.71573 0 15 0Z"-->
-<!--            android:strokeWidth="2"-->
-<!--            android:strokeColor="#000000"-->
-<!--            />-->
-<!--    </group>-->
-<!--</vector>-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient android:startColor="#E0FFFF"
         android:endColor="#F0FFFF"></gradient>
     <stroke android:color="@color/black"
-        android:width="2dp"></stroke>
+        android:width="1.5dp"></stroke>
     <corners android:radius="20dp"></corners>
 </shape>

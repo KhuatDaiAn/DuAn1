@@ -40,7 +40,7 @@
         android:layout_height="57dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/costom_button"
+        android:background="@drawable/custom_buttom_them_nha_dat"
         android:drawableLeft="@drawable/icons8_search_24px"
         android:drawableTint="#FDFDFD"
         android:fontFamily="@font/bree_serif"

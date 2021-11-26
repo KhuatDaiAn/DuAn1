@@ -168,6 +168,7 @@
         android:background="@drawable/custom_buttom_them_nha_dat"
         android:fontFamily="@font/rokkitt"
         android:text="Sửa"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="30dp"
         android:textStyle="bold"
