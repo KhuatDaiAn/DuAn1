@@ -26,7 +26,6 @@ public class DonHangChiTietActivity extends AppCompatActivity {
     TextView txtTenGTNhaDat,txtDiaChi,txtMoTa,txtTien,txtMaTVMuaHang,txtSDTKhachHang;
     ImageView imgHinh, imgQuayLai;
     String maDonHang;
-//    ImageView imgSua;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +37,6 @@ public class DonHangChiTietActivity extends AppCompatActivity {
         txtSDTKhachHang = findViewById(R.id.txtSDTKhachHang);
         imgHinh = findViewById(R.id.imgHinh);
         imgQuayLai = findViewById(R.id.imgQuayLai);
-
-//        imgSua = findViewById(R.id.imgSua);
-//        imgSua.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dialogHoanTatGD();
-//            }
-//        });
         imgQuayLai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -28,6 +28,7 @@ public class ThongKeTop10Fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.thongketop10_fragment,container,false);
         lv=view.findViewById(R.id.lvThongKeTop10);
+        //load top 10 lên listview
         list=new ThongKeDao(getContext()).getTop();
         adapter=new ThongKeTop10Adapter(getContext(),list);
         lv.setAdapter(adapter);

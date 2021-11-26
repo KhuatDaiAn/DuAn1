@@ -12,13 +12,14 @@ import com.example.duan1_cellhome.DonHangFragment;
 import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.R;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class XemDonHangAdapter extends BaseAdapter {
 
     Context context;
     List<DonHang> donHangList;
-
+    SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 
 
     public XemDonHangAdapter(Context context, List<DonHang> donHangList) {
@@ -56,10 +57,12 @@ public class XemDonHangAdapter extends BaseAdapter {
         TextView txtTinhThanh=view.findViewById(R.id.txtTinhThanh);
         TextView txtGiaTien=view.findViewById(R.id.txtGiaTien);
         TextView txtTrangThai=view.findViewById(R.id.txtTrangThai);
+        TextView txtngayDang=view.findViewById(R.id.txtNgay);
         ImageView imgHinhND =(ImageView) view.findViewById(R.id.imgHinhND);
         txtMaDonhang.setText(donHang.getMaDonHang());
         txtTenGT.setText(donHang.getTenGTND());
         txtTinhThanh.setText(donHang.getDiaChiND());
+        txtngayDang.setText(sdf.format(donHang.getNgay()));
         txtGiaTien.setText(donHang.getGiaTienND()+"");
         ImageView imgSua =(ImageView) view.findViewById(R.id.imgSua);
         imgSua.setVisibility(view.GONE);

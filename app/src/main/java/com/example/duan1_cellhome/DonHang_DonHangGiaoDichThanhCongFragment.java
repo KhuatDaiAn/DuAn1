@@ -27,7 +27,7 @@ public class DonHang_DonHangGiaoDichThanhCongFragment extends Fragment {
         View view=inflater.inflate(R.layout.tablayout_donhang_giaodich,container,false);
         viewPager2=(ViewPager2) view.findViewById(R.id.viewPager2);
         tabLayout=(TabLayout) view.findViewById(R.id.tabLayout2);
-
+        //xét tab layout qua lại
         FragmentManager manager=getChildFragmentManager();
         ViewDonHang_GiaoDichAdapter adapter= new ViewDonHang_GiaoDichAdapter(manager,getLifecycle());
         viewPager2.setAdapter(adapter);
@@ -44,10 +44,12 @@ public class DonHang_DonHangGiaoDichThanhCongFragment extends Fragment {
                 }
             }
         }).attach();
+        //animation cho tab layout
         viewPager2.setPageTransformer(new ZoomOutPageTransformer());
 
         return view;
     }
+
     public class ZoomOutPageTransformer implements ViewPager2.PageTransformer {
         private static final float MIN_SCALE = 0.85f;
         private static final float MIN_ALPHA = 0.5f;

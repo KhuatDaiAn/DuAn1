@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.duan1_cellhome.Adapter.DonHangAdapter;
 import com.example.duan1_cellhome.DAO.DonHangDAO;
+import com.example.duan1_cellhome.DAO.NhaDatDAO;
 import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.Model.NhaDat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -80,10 +81,23 @@ public class DonHangFragment extends Fragment {
                 }else {
                     trangThai=1;
                 }
+
+
                 Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
+                //update thành trạng thái giao dịch thành công
                 DonHang donHang=new DonHang(maDonHang,null,null,03103123,"null",null,"null",1231,trangThai,ngayDang);
                 DonHangDAO dao=new DonHangDAO(getContext());
                 dao.updateTrangThai(donHang);
+                //xóa nhà đất khi giao dịch thành công
+                DonHang donHang1=new DonHangDAO(getContext()).getMaDonHang(maDonHang);
+                NhaDatDAO nhaDatDAO=new NhaDatDAO(getContext());
+                nhaDatDAO.delete(donHang1.getMaNhaDat());
+                //load lại danh sách đơn hàng
+                donHangList=new DonHangDAO(getContext()).getDonHang();
+                adapter=new DonHangAdapter(getContext(),donHangList);
+                gridViewDonHang.setNumColumns(1);
+                gridViewDonHang.setAdapter(adapter);
+                dialog.dismiss();
             }
         });
 

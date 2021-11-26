@@ -42,8 +42,9 @@ public class ThongKeDoanhThuFragment extends Fragment {
         btnTinh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String tungay=  txtTu.getText().toString();;
-                String denngay= txtToi.getText().toString(); ;
+                String tungay=  txtTu.getText().toString();
+                String denngay= txtToi.getText().toString();
+                //tính doanh thu
                 doanhthu=new ThongKeDao(getContext()).getDoanhThu(tungay,denngay);
                 txt.setText(doanhthu+"");
             }
@@ -51,12 +52,14 @@ public class ThongKeDoanhThuFragment extends Fragment {
         txtTu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //chọn ngày
                 datePickerDialog();
             }
         });
         txtToi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //chọn ngày
                 datePickerDialog2();
             }
         });

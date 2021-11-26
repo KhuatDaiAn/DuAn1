@@ -3,6 +3,7 @@ package com.example.duan1_cellhome;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,8 @@ public class DangNhapActivity extends AppCompatActivity {
         edtUsername=findViewById(R.id.edtUserNameDN);
         edtPassword=findViewById(R.id.edtPaswordDN);
         btnDangNhap = findViewById(R.id.btnDangNhap);
+        //hàm check lưu đăng nhập hay không
+        checkloginStatus();
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,11 +46,21 @@ public class DangNhapActivity extends AppCompatActivity {
                         Thanhvien thanhvien = new ThanhvienDao(getApplicationContext()).getDuLieu(username);
                         int vaiTro = thanhvien.getVaitro();
                         if (vaiTro==0){
+                            //ghi nhớ đăng nhập
+                            SharedPreferences.Editor editor=getSharedPreferences("login_status",MODE_PRIVATE).edit();
+                            editor.putBoolean("isLoggedAdmin",true);
+                            editor.apply();
+                            //chuyển qua màn hình chính
                             Intent intent = new Intent(DangNhapActivity.this, MainActivity.class);
                             intent.putExtra("tenTK",username);
                             intent.putExtra("matKhau",password);
                             startActivity(intent);
                         }else{
+                            //ghi nhớ đăng nhập
+                            SharedPreferences.Editor editor=getSharedPreferences("login_status",MODE_PRIVATE).edit();
+                            editor.putBoolean("isLoggedNguoiDung",true);
+                            editor.apply();
+                            //chuyển qua màn hình chính
                             Intent intent = new Intent(DangNhapActivity.this, MenuNguoiDung.class);
                             intent.putExtra("tenTK",username);
                             intent.putExtra("matKhau",password);
@@ -68,4 +81,24 @@ public class DangNhapActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void checkloginStatus(){
+        SharedPreferences editor=getSharedPreferences("login_status",MODE_PRIVATE);
+        boolean isLoggedAdmin = editor.getBoolean("isLoggedAdmin",false);
+        if(isLoggedAdmin==true){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+            return;
+        }
+
+        boolean isLoggedNguoiDung = editor.getBoolean("isLoggedNguoiDung",false);
+        if(isLoggedNguoiDung==true){
+            startActivity(new Intent(getApplicationContext(),MenuNguoiDung.class));
+            finish();
+            return;
+        }
+
+    }
+
+
 }

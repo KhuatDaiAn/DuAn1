@@ -49,11 +49,14 @@ public class XemNhaFragment extends Fragment {
         imgThem=view.findViewById(R.id.imgThemNhaDat);
         btnTim=view.findViewById(R.id.btnTim);
         spinnerTimKiem=view.findViewById(R.id.spinnerTimKiemTinhThanh);
+        //load dữ liệu nhà lên gridview
         list=new NhaDatDAO(getContext()).getNha();
         adapter=new NhaDatAdapter(getContext(),list);
         gridViewNhaDat.setNumColumns(2);
         gridViewNhaDat.setAdapter(adapter);
+        //hàm thêm 64 tỉnh thành
         addTinhThanh();
+        //lấy dữ liệu từ intent
         Intent intent=getActivity().getIntent();
         String username=intent.getStringExtra("tenTK");
         gridViewNhaDat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -66,6 +69,7 @@ public class XemNhaFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        // tìm theo kết quả tìm kiếm
         btnTim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

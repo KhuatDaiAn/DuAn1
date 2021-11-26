@@ -72,6 +72,7 @@ public class DangKyActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
         }else{
             if (Repassword.equals(password)){
+                //tạo tài khoản mới
                 int soDT=Integer.parseInt(sodt);
                 Thanhvien thanhvien=new Thanhvien(maTV+"",hoTen,username,password,namSinh,soDT,1);
                 ThanhvienDao dao=new ThanhvienDao(getApplicationContext());

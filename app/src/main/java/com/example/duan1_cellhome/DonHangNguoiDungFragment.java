@@ -44,11 +44,14 @@ public class DonHangNguoiDungFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_list_don_hang_nguoi_dung, container, false);
+        //lấy dữ liệu từ intent
         Intent intent=getActivity().getIntent();
         String username=intent.getStringExtra("tenTK");
+        //hàm lấy dữ liệu của 1 thành viên
         Thanhvien thanhvien=new ThanhvienDao(getContext()).getDuLieu(username);
-        donHangList=new DonHangDAO(getContext()).getDonHangCaNhan(thanhvien.getMatv());
         gridViewDonHangNguoiDung=view.findViewById(R.id.gvDonHangNguoiDung);
+        //load đơn hàng của thành viên đó lên gridview
+        donHangList=new DonHangDAO(getContext()).getDonHangCaNhan(thanhvien.getMatv());
         adapter=new XemDonHangAdapter(getContext(),donHangList);
         gridViewDonHangNguoiDung.setNumColumns(1);
         gridViewDonHangNguoiDung.setAdapter(adapter);

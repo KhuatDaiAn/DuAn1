@@ -2,7 +2,9 @@ package com.example.duan1_cellhome;
 
 import static java.time.LocalDate.now;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -46,6 +48,7 @@ public class DatFragment extends Fragment {
         View view=inflater.inflate(R.layout.layout_list_nhadat,container,false);
         gridViewNhaDat=view.findViewById(R.id.gvNhaDat);
         imgThem=view.findViewById(R.id.imgThemNhaDat);
+        //load dữ liệu đất lên gridview
         list=new NhaDatDAO(getContext()).getDat();
         adapter=new NhaDatAdapter(getContext(),list);
         gridViewNhaDat.setNumColumns(2);
@@ -60,17 +63,21 @@ public class DatFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
-
+        gridViewNhaDat.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                NhaDat nhaDat= (NhaDat) adapter.getItem(i);
+                //xóa nhà
+                DiaLogXoaNhaDat(nhaDat.getMaNhaDat());
+                return false;
+            }
+        });
         imgThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialogThemNha();
             }
         });
-
-
 
         return view;
 
@@ -89,6 +96,7 @@ public class DatFragment extends Fragment {
         EditText edtmoTa=dialog.findViewById(R.id.edtMoTa);
         Button btnThem=dialog.findViewById(R.id.btnThemNhaDat);
         Button btnCancel=dialog.findViewById(R.id.btnCancel);
+        //hàm load 64 tỉnh thành
         addTinhThanh();
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,10 +117,13 @@ public class DatFragment extends Fragment {
                 int giaTien = Integer.parseInt(giatien);
                 Random random=new Random();
                 int manhaDat=random.nextInt(61);
+                //lấy ngày hiện tại
                 Date ngayDang= Date.valueOf(String.valueOf(now()));
+                //thêm đất mới
                 NhaDat nhaDat = new NhaDat(manhaDat+"", tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,1);
                 NhaDatDAO dao = new NhaDatDAO(getContext());
                 dao.insert(nhaDat);
+                //load lại dữ liệu lên gridview
                 list=new NhaDatDAO(getContext()).getDat();
                 adapter=new NhaDatAdapter(getContext(),list);
                 gridViewNhaDat.setNumColumns(2);
@@ -205,5 +216,28 @@ public class DatFragment extends Fragment {
             }
         });
     }
+    public void DiaLogXoaNhaDat(String ten){
+        AlertDialog.Builder dialogXoa=new AlertDialog.Builder(getContext());
+        dialogXoa.setMessage("Bạn có muốn xóa nhà"+ten+" này không");
+        dialogXoa.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                NhaDatDAO dao=new NhaDatDAO(getContext());
+                dao.delete(ten);
+                list=new NhaDatDAO(getContext()).getNha();
+                adapter=new NhaDatAdapter(getContext(),list);
+                gridViewNhaDat.setNumColumns(2);
+                gridViewNhaDat.setAdapter(adapter);
+            }
+        });
+        dialogXoa.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
+            }
+        });
+
+        dialogXoa.show();
+
+    }
 }

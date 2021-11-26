@@ -48,6 +48,7 @@ public class NhaFragment extends Fragment {
         View view=inflater.inflate(R.layout.layout_list_nhadat,container,false);
         gridViewNhaDat=view.findViewById(R.id.gvNhaDat);
         imgThem=view.findViewById(R.id.imgThemNhaDat);
+        //load dữ liệu nhà lên gridview
         list=new NhaDatDAO(getContext()).getNha();
         adapter=new NhaDatAdapter(getContext(),list);
         gridViewNhaDat.setNumColumns(2);
@@ -66,6 +67,7 @@ public class NhaFragment extends Fragment {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 NhaDat nhaDat= (NhaDat) adapter.getItem(i);
+                //xóa nhà
                 DiaLogXoaNhaDat(nhaDat.getMaNhaDat());
                 return false;
             }
@@ -128,6 +130,7 @@ public class NhaFragment extends Fragment {
                 dialog.dismiss();
             }
         });
+        //hàm thêm 64 tỉnh thành
         addTinhThanh();
         btnThem.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -143,9 +146,11 @@ public class NhaFragment extends Fragment {
                 Random random=new Random();
                 int manhaDat=random.nextInt(61);
                 Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
+                //thêm nhà mới
                 NhaDat nhaDat = new NhaDat(manhaDat+"", tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,0);
                 NhaDatDAO dao = new NhaDatDAO(getContext());
                 dao.insert(nhaDat);
+                //load lại dữ liệu nhà lên gridview
                 list=new NhaDatDAO(getContext()).getNha();
                 adapter=new NhaDatAdapter(getContext(),list);
                 gridViewNhaDat.setNumColumns(2);

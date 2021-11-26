@@ -80,7 +80,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
                 imgHinh.startAnimation(animationZoom);
             }
         });
-
+        //xét hình lên gridview
         list=new HinhDAO(this).getHinh(maNhaDat);
         upHinhAdapter=new HinhAdapter(getApplicationContext(),list);
         gvHinh.setNumColumns(6);
@@ -88,6 +88,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
         gvHinh.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //khi bấm vô item thì hiện tấm hình đó
                 Hinh hinh= (Hinh) upHinhAdapter.getItem(i);
                 dialogHienThiHinh(hinh.getHinh());
             }
@@ -106,6 +107,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
                 if (check==true){
                     Toast.makeText(getApplicationContext(), "Bạn đã đăng ký mua nhà này rồi. Xin vui lòng đợi giao dịch ", Toast.LENGTH_SHORT).show();
                 }else{
+                    //thêm đơn hàng khi người dùng bấm mua
                     DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1,ngayDang);
                     dao.insert(donHang);
                     finish();

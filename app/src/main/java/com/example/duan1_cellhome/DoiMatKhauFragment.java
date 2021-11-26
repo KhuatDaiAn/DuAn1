@@ -42,7 +42,7 @@ public class DoiMatKhauFragment extends Fragment {
         edtConfirmPass = view.findViewById(R.id.edtConfirmPaswordDMK);
         btnDMK = view.findViewById(R.id.btnDMK);
         btnHuy = view.findViewById(R.id.btnHuyDMK);
-
+        //lấy dữ liệu từ intent
         Intent intent = getActivity().getIntent();
         tenThanhVien = intent.getStringExtra("tenTK");
         Thanhvien thanhVien = new ThanhvienDao(getContext()).getDuLieu(tenThanhVien);
@@ -64,6 +64,7 @@ public class DoiMatKhauFragment extends Fragment {
                 }  else if (!newPass.equals(confirmPass)) {
                     Toast.makeText(getContext(), "Xác nhận mật khẩu mới không đúng", Toast.LENGTH_SHORT).show();
                 } else {
+                    //thay đổi mật khẩu
                     Thanhvien thanhvien = new Thanhvien(maThanhVien, "hoTen", "tenTK", newPass, "namSinh", 0, 0);
                     ThanhvienDao dao = new ThanhvienDao(getContext());
                     dao.updateMK(thanhvien);

@@ -128,12 +128,13 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
 
             }
         });
+        //load hình lên recycleview
         adapter=new UpNhiuHinhAdapter(this);
         @SuppressLint("WrongConstant") GridLayoutManager gridLayoutManager=new GridLayoutManager(this,10, LinearLayout.VERTICAL,false);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setFocusable(false);
         recyclerView.setAdapter(adapter);
-
+        //load hình lên gridview
         list=new HinhDAO(this).getHinh(maNhaDat);
         upHinhAdapter=new HinhAdapter(getApplicationContext(),list);
         gvHinh.setNumColumns(6);
@@ -163,7 +164,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
             public void onPermissionGranted() {
                 openBottomPicker();
             }
-
+        //cấp quyền cho lấy ảnh từ thư viện
             @Override
             public void onPermissionDenied(List<String> deniedPermissions) {
                 Toast.makeText(SuaChiTietNhaDatActivity.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
@@ -182,6 +183,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
         TedBottomPicker.OnMultiImageSelectedListener listener=new TedBottomPicker.OnMultiImageSelectedListener() {
             @Override
             public void onImagesSelected(ArrayList<Uri> uriList) {
+                //lấy ảnh r add vô
                 adapter.setData((ArrayList<Uri>) uriList);
 
             }
@@ -277,6 +279,7 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
                 String mota=edtmoTa.getText().toString();
                 int giaTien = Integer.parseInt(giatien);
                 Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
+                //sửa thông tin nhà đất
                 NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,0);
                 NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
                 dao.update(nhaDat);

@@ -41,6 +41,7 @@ public class ThanhVienFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.layout_list_thanhvien,container,false);
         gridViewThanhVien = view.findViewById(R.id.gvThanhVien);
+        //load dữ liệu thành viên lên gridview
         thanhvienList = new ThanhvienDao(getContext()).getAll();
         adapter = new ThanhvienAdapter(getContext(),thanhvienList);
         gridViewThanhVien.setNumColumns(1);

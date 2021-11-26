@@ -49,21 +49,26 @@ public class XemDatFragment extends Fragment {
         imgThem=view.findViewById(R.id.imgThemNhaDat);
         spinnerTimKiem=view.findViewById(R.id.spinnerTimKiemTinhThanh);
         btnTim = view.findViewById(R.id.btnTim);
+        //load dữ liệu đất lên gridview
         list=new NhaDatDAO(getContext()).getDat();
         adapter=new NhaDatAdapter(getContext(),list);
         gridViewNhaDat.setNumColumns(2);
         gridViewNhaDat.setAdapter(adapter);
+        //hàm thêm 64 tỉnh thành
         addTinhThanh();
-
+        Intent intent=getActivity().getIntent();
+        String username=intent.getStringExtra("tenTK");
         gridViewNhaDat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 NhaDat nhaDat= (NhaDat) adapter.getItem(i);
                 Intent intent = new Intent(getContext(), ChiTietNhaDatActivity.class);
                 intent.putExtra("maNhaDat",nhaDat.getMaNhaDat());
+                intent.putExtra("tenTK",username);
                 startActivity(intent);
             }
         });
+        // tìm theo kết quả tìm kiếm
         btnTim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
