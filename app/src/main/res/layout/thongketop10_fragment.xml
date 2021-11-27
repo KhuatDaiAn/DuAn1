@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/chakrapetch"
         android:text="Top 10 tỉnh có nhiều nhà đất"
         android:textColor="@color/black"
         android:textSize="24dp"

@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/chakrapetch"
         android:text="Giao dịch thành công"
         android:textSize="18dp"
         android:textStyle="bold"
@@ -27,7 +28,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
+        android:fontFamily="@font/chakrapetch"
         android:text="Lưu"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chkHoanTatGD" />
@@ -39,7 +42,9 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
+        android:fontFamily="@font/chakrapetch"
         android:text="Cancel"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/btnLuuGD"
         app:layout_constraintTop_toBottomOf="@+id/chkHoanTatGD" />

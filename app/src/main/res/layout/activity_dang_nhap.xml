@@ -55,6 +55,7 @@
         android:drawableLeft="@drawable/icons8_name_26px"
         android:drawablePadding="15dp"
         android:ems="10"
+        android:fontFamily="@font/chakrapetch"
         android:hint="admin"
         android:inputType="textPersonName"
         android:lineSpacingExtra="8sp"
@@ -74,6 +75,7 @@
         android:drawableStart="@drawable/icons8_password_26px"
         android:drawablePadding="15dp"
         android:ems="10"
+        android:fontFamily="@font/chakrapetch"
         android:hint="********"
         android:inputType="textPassword"
         android:paddingLeft="15dp"
@@ -87,6 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/chakrapetch"
         android:text="Nhớ mật khẩu"
         app:layout_constraintStart_toStartOf="@+id/edtPaswordDN"
         app:layout_constraintTop_toBottomOf="@+id/edtPaswordDN" />
@@ -113,6 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/chakrapetch"
         android:text="Đăng ký"
         android:textColor="@android:color/holo_red_dark"
         android:textStyle="bold"
@@ -125,6 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/chakrapetch"
         android:text="Your Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -135,6 +140,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/chakrapetch"
         android:text="Password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtUserNameDN" />

@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/banner" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/txtTenNguoiDungHeader"
         android:layout_width="240dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -42,12 +42,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtTenHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Admin"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTenNguoiDungHeader" />
 </androidx.constraintlayout.widget.ConstraintLayout>

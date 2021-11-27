@@ -44,10 +44,10 @@ public class ThongKeTop10Adapter extends BaseAdapter {
 
         }
         Top top= (Top) getItem(position);
-        TextView txtTenSach=view.findViewById(R.id.txtThongKeTenSach);
-        TextView txtsoLuong=view.findViewById(R.id.txtsoLuong);
-        txtTenSach.setText("Tên tỉnh :"+top.getTenTinh());
-        txtsoLuong.setText("Số lượng căn nhà :"+top.getSoLuong());
+        TextView txtTenTinh=view.findViewById(R.id.txtThongKeTenTinh);
+        TextView txtSoLuong=view.findViewById(R.id.txtsoLuong);
+        txtTenTinh.setText(top.getTenTinh());
+        txtSoLuong.setText("Số lượng nhà đất: "+top.getSoLuong());
         return view;
     }
 }

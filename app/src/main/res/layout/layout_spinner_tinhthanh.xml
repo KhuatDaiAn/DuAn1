@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="17dp"
+        android:fontFamily="@font/chakrapetch"
         android:text="TextView"
         android:textColor="#070707"
         android:textSize="18dp"

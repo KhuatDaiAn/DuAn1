@@ -3,8 +3,10 @@ package com.example.duan1_cellhome;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -15,6 +17,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 
+import com.example.duan1_cellhome.DAO.ThanhvienDao;
+import com.example.duan1_cellhome.Model.Thanhvien;
 import com.example.duan1_cellhome.databinding.ActivityMenunguoidungBinding;
 import com.google.android.material.navigation.NavigationView;
 
@@ -23,6 +27,8 @@ public class MenuNguoiDung extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenunguoidungBinding binding;
+    private TextView tenTk, hoTen;
+    private View headerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +64,15 @@ public class MenuNguoiDung extends AppCompatActivity {
         });
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        Intent intent = getIntent();
+        String ten = intent.getStringExtra("tenTK");
+        Log.d("==========>", "onCreate: "+ten);
+        headerView = navigationView.getHeaderView(0);
+        Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(ten);
+        tenTk = headerView.findViewById(R.id.txtTenHeader);
+        hoTen = headerView.findViewById(R.id.txtTenNguoiDungHeader);
+        hoTen.setText(thanhvien.getHoTen());
+        tenTk.setText(ten);
     }
 
 

@@ -8,11 +8,12 @@
     android:paddingBottom="20dp">
 
     <TextView
-        android:id="@+id/txtThongKeTenSach"
+        android:id="@+id/txtThongKeTenTinh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/chakrapetch"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -26,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="230dp"
         android:layout_marginTop="37dp"
+        android:fontFamily="@font/chakrapetch"
         android:text="TextView"
         android:textColor="@color/black"
         android:textStyle="italic"

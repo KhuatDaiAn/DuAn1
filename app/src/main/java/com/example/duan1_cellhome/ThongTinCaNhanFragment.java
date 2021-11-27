@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.duan1_cellhome.DAO.DonHangDAO;
 import com.example.duan1_cellhome.DAO.NhaDatDAO;
@@ -55,6 +56,7 @@ public class ThongTinCaNhanFragment extends Fragment {
                     edtHoTen.setEnabled(true);
                     edtNamSinh.setEnabled(true);
                     edtSDT.setEnabled(true);
+                    edtHoTen.requestFocus();
                 }
             });
         btnLuu.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +66,7 @@ public class ThongTinCaNhanFragment extends Fragment {
                 edtNamSinh.setEnabled(false);
                 edtSDT.setEnabled(false);
                 updetaThongTin();
+                Toast.makeText(getContext(), "Lưu thành công", Toast.LENGTH_SHORT).show();
             }
         });
 
