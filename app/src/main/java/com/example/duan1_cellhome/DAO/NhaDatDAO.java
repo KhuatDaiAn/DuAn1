@@ -53,6 +53,35 @@ public class NhaDatDAO implements INhaDatDAO{
         return list;
     }
 
+    public List<NhaDat> getNhaDat() {
+        List<NhaDat> list=new ArrayList<>();
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat",null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            String maNhaDat=cursor.getString(0);
+            String tenGT=cursor.getString(1);
+            byte[] hinh=cursor.getBlob(2);
+            String tinhThanh=cursor.getString(3);
+            Date ngayDang = null;
+            try {
+                ngayDang = sdf.parse(cursor.getString(4));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            String diaChi=cursor.getString(5);
+            int giaTien=cursor.getInt(6);
+            String dienTich=cursor.getString(7);
+            String moTa=cursor.getString(8);
+            int loainha=cursor.getInt(9);
+            NhaDat nhaDat=new NhaDat(maNhaDat,tenGT,hinh,tinhThanh,ngayDang,diaChi,giaTien,dienTich,moTa,loainha);
+            list.add(nhaDat);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
+
     @Override
     public List<NhaDat> getDat() {
         List<NhaDat> list=new ArrayList<>();
