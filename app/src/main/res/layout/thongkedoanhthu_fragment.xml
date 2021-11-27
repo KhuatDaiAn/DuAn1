@@ -17,15 +17,16 @@
         app:layout_constraintTop_toBottomOf="@+id/btnTinh" />
 
     <Button
-        android:background="@drawable/custom_button"
-        android:backgroundTint="@color/teal_200"
         android:id="@+id/btnTinh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginTop="48dp"
-        android:text="Tính"
+        android:background="@drawable/custom_button"
+        android:backgroundTint="#00286B"
         android:fontFamily="serif-monospace"
+        android:text="Tính"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"

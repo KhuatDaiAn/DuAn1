@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/edtHoTenCN"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/custom_backgroud"
+        android:text="Họ tên"
+        android:enabled="false"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtTenTaiKhoanCN"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_backgroud"
+        android:text="Tên tài khoản"
+        android:enabled="false"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtHoTenCN"
+        app:layout_constraintTop_toBottomOf="@+id/edtHoTenCN" />
+
+    <EditText
+        android:id="@+id/edtNamSinhCN"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_backgroud"
+        android:text="Năm sinh"
+        android:textAlignment="center"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtTenTaiKhoanCN"
+        app:layout_constraintTop_toBottomOf="@+id/edtTenTaiKhoanCN" />
+
+    <EditText
+        android:id="@+id/edtSDTCaNhan"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_backgroud"
+        android:text="Số điện thoại"
+        android:enabled="false"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/edtNamSinhCN"
+        app:layout_constraintTop_toBottomOf="@+id/edtNamSinhCN" />
+
+    <Button
+        android:id="@+id/btnSuaCN"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/custom_buttom_them_nha_dat"
+        android:text="Sửa"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/edtSDTCaNhan"
+        app:layout_constraintTop_toBottomOf="@+id/edtSDTCaNhan" />
+
+    <Button
+        android:id="@+id/btnLuuCN"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/custom_buttom_them_nha_dat"
+        android:text="Lưu"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/edtSDTCaNhan"
+        app:layout_constraintTop_toBottomOf="@+id/edtSDTCaNhan" />
 </androidx.constraintlayout.widget.ConstraintLayout>
