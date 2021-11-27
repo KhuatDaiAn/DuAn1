@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import androidx.annotation.NonNull;
@@ -36,7 +37,15 @@ public class DonHangGiaoDichThanhCongActivityFragment extends Fragment {
         adapter=new DonHangAdapter(getContext(),donHangList);
         gridViewDonHang.setNumColumns(1);
         gridViewDonHang.setAdapter(adapter);
-
+        gridViewDonHang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                DonHang donHang= (DonHang) adapter.getItem(i);
+                Intent intent = new Intent(getContext(), DonHangChiTietActivity.class);
+                intent.putExtra("maDonHang",donHang.getMaDonHang());
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

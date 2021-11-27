@@ -19,13 +19,15 @@ import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.Model.NhaDat;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import static java.time.LocalDate.now;
 
 public class DonHangChiTietActivity extends AppCompatActivity {
-    TextView txtTenGTNhaDat,txtDiaChi,txtMoTa,txtTien,txtMaTVMuaHang,txtSDTKhachHang;
+    TextView txtTenGTNhaDat,txtDiaChi,txtTien,txtMaTVMuaHang,txtSDTKhachHang, txtNgayMua;
     ImageView imgHinh, imgQuayLai;
     String maDonHang;
+    SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class DonHangChiTietActivity extends AppCompatActivity {
         txtTien = findViewById(R.id.txtTien);
         txtMaTVMuaHang = findViewById(R.id.txtMaTVMuaHang);
         txtSDTKhachHang = findViewById(R.id.txtSDTKhachHang);
+        txtNgayMua = findViewById(R.id.txtNgayMua);
         imgHinh = findViewById(R.id.imgHinh);
         imgQuayLai = findViewById(R.id.imgQuayLai);
         imgQuayLai.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +55,8 @@ public class DonHangChiTietActivity extends AppCompatActivity {
         DonHang donHang=new DonHangDAO(this).getMaDonHang(maDonHang);
         txtTenGTNhaDat.setText(donHang.getTenGTND());
         txtDiaChi.setText(donHang.getDiaChiND());
+        txtTien.setText(donHang.getGiaTienND()+"");
+        txtNgayMua.setText(sdf.format(donHang.getNgay()));
         txtMaTVMuaHang.setText(donHang.getMaTV());
         txtSDTKhachHang.setText(donHang.getSoDTNM()+"");
     }
