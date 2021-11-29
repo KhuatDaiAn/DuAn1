@@ -69,6 +69,8 @@ public class DoiMatKhauFragment extends Fragment {
                     ThanhvienDao dao = new ThanhvienDao(getContext());
                     dao.updateMK(thanhvien);
                     Toast.makeText(getContext(), "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
+                    Intent intent1=new Intent(getContext(),DangNhapActivity.class);
+                    startActivity(intent1);
                 }
             }
 

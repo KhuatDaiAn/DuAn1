@@ -277,14 +277,44 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
                 String giatien=edtGiaTien.getText().toString();
                 String dientich=edtDienTich.getText().toString();
                 String mota=edtmoTa.getText().toString();
-                int giaTien = Integer.parseInt(giatien);
-                Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
-                //sửa thông tin nhà đất
-                NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,0);
-                NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
-                dao.update(nhaDat);
-                dialog.dismiss();
-                ganDuLieu();
+                Intent intent=getIntent();
+                maNhaDat=intent.getStringExtra("maNhaDat");
+                NhaDat nhaDat1=new NhaDatDAO(getApplicationContext()).getMa(maNhaDat);
+                if (nhaDat1.getLoaiNha()==0){
+                    boolean check=new NhaDatDAO(getApplicationContext()).kiemTra(tenNhaDat);
+                    if (tenNhaDat.isEmpty()||tinhThanh.isEmpty()||diachi.isEmpty()||giatien.isEmpty()||dientich.isEmpty()||mota.isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
+                    }else if(check==true){
+                        Toast.makeText(getApplicationContext(), "Sản phẩm đã có rồi", Toast.LENGTH_SHORT).show();
+                    }else{
+                        int giaTien = Integer.parseInt(giatien);
+                        Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
+                        //sửa thông tin nhà đất
+                        NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,0);
+                        NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
+                        dao.update(nhaDat);
+                        dialog.dismiss();
+                        ganDuLieu();
+                    }
+                }else if (nhaDat1.getLoaiNha()==1){
+                    boolean check=new NhaDatDAO(getApplicationContext()).kiemTra(tenNhaDat);
+                    if (tenNhaDat.isEmpty()||tinhThanh.isEmpty()||diachi.isEmpty()||giatien.isEmpty()||dientich.isEmpty()||mota.isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
+                    }else if(check==true){
+                        Toast.makeText(getApplicationContext(), "Sản phẩm đã có rồi", Toast.LENGTH_SHORT).show();
+                    }else{
+                        int giaTien = Integer.parseInt(giatien);
+                        Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
+                        //sửa thông tin nhà đất
+                        NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,1);
+                        NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
+                        dao.update(nhaDat);
+                        dialog.dismiss();
+                        ganDuLieu();
+                    }
+                }
+
+
             }
         });
 

@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -114,15 +115,22 @@ public class DatFragment extends Fragment {
                 String giatien=edtGiaTien.getText().toString();
                 String dientich=edtDienTich.getText().toString();
                 String mota=edtmoTa.getText().toString();
-                int giaTien = Integer.parseInt(giatien);
-                Random random=new Random();
-                int manhaDat=random.nextInt(61);
-                //lấy ngày hiện tại
-                Date ngayDang= Date.valueOf(String.valueOf(now()));
-                //thêm đất mới
-                NhaDat nhaDat = new NhaDat(manhaDat+"", tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,1);
-                NhaDatDAO dao = new NhaDatDAO(getContext());
-                dao.insert(nhaDat);
+                boolean check=new NhaDatDAO(getContext()).kiemTra(tenNhaDat);
+                if (tenNhaDat.isEmpty()||tinhThanh.isEmpty()||diachi.isEmpty()||giatien.isEmpty()||dientich.isEmpty()||mota.isEmpty()){
+                    Toast.makeText(getContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
+                }else if(check==true){
+                    Toast.makeText(getContext(), "Sản phẩm đã có rồi", Toast.LENGTH_SHORT).show();
+                }else{
+                    int giaTien = Integer.parseInt(giatien);
+                    Random random=new Random();
+                    int manhaDat=random.nextInt(61);
+                    //lấy ngày hiện tại
+                    Date ngayDang= Date.valueOf(String.valueOf(now()));
+                    //thêm đất mới
+                    NhaDat nhaDat = new NhaDat(manhaDat+"", tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,1);
+                    NhaDatDAO dao = new NhaDatDAO(getContext());
+                    dao.insert(nhaDat);
+                }
                 //load lại dữ liệu lên gridview
                 list=new NhaDatDAO(getContext()).getDat();
                 adapter=new NhaDatAdapter(getContext(),list);

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.duan1_cellhome.DAO.ThanhvienDao;
 import com.example.duan1_cellhome.Model.Thanhvien;
 
+import java.util.Calendar;
 import java.util.Random;
 
 public class DangKyActivity extends AppCompatActivity {
@@ -68,19 +69,27 @@ public class DangKyActivity extends AppCompatActivity {
         String hoTen=edtHoTen.getText().toString();
         String namSinh=edtNamSinhDK.getText().toString();
         String sodt=edtSoDienThoai.getText().toString();
+        Calendar calendar=Calendar.getInstance();
+        int year=calendar.get(Calendar.YEAR);
         if (username.isEmpty()||password.isEmpty()||Repassword.isEmpty()||hoTen.isEmpty()||namSinh.isEmpty()||sodt.isEmpty()){
             Toast.makeText(getApplicationContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
-        }else{
-            if (Repassword.equals(password)){
+        }else if (password.length()<=2){
+            Toast.makeText(getApplicationContext(), "Mật khẩu quá ngắn", Toast.LENGTH_LONG).show();
+        } else{
+            int namsinh=Integer.parseInt(namSinh);
+            if (namsinh>=year||(year-namsinh)<=5){
+                Toast.makeText(getApplicationContext(), "Chưa đủ tuổi hoặc nhập năm sinh ảo", Toast.LENGTH_SHORT).show();
+            }else if (Repassword.equals(password)){
                 //tạo tài khoản mới
                 int soDT=Integer.parseInt(sodt);
                 Thanhvien thanhvien=new Thanhvien(maTV+"",hoTen,username,password,namSinh,soDT,1);
                 ThanhvienDao dao=new ThanhvienDao(getApplicationContext());
                 dao.insert(thanhvien);
+                finish();
             }else{
                 Toast.makeText(getApplicationContext(), "Xác nhận lại mật khẩu không đúng", Toast.LENGTH_SHORT).show();
             }
-        finish();}
+        }
     }
 
 }

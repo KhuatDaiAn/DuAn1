@@ -223,4 +223,12 @@ public class NhaDatDAO implements INhaDatDAO{
         database.delete("NhaDat","maNhaDat = ?",params);
 
     }
+    public Boolean kiemTra(String tenNhaDat) {
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        String sql = "SELECT * FROM NhaDat WHERE tenGT = ?";
+        Cursor cursor=database.rawQuery(sql,new String[]{tenNhaDat});
+        int count=cursor.getCount();
+        cursor.close();
+        return count>0;
+    }
 }

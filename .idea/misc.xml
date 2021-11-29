@@ -30,6 +30,7 @@
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/fragment_gallery.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/item_hinh.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/item_photo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/layout_doi_mat_khau.xml" value="0.264" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/layout_item_donhang.xml" value="0.536" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/layout_item_nhadat.xml" value="0.72" />
         <entry key="..\:/Users/Dell/Desktop/DuAn1/app/src/main/res/layout/layout_list_don_hang_nguoi_dung.xml" value="0.25416666666666665" />
@@ -75,7 +76,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.6" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>

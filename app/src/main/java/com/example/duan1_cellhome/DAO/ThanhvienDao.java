@@ -116,24 +116,5 @@ public class ThanhvienDao implements IThanhVienDAO {
         return count>0;
     }
 
-    public Thanhvien getMa(String mathanhvien) {
-        Thanhvien thanhVien = null;
-        SQLiteDatabase database=myDatabase.getReadableDatabase();
-        Cursor cursor=database.rawQuery("SELECT * FROM NhaDat WHERE maNhaDat= ?",new String[]{mathanhvien});
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()){
-            String maThanhVien=cursor.getString(0);
-            String hoTen=cursor.getString(1);
-            String tenTK = cursor.getString(2);
-            String matKhau = cursor.getString(3);
-            String namSinh = cursor.getString(4);
-            int soDT=cursor.getInt(5);
-            int vaiTro=cursor.getInt(6);
-            thanhVien = new Thanhvien(maThanhVien, hoTen, tenTK, matKhau, namSinh, soDT, vaiTro);
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return thanhVien;
-    }
 
 }
