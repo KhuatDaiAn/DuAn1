@@ -1,7 +1,10 @@
 package com.example.duan1_cellhome;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -48,6 +52,12 @@ public class DoiMatKhauFragment extends Fragment {
         Thanhvien thanhVien = new ThanhvienDao(getContext()).getDuLieu(tenThanhVien);
         String maThanhVien = thanhVien.getMatv();
         String matKhau = thanhVien.getMk();
+        btnHuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onDestroy();
+            }
+        });
         btnDMK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,14 +65,56 @@ public class DoiMatKhauFragment extends Fragment {
                 newPass = edtNewPass.getText().toString();
                 confirmPass = edtConfirmPass.getText().toString();
 
-                if (oldPass.equals("") || newPass.equals("") || confirmPass.equals("")) {
+                if (oldPass.equals("") && newPass.equals("") && confirmPass.equals("")) {
                     Toast.makeText(getContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
-                } else if (!matKhau.equals(oldPass)) {
+                    edtOldPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtNewPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtConfirmPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                }else if (oldPass.equals("") && newPass.equals("")) {
+                    Toast.makeText(getContext(), "Thiếu mật khẩu cũ, mới", Toast.LENGTH_SHORT).show();
+                    edtConfirmPass.setBackgroundResource(R.drawable.custom_backgroud);
+                    edtOldPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtNewPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                }else if (oldPass.equals("") && confirmPass.equals("")) {
+                    Toast.makeText(getContext(), "Thiếu mật khẩu cũ, nhập lại mật khẩu", Toast.LENGTH_SHORT).show();
+                    edtOldPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtConfirmPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtNewPass.setBackgroundResource(R.drawable.custom_backgroud);
+                } else if (newPass.equals("") && confirmPass.equals("")) {
+                    Toast.makeText(getContext(), "Thiếu mật khẩu mới, nhập lại mật khẩu", Toast.LENGTH_SHORT).show();
+                    edtNewPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtConfirmPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtOldPass.setBackgroundResource(R.drawable.custom_backgroud);
+                }else if (newPass.equals("")) {
+                    Toast.makeText(getContext(), "Thiếu mật khẩu mới", Toast.LENGTH_SHORT).show();
+                    edtNewPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtOldPass.setBackgroundResource(R.drawable.custom_backgroud);
+                    edtConfirmPass.setBackgroundResource(R.drawable.custom_backgroud);
+                }else if (oldPass.equals("")) {
+                    Toast.makeText(getContext(), "Thiếu mật khẩu cũ", Toast.LENGTH_SHORT).show();
+                    edtOldPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtNewPass.setBackgroundResource(R.drawable.custom_backgroud);
+                    edtConfirmPass.setBackgroundResource(R.drawable.custom_backgroud);
+                }else if (confirmPass.equals("")) {
+                    Toast.makeText(getContext(), "Thiếu nhập lại mật khẩu", Toast.LENGTH_SHORT).show();
+                    edtConfirmPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtNewPass.setBackgroundResource(R.drawable.custom_backgroud);
+                    edtOldPass.setBackgroundResource(R.drawable.custom_backgroud);
+                }else if (!matKhau.equals(oldPass)) {
                     Toast.makeText(getContext(), "Mật khẩu cũ không đúng", Toast.LENGTH_SHORT).show();
+                    edtOldPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtNewPass.setBackgroundResource(R.drawable.custom_backgroud);
+                    edtConfirmPass.setBackgroundResource(R.drawable.custom_backgroud);
                 } else if (newPass.equals(matKhau)) {
                     Toast.makeText(getContext(), "Mật khẩu mới không được trùng mật khẩu cũ", Toast.LENGTH_SHORT).show();
+                    edtNewPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtOldPass.setBackgroundResource(R.drawable.custom_backgroud);
+                    edtConfirmPass.setBackgroundResource(R.drawable.custom_backgroud);
                 }  else if (!newPass.equals(confirmPass)) {
                     Toast.makeText(getContext(), "Xác nhận mật khẩu mới không đúng", Toast.LENGTH_SHORT).show();
+                    edtConfirmPass.setBackgroundColor(Color.parseColor("#f64f59"));
+                    edtNewPass.setBackgroundResource(R.drawable.custom_backgroud);
+                    edtOldPass.setBackgroundResource(R.drawable.custom_backgroud);
                 } else {
                     //thay đổi mật khẩu
                     Thanhvien thanhvien = new Thanhvien(maThanhVien, "hoTen", "tenTK", newPass, "namSinh", 0, 0);

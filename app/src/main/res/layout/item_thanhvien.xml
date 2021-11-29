@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/txtMaTV"
         android:layout_width="112dp"
-        android:layout_height="20dp"
+        android:layout_height="35dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/chakrapetch"
@@ -65,9 +65,9 @@
 
     <TextView
         android:id="@+id/txtNamSinh"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
+        android:layout_marginStart="130dp"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/chakrapetch"
         android:text="TextView"
