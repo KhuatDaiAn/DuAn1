@@ -44,9 +44,12 @@ public class ThongKeDoanhThuFragment extends Fragment {
             public void onClick(View v) {
                 String tungay=  txtTu.getText().toString();
                 String denngay= txtToi.getText().toString();
-                //tính doanh thu
-                doanhthu=new ThongKeDao(getContext()).getDoanhThu(tungay,denngay);
-                txt.setText(doanhthu+"");
+                if(tungay.isEmpty()||denngay.isEmpty()){
+                    //tính doanh thu
+                    doanhthu=new ThongKeDao(getContext()).getDoanhThu(tungay,denngay);
+                    txt.setText(doanhthu+"");
+                }
+
             }
         });
         txtTu.setOnClickListener(new View.OnClickListener() {
