@@ -80,7 +80,7 @@ public class DangKyActivity extends AppCompatActivity {
             }else{
                 Toast.makeText(getApplicationContext(), "Xác nhận lại mật khẩu không đúng", Toast.LENGTH_SHORT).show();
             }
-        }
+        finish();}
     }
 
 }
