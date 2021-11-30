@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -65,6 +66,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
         txttenGT.setText(nhaDat.getTenGT());
         txtmaNhaDat.setText(nhaDat.getMaNhaDat());
         txtmoTa.setText(nhaDat.getMoTa());
+        txtmoTa.setMovementMethod(new ScrollingMovementMethod());
         txtgiaTien.setText(nhaDat.getGiaTien()+"");
         txtdiaChi.setText(nhaDat.getDiaChi());
         byte[] imageArray=nhaDat.getHinh();

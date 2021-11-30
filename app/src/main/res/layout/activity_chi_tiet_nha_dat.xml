@@ -40,7 +40,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="78dp"
+        android:layout_marginTop="55dp"
         android:fontFamily="@font/chakrapetch"
         android:text="Mã"
         android:textColor="@color/black"
@@ -64,21 +64,21 @@
         android:layout_width="368dp"
         android:layout_height="150dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtmaNhaDat"
         app:srcCompat="@drawable/img_5" />
 
     <TextView
         android:id="@+id/txttenGTChiTiet"
-        android:layout_width="370dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/chakrapetch"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="24dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
@@ -88,17 +88,16 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txttenGTChiTiet"
         app:srcCompat="@drawable/icons8_google_maps_100px" />
 
     <TextView
         android:id="@+id/txtdiaChi"
-        android:layout_width="314dp"
-        android:layout_height="39dp"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
         android:fontFamily="@font/chakrapetch"
         android:paddingEnd="15dp"
         android:text="TextView"
@@ -111,9 +110,9 @@
     <TextView
         android:id="@+id/txtgiaTienChiTiet"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="6dp"
         android:fontFamily="@font/chakrapetch"
         android:text="TextView"
         android:textColor="@android:color/holo_red_dark"
@@ -127,7 +126,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="19dp"
         android:fontFamily="@font/chakrapetch"
         android:text="Mô tả"
         android:textColor="@color/black"
@@ -138,10 +136,9 @@
 
     <TextView
         android:id="@+id/txtmoTa"
-        android:layout_width="wrap_content"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="18dp"
         android:fontFamily="@font/chakrapetch"
         android:text="TextView"
         android:textSize="16dp"
@@ -153,15 +150,14 @@
         android:layout_width="144dp"
         android:layout_height="55dp"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="240dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
         android:fontFamily="@font/rokkitt"
         android:text="Mua"
-        android:textColor="@color/white"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtmoTa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
