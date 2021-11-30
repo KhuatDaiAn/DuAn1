@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/custom_backgroud">
+    android:background="@color/white">
 
     <GridView
         android:id="@+id/gvDonHangNguoiDung"
-        android:layout_width="390dp"
-        android:layout_height="600dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginHorizontal="23dp"
         android:layout_marginStart="2dp"
         android:layout_marginTop="16dp"

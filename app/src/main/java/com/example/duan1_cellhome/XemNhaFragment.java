@@ -93,6 +93,7 @@ public class XemNhaFragment extends Fragment {
 
     public void addTinhThanh(){
         tinhThanhList=new ArrayList<>();
+        tinhThanhList.add(new TinhThanh("Tất cả"));
         tinhThanhList.add(new TinhThanh("An Giang"));
         tinhThanhList.add(new TinhThanh("Bà Rịa-Vũng Tàu"));
         tinhThanhList.add(new TinhThanh("Bạc Liêu"));

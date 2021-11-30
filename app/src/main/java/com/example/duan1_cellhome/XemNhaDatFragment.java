@@ -66,7 +66,7 @@ public class XemNhaDatFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (selectedTinhThanh.equals("Tất cả")){
-                    list=new NhaDatDAO(getContext()).getNha();
+                    list=new NhaDatDAO(getContext()).getNhaDat();
                     adapter=new NhaDatAdapter(getContext(),list);
                     gridViewNhaDat.setNumColumns(2);
                     gridViewNhaDat.setAdapter(adapter);
@@ -85,6 +85,7 @@ public class XemNhaDatFragment extends Fragment {
 
     public void addTinhThanh(){
         tinhThanhList=new ArrayList<>();
+        tinhThanhList.add(new TinhThanh("Tất cả"));
         tinhThanhList.add(new TinhThanh("An Giang"));
         tinhThanhList.add(new TinhThanh("Bà Rịa-Vũng Tàu"));
         tinhThanhList.add(new TinhThanh("Bạc Liêu"));

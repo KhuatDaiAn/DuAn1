@@ -30,7 +30,7 @@
         android:id="@+id/nav_thongTinCaNhan"
         android:name="com.example.duan1_cellhome.ThongTinCaNhanFragment"
         android:label="Thông tin cá nhân"
-        tools:layout="@layout/fragment_thong_tin_ca_nhan" />
+        tools:layout="@layout/layout_thong_tin_ca_nhan" />
     <fragment
         android:id="@+id/nav_doimatkhau"
         android:name="com.example.duan1_cellhome.DoiMatKhauFragment"

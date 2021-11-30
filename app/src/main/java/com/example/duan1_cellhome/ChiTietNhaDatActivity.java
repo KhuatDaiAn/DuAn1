@@ -110,6 +110,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
                     //thêm đơn hàng khi người dùng bấm mua
                     DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1,ngayDang);
                     dao.insert(donHang);
+                    Toast.makeText(getApplicationContext(), "Bạn đã đăng ký mua nhà này", Toast.LENGTH_SHORT).show();
                     finish();
                 }
 
