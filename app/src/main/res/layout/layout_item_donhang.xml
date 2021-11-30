@@ -77,8 +77,8 @@
         android:id="@+id/imgSua"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="180dp"
-        app:layout_constraintStart_toEndOf="@+id/txtMaDonHang"
+        android:layout_marginStart="300dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icons8_ball_point_pen_50px" />
 
