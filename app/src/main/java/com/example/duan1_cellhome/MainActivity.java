@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         hoTen = headerView.findViewById(R.id.txtTenNguoiDungHeader);
         hoTen.setText(thanhvien.getHoTen());
         tenTk.setText(ten);
+
     }
 
 
