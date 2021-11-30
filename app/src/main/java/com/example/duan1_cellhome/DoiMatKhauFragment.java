@@ -55,7 +55,9 @@ public class DoiMatKhauFragment extends Fragment {
         btnHuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onDestroy();
+                edtNewPass.setText("");
+                edtOldPass.setText("");
+                edtConfirmPass.setText("");
             }
         });
         btnDMK.setOnClickListener(new View.OnClickListener() {
