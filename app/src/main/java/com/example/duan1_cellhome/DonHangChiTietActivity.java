@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -59,6 +60,12 @@ public class DonHangChiTietActivity extends AppCompatActivity {
         txtNgayMua.setText(sdf.format(donHang.getNgay()));
         txtMaTVMuaHang.setText(donHang.getMaTV());
         txtSDTKhachHang.setText(donHang.getSoDTNM()+"");
+        byte[] imageArray=donHang.getHinhND();
+        if(imageArray==null){
+            imgHinh.setImageResource(R.drawable.no_image);
+        }else{
+            imgHinh.setImageBitmap(BitmapFactory.decodeByteArray(imageArray,0,imageArray.length));
+        }
     }
 
 }

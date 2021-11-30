@@ -26,6 +26,7 @@ import static java.time.LocalDate.now;
 public class ThongTinCaNhanFragment extends Fragment {
     EditText edtHoTen, edtTenTk, edtNamSinh, edtSDT;
     Button btnSua, btnLuu;
+    int dem=0;
     public ThongTinCaNhanFragment() {
         // Required empty public constructor
     }
@@ -53,10 +54,20 @@ public class ThongTinCaNhanFragment extends Fragment {
         btnSua.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    edtHoTen.setEnabled(true);
-                    edtNamSinh.setEnabled(true);
-                    edtSDT.setEnabled(true);
-                    edtHoTen.requestFocus();
+                    if (dem%2==0){
+                        edtHoTen.setEnabled(true);
+                        edtNamSinh.setEnabled(true);
+                        edtSDT.setEnabled(true);
+                        edtHoTen.requestFocus();
+                        btnSua.setText("Đóng sửa");
+                    }else{
+                        ganDuLieuThongTinCaNhan();
+                        edtHoTen.setEnabled(false);
+                        edtNamSinh.setEnabled(false);
+                        edtSDT.setEnabled(false);
+                        btnSua.setText("Mở khóa để sửa");
+                    }
+                  dem++;
                 }
             });
         btnLuu.setOnClickListener(new View.OnClickListener() {
