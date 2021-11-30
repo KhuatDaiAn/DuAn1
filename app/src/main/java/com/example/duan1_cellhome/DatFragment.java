@@ -130,14 +130,13 @@ public class DatFragment extends Fragment {
                     NhaDat nhaDat = new NhaDat(manhaDat+"", tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,1);
                     NhaDatDAO dao = new NhaDatDAO(getContext());
                     dao.insert(nhaDat);
+                    //load lại dữ liệu lên gridview
+                    list=new NhaDatDAO(getContext()).getDat();
+                    adapter=new NhaDatAdapter(getContext(),list);
+                    gridViewNhaDat.setNumColumns(2);
+                    gridViewNhaDat.setAdapter(adapter);
+                    dialog.dismiss();
                 }
-                //load lại dữ liệu lên gridview
-                list=new NhaDatDAO(getContext()).getDat();
-                adapter=new NhaDatAdapter(getContext(),list);
-                gridViewNhaDat.setNumColumns(2);
-                gridViewNhaDat.setAdapter(adapter);
-                dialog.dismiss();
-
             }
         });
 

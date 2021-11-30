@@ -102,7 +102,7 @@
         android:layout_marginTop="55dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
         android:fontFamily="serif-monospace"
-        android:text="Login"
+        android:text="Đăng nhập"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="24dp"

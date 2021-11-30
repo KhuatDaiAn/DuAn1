@@ -178,10 +178,10 @@
         android:id="@+id/txtVeDangNhap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/chakrapetch"
-        android:text="I have an account"
+        android:text="Đã có tài khoản"
         android:textColor="@android:color/holo_red_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNhapLaiPaswordDK" />

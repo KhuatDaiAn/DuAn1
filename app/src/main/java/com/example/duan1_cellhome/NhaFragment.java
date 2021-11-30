@@ -157,14 +157,13 @@ public class NhaFragment extends Fragment {
                     NhaDat nhaDat = new NhaDat(manhaDat+"", tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,0);
                     NhaDatDAO dao = new NhaDatDAO(getContext());
                     dao.insert(nhaDat);
+                    //load lại dữ liệu nhà lên gridview
+                    list=new NhaDatDAO(getContext()).getNha();
+                    adapter=new NhaDatAdapter(getContext(),list);
+                    gridViewNhaDat.setNumColumns(2);
+                    gridViewNhaDat.setAdapter(adapter);
+                    dialog.dismiss();
                 }
-                //load lại dữ liệu nhà lên gridview
-                list=new NhaDatDAO(getContext()).getNha();
-                adapter=new NhaDatAdapter(getContext(),list);
-                gridViewNhaDat.setNumColumns(2);
-                gridViewNhaDat.setAdapter(adapter);
-                dialog.dismiss();
-
             }
         });
 
