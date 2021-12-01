@@ -21,11 +21,15 @@ import androidx.fragment.app.Fragment;
 import com.example.duan1_cellhome.DAO.ThongKeDao;
 
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class ThongKeDoanhThuFragment extends Fragment {
 
-    EditText txtTu,txtToi;
+    EditText edtTu,edtToi;
     Button btnTinh;
     TextView txt;
     int doanhthu;
@@ -35,8 +39,8 @@ public class ThongKeDoanhThuFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.thongkedoanhthu_fragment,container,false);
-        txtTu=view.findViewById(R.id.txtTuNgay);
-        txtToi=view.findViewById(R.id.txtDenNgay);
+        edtTu=view.findViewById(R.id.txtTuNgay);
+        edtToi=view.findViewById(R.id.txtDenNgay);
         btnTinh=view.findViewById(R.id.btnTinh);
         txt=view.findViewById(R.id.txtTongTien);
 
@@ -44,10 +48,20 @@ public class ThongKeDoanhThuFragment extends Fragment {
         btnTinh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String tungay=  txtTu.getText().toString();
-                String denngay= txtToi.getText().toString();
+                String tungay=  edtTu.getText().toString();
+                String denngay= edtToi.getText().toString();
+                Date date=null;
+                SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
+                try {
+                    date=sdf.parse(tungay);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 if(tungay.isEmpty()||denngay.isEmpty()){
                     Toast.makeText(getContext(), "Không được để trống ngày", Toast.LENGTH_SHORT).show();
+                }else if (!tungay.equals(sdf.format(date))){
+                    Toast.makeText(getContext(), "Sai định dạng ngày", Toast.LENGTH_SHORT).show();
+
                 }else{
                     //tính doanh thu
                     DecimalFormat formatter = new DecimalFormat("#,###,###");
@@ -57,14 +71,14 @@ public class ThongKeDoanhThuFragment extends Fragment {
 
             }
         });
-        txtTu.setOnClickListener(new View.OnClickListener() {
+        edtTu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //chọn ngày
                 datePickerDialog();
             }
         });
-        txtToi.setOnClickListener(new View.OnClickListener() {
+        edtToi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //chọn ngày
@@ -85,11 +99,13 @@ public class ThongKeDoanhThuFragment extends Fragment {
         int year=calendar.get(Calendar.YEAR);
         int month1=calendar.get(Calendar.MONTH);
         int month=month1;
+        SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
         int day=calendar.get(Calendar.DATE);
         DatePickerDialog datePickerDialog=new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                txtTu.setText(dayOfMonth+"/"+(month+1)+"/"+year);
+                calendar.set(year,month,dayOfMonth);
+                edtTu.setText(sdf.format(calendar.getTime()));
 
             }
         },year,month,day);
@@ -100,11 +116,13 @@ public class ThongKeDoanhThuFragment extends Fragment {
         int year=calendar.get(Calendar.YEAR);
         int month1=calendar.get(Calendar.MONTH);
         int month=month1;
+        SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
         int day=calendar.get(Calendar.DATE);
         DatePickerDialog datePickerDialog=new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                txtToi.setText(dayOfMonth+"/"+(month+1)+"/"+year);
+                calendar.set(year,month,dayOfMonth);
+                edtToi.setText(sdf.format(calendar.getTime()));
 
             }
         },year,month,day);
