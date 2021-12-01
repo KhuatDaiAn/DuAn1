@@ -21,7 +21,7 @@ public class DonHangAdapter extends BaseAdapter {
     Context context;
     List<DonHang> donHangList;
     SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
-
+    DecimalFormat formatter = new DecimalFormat("#,###,###");
 
 
     public DonHangAdapter(DonHangFragment donHangFragment, List<DonHang> donHangList) {
@@ -72,7 +72,7 @@ public class DonHangAdapter extends BaseAdapter {
         txtMaDonhang.setText(donHang.getMaDonHang());
         txtTenGT.setText(donHang.getTenGTND());
         txtTinhThanh.setText(donHang.getDiaChiND());
-        txtGiaTien.setText(donHang.getGiaTienND()+"");
+        txtGiaTien.setText(formatter.format(donHang.getGiaTienND())+"");
         txtngayDang.setText(sdf.format(donHang.getNgay()));
 
         byte[] img=donHang.getHinhND();

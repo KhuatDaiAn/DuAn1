@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -26,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.duan1_cellhome.Adapter.HinhAdapter;
+import com.example.duan1_cellhome.Adapter.NhaDatAdapter;
 import com.example.duan1_cellhome.Adapter.UpNhiuHinhAdapter;
 import com.example.duan1_cellhome.DAO.DonHangDAO;
 import com.example.duan1_cellhome.DAO.HinhDAO;
@@ -63,11 +66,12 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
         Intent intent=getIntent();
         maNhaDat=intent.getStringExtra("maNhaDat");
         NhaDat nhaDat=new NhaDatDAO(this).getMa(maNhaDat);
+        DecimalFormat formatter = new DecimalFormat("#,###,###");
         txttenGT.setText(nhaDat.getTenGT());
         txtmaNhaDat.setText(nhaDat.getMaNhaDat());
         txtmoTa.setText(nhaDat.getMoTa());
         txtmoTa.setMovementMethod(new ScrollingMovementMethod());
-        txtgiaTien.setText(nhaDat.getGiaTien()+"");
+        txtgiaTien.setText(formatter.format(nhaDat.getGiaTien())+"");
         txtdiaChi.setText(nhaDat.getDiaChi());
         byte[] imageArray=nhaDat.getHinh();
         if(imageArray==null){
@@ -99,24 +103,37 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
-                String username=intent.getStringExtra("tenTK");
-                Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(username);
-                DonHangDAO dao=new DonHangDAO(getApplicationContext());
-                Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
-                Random random=new Random();
-                int maDonHang=random.nextInt(61);
-                Boolean check=new DonHangDAO(getApplicationContext()).kiemtradangkyDonHang(thanhvien.getMatv(),nhaDat.getMaNhaDat());
-                if (check==true){
-                    Toast.makeText(getApplicationContext(), "Bạn đã đăng ký mua nhà này rồi. Xin vui lòng đợi giao dịch ", Toast.LENGTH_SHORT).show();
-                }else{
-                    //thêm đơn hàng khi người dùng bấm mua
-                    DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1,ngayDang);
-                    dao.insert(donHang);
-                    Toast.makeText(getApplicationContext(), "Bạn đã đăng ký mua nhà này", Toast.LENGTH_SHORT).show();
-                    finish();
-                }
+                AlertDialog.Builder dialogXoa=new AlertDialog.Builder(ChiTietNhaDatActivity.this);
+                dialogXoa.setMessage("Bạn có muốn đăng ký mua:  "+nhaDat.getTenGT()+" này không");
+                dialogXoa.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String username=intent.getStringExtra("tenTK");
+                        Thanhvien thanhvien=new ThanhvienDao(getApplicationContext()).getDuLieu(username);
+                        DonHangDAO dao=new DonHangDAO(getApplicationContext());
+                        Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
+                        Random random=new Random();
+                        int maDonHang=random.nextInt(61);
+                        Boolean check=new DonHangDAO(getApplicationContext()).kiemtradangkyDonHang(thanhvien.getMatv(),nhaDat.getMaNhaDat());
+                        if (check==true){
+                            Toast.makeText(getApplicationContext(), "Bạn đã đăng ký mua nhà này rồi. Xin vui lòng đợi giao dịch ", Toast.LENGTH_SHORT).show();
+                        }else{
+                            //thêm đơn hàng khi người dùng bấm mua
+                            DonHang donHang=new DonHang(maDonHang+"",thanhvien.getMatv(),nhaDat.getMaNhaDat(),thanhvien.getSoDT(),nhaDat.getTenGT(),nhaDat.getHinh(),nhaDat.getDiaChi(),nhaDat.getGiaTien(),1,ngayDang);
+                            dao.insert(donHang);
+                            Toast.makeText(getApplicationContext(), "Bạn đã đăng ký mua nhà này", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+                });
+                dialogXoa.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                    }
+                });
 
+                dialogXoa.show();
             }
         });
         imgThoat.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +143,7 @@ public class ChiTietNhaDatActivity extends AppCompatActivity {
             }
         });
     }
+
     public void AnhXa(){
         txttenGT=findViewById(R.id.txttenGTChiTiet);
         txtmaNhaDat=findViewById(R.id.txtmaNhaDat);

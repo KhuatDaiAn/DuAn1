@@ -12,6 +12,19 @@
     android:shadowDy="5"
     android:shadowRadius="5">
 
+    <TextView
+        android:id="@+id/txtGiaTien3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/chakrapetch"
+        android:text="$"
+        android:textColor="#FA0303"
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@+id/txtgiaTien"
+        app:layout_constraintTop_toBottomOf="@+id/txttinhThanh" />
+
     <ImageView
         android:id="@+id/imghinh"
         android:layout_width="166dp"

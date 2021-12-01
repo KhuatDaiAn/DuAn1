@@ -198,7 +198,6 @@ public class NhaDatDAO implements INhaDatDAO{
         String[] params=new String[]{nhaDat.getMaNhaDat()};
 
         values.put("tenGT",nhaDat.getTenGT());
-        values.put("hinh",nhaDat.getHinh());
         values.put("tinhThanh",nhaDat.getTinhThanh());
         values.put("ngayDang",sdf.format(nhaDat.getNgayDang()));
         values.put("diaChi",nhaDat.getDiaChi());

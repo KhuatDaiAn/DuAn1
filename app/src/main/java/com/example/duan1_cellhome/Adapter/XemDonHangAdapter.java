@@ -13,6 +13,7 @@ import com.example.duan1_cellhome.DonHangNguoiDungFragment;
 import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.R;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class XemDonHangAdapter extends BaseAdapter {
     Context context;
     List<DonHang> donHangList;
     SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
-
+    DecimalFormat formatter = new DecimalFormat("#,###,###");
 
 //    public XemDonHangAdapter(DonHangNguoiDungFragment donHangNguoiDungFragment, List<DonHang> donHangList) {
 //        this.donHangNguoiDungFragment = donHangNguoiDungFragment;
@@ -71,7 +72,7 @@ public class XemDonHangAdapter extends BaseAdapter {
         txtTenGT.setText(donHang.getTenGTND());
         txtTinhThanh.setText(donHang.getDiaChiND());
         txtngayDang.setText(sdf.format(donHang.getNgay()));
-        txtGiaTien.setText(donHang.getGiaTienND()+"");
+        txtGiaTien.setText(formatter.format(donHang.getGiaTienND())+"");
 
         imgSua.setVisibility(view.GONE);
 

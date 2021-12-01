@@ -118,6 +118,8 @@ public class DatFragment extends Fragment {
                 boolean check=new NhaDatDAO(getContext()).kiemTra(tenNhaDat);
                 if (tenNhaDat.isEmpty()||tinhThanh.isEmpty()||diachi.isEmpty()||giatien.isEmpty()||dientich.isEmpty()||mota.isEmpty()){
                     Toast.makeText(getContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
+                }else if(tenNhaDat.equals(" ")||tinhThanh.equals(" ")||diachi.equals(" ")||giatien.equals(" ")||dientich.equals(" ")||mota.equals(" ")) {
+                    Toast.makeText(getContext(), "Không được nhập khoảng cách không", Toast.LENGTH_SHORT).show();
                 }else if(check==true){
                     Toast.makeText(getContext(), "Sản phẩm đã có rồi", Toast.LENGTH_SHORT).show();
                 }else{
@@ -225,13 +227,13 @@ public class DatFragment extends Fragment {
     }
     public void DiaLogXoaNhaDat(String ten){
         AlertDialog.Builder dialogXoa=new AlertDialog.Builder(getContext());
-        dialogXoa.setMessage("Bạn có muốn xóa nhà"+ten+" này không");
+        dialogXoa.setMessage("Bạn có muốn xóa đất"+ten+" này không");
         dialogXoa.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 NhaDatDAO dao=new NhaDatDAO(getContext());
                 dao.delete(ten);
-                list=new NhaDatDAO(getContext()).getNha();
+                list=new NhaDatDAO(getContext()).getDat();
                 adapter=new NhaDatAdapter(getContext(),list);
                 gridViewNhaDat.setNumColumns(2);
                 gridViewNhaDat.setAdapter(adapter);

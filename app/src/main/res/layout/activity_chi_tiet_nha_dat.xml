@@ -8,6 +8,19 @@
     tools:context=".ChiTietNhaDatActivity">
 
 
+    <TextView
+        android:id="@+id/txtGiaTien5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/chakrapetch"
+        android:text="$"
+        android:textColor="#FA0303"
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@+id/txtgiaTienChiTiet"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView2"
         android:layout_width="match_parent"
@@ -61,10 +74,11 @@
 
     <ImageView
         android:id="@+id/imgHinhChiTiet"
-        android:layout_width="368dp"
+        android:layout_width="260dp"
         android:layout_height="150dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="65dp"
         android:layout_marginTop="4dp"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtmaNhaDat"
         app:srcCompat="@drawable/img_5" />

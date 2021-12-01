@@ -146,7 +146,9 @@ public class NhaFragment extends Fragment {
                 boolean check=new NhaDatDAO(getContext()).kiemTra(tenNhaDat);
                 if (tenNhaDat.isEmpty()||tinhThanh.isEmpty()||diachi.isEmpty()||giatien.isEmpty()||dientich.isEmpty()||mota.isEmpty()){
                     Toast.makeText(getContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
-                }else if(check==true){
+                }else if(tenNhaDat.equals(" ")||tinhThanh.equals(" ")||diachi.equals(" ")||giatien.equals(" ")||dientich.equals(" ")||mota.equals(" ")){
+                    Toast.makeText(getContext(), "Không được nhập khoảng cách không", Toast.LENGTH_SHORT).show();
+                } else if(check==true){
                     Toast.makeText(getContext(), "Sản phẩm đã có rồi", Toast.LENGTH_SHORT).show();
                 }else{
                     int giaTien = Integer.parseInt(giatien);

@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.duan1_cellhome.DAO.ThongKeDao;
 
+import java.text.DecimalFormat;
 import java.util.Calendar;
 
 public class ThongKeDoanhThuFragment extends Fragment {
@@ -49,8 +50,9 @@ public class ThongKeDoanhThuFragment extends Fragment {
                     Toast.makeText(getContext(), "Không được để trống ngày", Toast.LENGTH_SHORT).show();
                 }else{
                     //tính doanh thu
+                    DecimalFormat formatter = new DecimalFormat("#,###,###");
                     doanhthu=new ThongKeDao(getContext()).getDoanhThu(tungay,denngay);
-                    txt.setText(doanhthu+"");
+                    txt.setText(formatter.format(doanhthu)+"");
                 }
 
             }

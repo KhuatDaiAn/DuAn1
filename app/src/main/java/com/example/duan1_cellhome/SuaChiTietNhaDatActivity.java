@@ -45,6 +45,7 @@ import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.normal.TedPermission;
 
 import java.sql.Date;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -98,10 +99,11 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
         Intent intent=getIntent();
         maNhaDat=intent.getStringExtra("maNhaDat");
         NhaDat nhaDat=new NhaDatDAO(this).getMa(maNhaDat);
+        DecimalFormat formatter = new DecimalFormat("#,###,###");
         txttenGT.setText(nhaDat.getTenGT());
         txtmaNhaDat.setText(nhaDat.getMaNhaDat());
         txtmoTa.setText(nhaDat.getMoTa());
-        txtgiaTien.setText(nhaDat.getGiaTien()+"");
+        txtgiaTien.setText(formatter.format(nhaDat.getGiaTien())+"");
         txtdiaChi.setText(nhaDat.getDiaChi());
         byte[] imageArray=nhaDat.getHinh();
         if(imageArray==null){
