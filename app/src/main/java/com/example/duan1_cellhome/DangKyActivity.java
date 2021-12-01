@@ -69,11 +69,14 @@ public class DangKyActivity extends AppCompatActivity {
         String hoTen=edtHoTen.getText().toString();
         String namSinh=edtNamSinhDK.getText().toString();
         String sodt=edtSoDienThoai.getText().toString();
+        String pattern = "^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$";
         Calendar calendar=Calendar.getInstance();
         int year=calendar.get(Calendar.YEAR);
         if (username.isEmpty()||password.isEmpty()||Repassword.isEmpty()||hoTen.isEmpty()||namSinh.isEmpty()||sodt.isEmpty()){
             Toast.makeText(getApplicationContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
-        }else if (password.length()<=2){
+        }else if(!sodt.matches(pattern)){
+            Toast.makeText(getApplicationContext(), "Không đúng định dạng số điện thoại", Toast.LENGTH_SHORT).show();
+        } else if (password.length()<=2){
             Toast.makeText(getApplicationContext(), "Mật khẩu quá ngắn", Toast.LENGTH_LONG).show();
         } else{
             int namsinh=Integer.parseInt(namSinh);
