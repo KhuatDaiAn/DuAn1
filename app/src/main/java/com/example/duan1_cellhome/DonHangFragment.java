@@ -73,6 +73,7 @@ public class DonHangFragment extends Fragment {
         return view;
     }
 
+    // hoàn thành giao dịch
     public void dialogHoanTatGD(String maDonHang) {
         Dialog dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.dialog_sua_don_hang);
@@ -127,6 +128,7 @@ public class DonHangFragment extends Fragment {
                 String username=intent.getStringExtra("tenTK");
                 Thanhvien thanhvien=new ThanhvienDao(getContext()).getDuLieu(username);
                 DonHangDAO donHangDAO = new DonHangDAO(getContext());
+                // xóa đơn hàng
                 donHangDAO.delete(maDonHang);
                 list = new DonHangDAO(getContext()).getDonHangCaNhan(thanhvien.getMatv());
                 adapter = new DonHangAdapter(getContext(),list);

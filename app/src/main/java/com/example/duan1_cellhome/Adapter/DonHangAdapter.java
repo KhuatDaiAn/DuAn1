@@ -67,7 +67,6 @@ public class DonHangAdapter extends BaseAdapter {
         TextView txtngayDang=view.findViewById(R.id.txtNgay);
         ImageView imgHinhND =(ImageView) view.findViewById(R.id.imgHinhND);
         ImageView imgSua =(ImageView) view.findViewById(R.id.imgSua);
-        ImageView imgHuy =(ImageView) view.findViewById(R.id.imgHuy);
 
         txtMaDonhang.setText(donHang.getMaDonHang());
         txtTenGT.setText(donHang.getTenGTND());
@@ -91,8 +90,6 @@ public class DonHangAdapter extends BaseAdapter {
             imgSua.setVisibility(view.GONE);
             txtTrangThai.setText("Đã giao dịch");
         }
-        // ẩn icon hủy đơn hàng
-        imgHuy.setVisibility(view.GONE);
 
         // hiện dialog xác nhận gia dịch thành công
         imgSua.setOnClickListener(new View.OnClickListener() {

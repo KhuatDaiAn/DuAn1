@@ -24,10 +24,6 @@ public class XemDonHangAdapter extends BaseAdapter {
     SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
     DecimalFormat formatter = new DecimalFormat("#,###,###");
 
-//    public XemDonHangAdapter(DonHangNguoiDungFragment donHangNguoiDungFragment, List<DonHang> donHangList) {
-//        this.donHangNguoiDungFragment = donHangNguoiDungFragment;
-//        this.donHangList = donHangList;
-//    }
     public XemDonHangAdapter(Context context, List<DonHang> donHangList) {
         this.context = context;
         this.donHangList = donHangList;
@@ -65,7 +61,6 @@ public class XemDonHangAdapter extends BaseAdapter {
         TextView txtTrangThai=view.findViewById(R.id.txtTrangThai);
         TextView txtngayDang=view.findViewById(R.id.txtNgay);
         ImageView imgHinhND =(ImageView) view.findViewById(R.id.imgHinhND);
-        ImageView imgHuy =(ImageView) view.findViewById(R.id.imgHuy);
         ImageView imgSua =(ImageView) view.findViewById(R.id.imgSua);
 
         txtMaDonhang.setText(donHang.getMaDonHang());
@@ -91,13 +86,6 @@ public class XemDonHangAdapter extends BaseAdapter {
             txtTrangThai.setText("Đã giao dịch");
         }
 
-        imgHuy.setVisibility(view.GONE);
-//        imgHuy.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                donHangNguoiDungFragment.DialogHuyDonHang(donHang.getMaDonHang());
-//            }
-//        });
         return view;
     }
 

@@ -40,7 +40,7 @@ public class XemNhaDatFragment extends Fragment {
         gridViewNhaDat=view.findViewById(R.id.gvNhaDat);
         imgThem=view.findViewById(R.id.imgThemNhaDat);
         btnTim=view.findViewById(R.id.btnTim);
-        spinnerTimKiem=view.findViewById(R.id.spinnerTimKiemTinhThanh);
+        spinnerTimKiem=view.findViewById(R.id.spTimKiemTinhThanh);
         //load dữ liệu nhà lên gridview
         list=new NhaDatDAO(getContext()).getNhaDat();
         adapter=new NhaDatAdapter(getContext(),list);

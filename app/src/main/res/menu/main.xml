@@ -5,6 +5,6 @@
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="Reset"
-        android:icon="@drawable/icons8_password_reset_50px"
+        android:icon="@drawable/icon_password_reset"
         app:showAsAction="always" />
 </menu>

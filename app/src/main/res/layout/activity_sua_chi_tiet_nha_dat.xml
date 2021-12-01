@@ -122,7 +122,7 @@
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txttenGTChiTiet"
-        app:srcCompat="@drawable/icons8_google_maps_100px" />
+        app:srcCompat="@drawable/icon_google_maps" />
 
     <TextView
         android:id="@+id/txtdiaChi"
