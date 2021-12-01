@@ -84,12 +84,12 @@ public class ThongKeDoanhThuFragment extends Fragment {
         Calendar calendar=Calendar.getInstance();
         int year=calendar.get(Calendar.YEAR);
         int month1=calendar.get(Calendar.MONTH);
-        int month=month1+1;
+        int month=month1;
         int day=calendar.get(Calendar.DATE);
         DatePickerDialog datePickerDialog=new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                txtTu.setText(dayOfMonth+"/"+month+"/"+year);
+                txtTu.setText(dayOfMonth+"/"+(month+1)+"/"+year);
 
             }
         },year,month,day);
@@ -99,12 +99,12 @@ public class ThongKeDoanhThuFragment extends Fragment {
         Calendar calendar=Calendar.getInstance();
         int year=calendar.get(Calendar.YEAR);
         int month1=calendar.get(Calendar.MONTH);
-        int month=month1+1;
+        int month=month1;
         int day=calendar.get(Calendar.DATE);
         DatePickerDialog datePickerDialog=new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                txtToi.setText(dayOfMonth+"/"+month+"/"+year);
+                txtToi.setText(dayOfMonth+"/"+(month+1)+"/"+year);
 
             }
         },year,month,day);
