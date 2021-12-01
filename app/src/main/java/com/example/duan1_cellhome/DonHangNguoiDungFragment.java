@@ -1,25 +1,38 @@
 package com.example.duan1_cellhome;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.GridView;
 
 import com.example.duan1_cellhome.Adapter.DonHangAdapter;
+import com.example.duan1_cellhome.Adapter.NhaDatAdapter;
 import com.example.duan1_cellhome.Adapter.XemDonHangAdapter;
 import com.example.duan1_cellhome.DAO.DonHangDAO;
+import com.example.duan1_cellhome.DAO.NhaDatDAO;
 import com.example.duan1_cellhome.DAO.ThanhvienDao;
 import com.example.duan1_cellhome.Model.DonHang;
+import com.example.duan1_cellhome.Model.NhaDat;
 import com.example.duan1_cellhome.Model.Thanhvien;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.time.LocalDate.now;
 
 public class DonHangNguoiDungFragment extends Fragment {
     List<DonHang> donHangList = new ArrayList<>();
@@ -64,6 +77,8 @@ public class DonHangNguoiDungFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
         return view;
     }
+
 }

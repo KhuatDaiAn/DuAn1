@@ -58,7 +58,7 @@ public class DonHangAdapter extends BaseAdapter {
         }
 
         DonHang donHang= (DonHang) getItem(position);
-
+        // ánh xạ
         TextView txtMaDonhang = view.findViewById(R.id.txtMaDonHang);
         TextView txtTenGT=view.findViewById(R.id.txtTenGT);
         TextView txtTinhThanh=view.findViewById(R.id.txtTinhThanh);
@@ -67,6 +67,8 @@ public class DonHangAdapter extends BaseAdapter {
         TextView txtngayDang=view.findViewById(R.id.txtNgay);
         ImageView imgHinhND =(ImageView) view.findViewById(R.id.imgHinhND);
         ImageView imgSua =(ImageView) view.findViewById(R.id.imgSua);
+        ImageView imgHuy =(ImageView) view.findViewById(R.id.imgHuy);
+
         txtMaDonhang.setText(donHang.getMaDonHang());
         txtTenGT.setText(donHang.getTenGTND());
         txtTinhThanh.setText(donHang.getDiaChiND());
@@ -85,9 +87,14 @@ public class DonHangAdapter extends BaseAdapter {
 
 
         if (donHang.getTrangThai()==0){
+            // ẩn icon hiện dialog xác nhận gia dịch thành công khi đã giao dịch
             imgSua.setVisibility(view.GONE);
             txtTrangThai.setText("Đã giao dịch");
         }
+        // ẩn icon hủy đơn hàng
+        imgHuy.setVisibility(view.GONE);
+
+        // hiện dialog xác nhận gia dịch thành công
         imgSua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

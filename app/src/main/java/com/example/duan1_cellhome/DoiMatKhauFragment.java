@@ -66,7 +66,6 @@ public class DoiMatKhauFragment extends Fragment {
                 oldPass = edtOldPass.getText().toString();
                 newPass = edtNewPass.getText().toString();
                 confirmPass = edtConfirmPass.getText().toString();
-
                 if (oldPass.equals("") && newPass.equals("") && confirmPass.equals("")) {
                     Toast.makeText(getContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
                     edtOldPass.setBackgroundColor(Color.parseColor("#f64f59"));
@@ -130,7 +129,6 @@ public class DoiMatKhauFragment extends Fragment {
 
         });
         return view;
-
     }
 
 

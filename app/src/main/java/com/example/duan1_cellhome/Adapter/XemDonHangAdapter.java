@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.duan1_cellhome.DonHangFragment;
+import com.example.duan1_cellhome.DonHangNguoiDungFragment;
 import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.R;
 
@@ -16,12 +17,16 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class XemDonHangAdapter extends BaseAdapter {
-
+    DonHangNguoiDungFragment donHangNguoiDungFragment;
     Context context;
     List<DonHang> donHangList;
     SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 
 
+//    public XemDonHangAdapter(DonHangNguoiDungFragment donHangNguoiDungFragment, List<DonHang> donHangList) {
+//        this.donHangNguoiDungFragment = donHangNguoiDungFragment;
+//        this.donHangList = donHangList;
+//    }
     public XemDonHangAdapter(Context context, List<DonHang> donHangList) {
         this.context = context;
         this.donHangList = donHangList;
@@ -51,7 +56,7 @@ public class XemDonHangAdapter extends BaseAdapter {
         }
 
         DonHang donHang= (DonHang) getItem(position);
-
+        // ánh xạ
         TextView txtMaDonhang = view.findViewById(R.id.txtMaDonHang);
         TextView txtTenGT=view.findViewById(R.id.txtTenGT);
         TextView txtTinhThanh=view.findViewById(R.id.txtTinhThanh);
@@ -59,13 +64,17 @@ public class XemDonHangAdapter extends BaseAdapter {
         TextView txtTrangThai=view.findViewById(R.id.txtTrangThai);
         TextView txtngayDang=view.findViewById(R.id.txtNgay);
         ImageView imgHinhND =(ImageView) view.findViewById(R.id.imgHinhND);
+        ImageView imgHuy =(ImageView) view.findViewById(R.id.imgHuy);
+        ImageView imgSua =(ImageView) view.findViewById(R.id.imgSua);
+
         txtMaDonhang.setText(donHang.getMaDonHang());
         txtTenGT.setText(donHang.getTenGTND());
         txtTinhThanh.setText(donHang.getDiaChiND());
         txtngayDang.setText(sdf.format(donHang.getNgay()));
         txtGiaTien.setText(donHang.getGiaTienND()+"");
-        ImageView imgSua =(ImageView) view.findViewById(R.id.imgSua);
+
         imgSua.setVisibility(view.GONE);
+
         byte[] img=donHang.getHinhND();
         if(img == null){
             imgHinhND.setImageResource(R.drawable.nha1);
@@ -81,6 +90,13 @@ public class XemDonHangAdapter extends BaseAdapter {
             txtTrangThai.setText("Đã giao dịch");
         }
 
+        imgHuy.setVisibility(view.GONE);
+//        imgHuy.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                donHangNguoiDungFragment.DialogHuyDonHang(donHang.getMaDonHang());
+//            }
+//        });
         return view;
     }
 

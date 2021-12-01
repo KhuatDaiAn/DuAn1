@@ -2,7 +2,9 @@ package com.example.duan1_cellhome;
 
 import static java.time.LocalDate.now;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,10 +23,13 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.example.duan1_cellhome.Adapter.DonHangAdapter;
+import com.example.duan1_cellhome.Adapter.XemDonHangAdapter;
 import com.example.duan1_cellhome.DAO.DonHangDAO;
 import com.example.duan1_cellhome.DAO.NhaDatDAO;
+import com.example.duan1_cellhome.DAO.ThanhvienDao;
 import com.example.duan1_cellhome.Model.DonHang;
 import com.example.duan1_cellhome.Model.NhaDat;
+import com.example.duan1_cellhome.Model.Thanhvien;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.sql.Date;
@@ -33,6 +38,7 @@ import java.util.List;
 
 public class DonHangFragment extends Fragment {
     List<DonHang> donHangList = new ArrayList<>();
+    List<DonHang> list;
     GridView gridViewDonHang;
     DonHangAdapter adapter;
     int trangThai;
@@ -45,7 +51,15 @@ public class DonHangFragment extends Fragment {
         adapter=new DonHangAdapter(this,donHangList);
         gridViewDonHang.setNumColumns(1);
         gridViewDonHang.setAdapter(adapter);
-
+        gridViewDonHang.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                DonHang donHang= (DonHang) adapter.getItem(i);
+                //xóa đơn hàng
+                DialogHuyDonHang(donHang.getMaDonHang());
+                return false;
+            }
+        });
         gridViewDonHang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -103,5 +117,31 @@ public class DonHangFragment extends Fragment {
 
         dialog.show();
     }
+    public void DialogHuyDonHang(String maDonHang) {
+        AlertDialog.Builder dialogHuy=new AlertDialog.Builder(getContext());
+        dialogHuy.setMessage("Bạn có muốn hủy đơn hàng này không");
+        dialogHuy.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent=getActivity().getIntent();
+                String username=intent.getStringExtra("tenTK");
+                Thanhvien thanhvien=new ThanhvienDao(getContext()).getDuLieu(username);
+                DonHangDAO donHangDAO = new DonHangDAO(getContext());
+                donHangDAO.delete(maDonHang);
+                list = new DonHangDAO(getContext()).getDonHangCaNhan(thanhvien.getMatv());
+                adapter = new DonHangAdapter(getContext(),list);
+                gridViewDonHang.setNumColumns(1);
+                gridViewDonHang.setAdapter(adapter);
+            }
+        });
+        dialogHuy.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
+            }
+        });
+
+        dialogHuy.show();
+
+    }
 }
