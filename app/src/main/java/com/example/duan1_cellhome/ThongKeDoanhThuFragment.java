@@ -1,6 +1,7 @@
 package com.example.duan1_cellhome;
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -19,11 +20,17 @@ import androidx.fragment.app.Fragment;
 
 
 import com.example.duan1_cellhome.DAO.ThongKeDao;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -43,7 +50,23 @@ public class ThongKeDoanhThuFragment extends Fragment {
         edtToi=view.findViewById(R.id.txtDenNgay);
         btnTinh=view.findViewById(R.id.btnTinh);
         txt=view.findViewById(R.id.txtTongTien);
-
+        //biểu đồ tròn
+        int tongTienNha=new ThongKeDao(getContext()).getTienNha();
+        int tongTienDat=new ThongKeDao(getContext()).getTienDat();
+        PieChart pieChart=view.findViewById(R.id.pieChart);
+        ArrayList<PieEntry> visitors=new ArrayList<>();
+        visitors.add(new PieEntry(tongTienNha,"Tiền bán nhà"));
+        visitors.add(new PieEntry(tongTienDat,"Tiền bán đất"));
+        PieDataSet pieDataSet=new PieDataSet(visitors,"");
+        pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        pieDataSet.setValueTextColor(Color.WHITE);
+        pieDataSet.setValueTextSize(18f);
+        pieDataSet.setLabel("Đơn vị tiền tệ:$ ");
+        PieData pieData=new PieData(pieDataSet);
+        pieChart.setData(pieData);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setCenterText("Thống Kê");
+        pieChart.animate();
 
         btnTinh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +89,21 @@ public class ThongKeDoanhThuFragment extends Fragment {
                     //tính doanh thu
                     DecimalFormat formatter = new DecimalFormat("#,###,###");
                     doanhthu=new ThongKeDao(getContext()).getDoanhThu(tungay,denngay);
+                    int doanhthuTienNha=new ThongKeDao(getContext()).getTienNhaTheoNgay(tungay,denngay);
+                    int doanhthuTienDat=new ThongKeDao(getContext()).getTienDatTheoNgay(tungay,denngay);
                     txt.setText(formatter.format(doanhthu)+"");
+                    ArrayList<PieEntry> visitors=new ArrayList<>();
+                    visitors.add(new PieEntry(doanhthuTienNha,"Tiền bán nhà"));
+                    visitors.add(new PieEntry(doanhthuTienDat,"Tiền bán đất"));
+                    PieDataSet pieDataSet=new PieDataSet(visitors,"");
+                    pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+                    pieDataSet.setValueTextColor(Color.BLACK);
+                    pieDataSet.setValueTextSize(18f);
+                    PieData pieData=new PieData(pieDataSet);
+                    pieChart.setData(pieData);
+                    pieChart.getDescription().setEnabled(false);
+                    pieChart.setCenterText("Thống Kê");
+                    pieChart.animate();
                 }
 
             }

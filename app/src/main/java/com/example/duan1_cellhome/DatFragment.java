@@ -129,7 +129,7 @@ public class DatFragment extends Fragment {
                     //lấy ngày hiện tại
                     Date ngayDang= Date.valueOf(String.valueOf(now()));
                     //thêm đất mới
-                    NhaDat nhaDat = new NhaDat(manhaDat+"", tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,1);
+                    NhaDat nhaDat = new NhaDat("Dat"+manhaDat, tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,1);
                     NhaDatDAO dao = new NhaDatDAO(getContext());
                     dao.insert(nhaDat);
                     //load lại dữ liệu lên gridview

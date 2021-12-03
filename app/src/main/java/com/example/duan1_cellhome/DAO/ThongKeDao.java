@@ -56,4 +56,64 @@ public class ThongKeDao implements IThongKe{
        }
         return list.get(0);
     }
+    @SuppressLint("Range")
+    public int getTienNhaTheoNgay(String tuNgay, String denNgay) {
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        List<Integer> list=new ArrayList<Integer>();
+        Cursor cursor=database.rawQuery("SELECT SUM(giaTienND) as doanhThuTienNha FROM DonHang WHERE ngay BETWEEN ? AND ? AND trangThai==0 AND maNhaDat LIKE 'Nha%'",new String[]{tuNgay,denNgay});
+        while(cursor.moveToNext()){
+            try{
+                list.add(Integer.parseInt(cursor.getString(cursor.getColumnIndex("doanhThuTienNha"))));
+            }catch (Exception e){
+                list.add(0);
+            }
+        }
+        return list.get(0);
+    }
+
+    @SuppressLint("Range")
+    public int getTienDatTheoNgay(String tuNgay, String denNgay) {
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        List<Integer> list=new ArrayList<Integer>();
+        Cursor cursor=database.rawQuery("SELECT SUM(giaTienND) as doanhThuTienDat FROM DonHang WHERE ngay BETWEEN ? AND ? AND trangThai==0 AND maNhaDat LIKE 'Dat%'",new String[]{tuNgay,denNgay});
+        while(cursor.moveToNext()){
+            try{
+                list.add(Integer.parseInt(cursor.getString(cursor.getColumnIndex("doanhThuTienDat"))));
+            }catch (Exception e){
+                list.add(0);
+            }
+        }
+        return list.get(0);
+    }
+
+
+    @SuppressLint("Range")
+    public int getTienNha() {
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        List<Integer> list=new ArrayList<Integer>();
+        Cursor cursor=database.rawQuery("SELECT SUM(giaTienND) as tongTienNha FROM DonHang WHERE trangThai==0 AND maNhaDat LIKE 'Nha%'",null);
+        while(cursor.moveToNext()){
+            try{
+                list.add(Integer.parseInt(cursor.getString(cursor.getColumnIndex("tongTienNha"))));
+            }catch (Exception e){
+                list.add(0);
+            }
+        }
+        return list.get(0);
+    }
+
+    @SuppressLint("Range")
+    public int getTienDat() {
+        SQLiteDatabase database=mydatabase.getReadableDatabase();
+        List<Integer> list=new ArrayList<Integer>();
+        Cursor cursor=database.rawQuery("SELECT SUM(giaTienND) as tongTienDat FROM DonHang WHERE trangThai==0 AND maNhaDat LIKE 'Dat%'",null);
+        while(cursor.moveToNext()){
+            try{
+                list.add(Integer.parseInt(cursor.getString(cursor.getColumnIndex("tongTienDat"))));
+            }catch (Exception e){
+                list.add(0);
+            }
+        }
+        return list.get(0);
+    }
 }
