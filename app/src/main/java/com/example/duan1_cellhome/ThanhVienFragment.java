@@ -71,7 +71,11 @@ public class ThanhVienFragment extends Fragment {
             public void onClick(DialogInterface dialog, int which) {
                 ThanhvienDao dao=new ThanhvienDao(getContext());
                 dao.delete(ten);
-
+                thanhvienList = new ThanhvienDao(getContext()).getAll();
+                adapter = new ThanhvienAdapter(getContext(),thanhvienList);
+                gridViewThanhVien.setNumColumns(1);
+                gridViewThanhVien.setAdapter(adapter);
+                dialog.dismiss();
             }
         });
         dialogXoa.setNegativeButton("Không", new DialogInterface.OnClickListener() {

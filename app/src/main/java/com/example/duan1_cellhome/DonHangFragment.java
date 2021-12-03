@@ -124,16 +124,14 @@ public class DonHangFragment extends Fragment {
         dialogHuy.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent intent=getActivity().getIntent();
-                String username=intent.getStringExtra("tenTK");
-                Thanhvien thanhvien=new ThanhvienDao(getContext()).getDuLieu(username);
                 DonHangDAO donHangDAO = new DonHangDAO(getContext());
                 // xóa đơn hàng
                 donHangDAO.delete(maDonHang);
-                list = new DonHangDAO(getContext()).getDonHangCaNhan(thanhvien.getMatv());
-                adapter = new DonHangAdapter(getContext(),list);
+                donHangList=new DonHangDAO(getContext()).getDonHang();
+                adapter=new DonHangAdapter(getContext(),donHangList);
                 gridViewDonHang.setNumColumns(1);
                 gridViewDonHang.setAdapter(adapter);
+                dialog.dismiss();
             }
         });
         dialogHuy.setNegativeButton("Không", new DialogInterface.OnClickListener() {
