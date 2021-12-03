@@ -2,7 +2,6 @@ package com.example.duan1_cellhome;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,8 +27,8 @@ public class DangKyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dang_ky);
         edtUserNameDK = findViewById(R.id.edtUserNameDK);
-        edtPaswordDK = findViewById(R.id.edtPaswordDK);
-        edtNhapLaiPaswordDK = findViewById(R.id.edtNhapLaiPaswordDK);
+        edtPaswordDK = findViewById(R.id.edtPasswordDK);
+        edtNhapLaiPaswordDK = findViewById(R.id.edtNhapLaiPW);
         edtHoTen = findViewById(R.id.edtHoTen);
         edtSoDienThoai = findViewById(R.id.edtSoDienThoai);
         edtNamSinhDK = findViewById(R.id.edtNamSinhDK);

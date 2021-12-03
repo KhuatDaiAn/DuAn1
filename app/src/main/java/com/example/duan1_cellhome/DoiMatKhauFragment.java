@@ -2,35 +2,20 @@ package com.example.duan1_cellhome;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.duan1_cellhome.Adapter.NhaDatAdapter;
-import com.example.duan1_cellhome.Adapter.TinhThanhSpinnerAdapter;
-import com.example.duan1_cellhome.DAO.NhaDatDAO;
 import com.example.duan1_cellhome.DAO.ThanhvienDao;
-import com.example.duan1_cellhome.Model.NhaDat;
 import com.example.duan1_cellhome.Model.Thanhvien;
-import com.example.duan1_cellhome.Model.TinhThanh;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DoiMatKhauFragment extends Fragment {
     EditText edtOldPass, edtNewPass, edtConfirmPass;
@@ -41,9 +26,9 @@ public class DoiMatKhauFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.layout_doi_mat_khau,container,false);
-        edtOldPass = view.findViewById(R.id.edtOldPasswordDMK);
-        edtNewPass = view.findViewById(R.id.edtNewPasswordDMK);
-        edtConfirmPass = view.findViewById(R.id.edtConfirmPaswordDMK);
+        edtOldPass = view.findViewById(R.id.edtOldPassword);
+        edtNewPass = view.findViewById(R.id.edtNewPassword);
+        edtConfirmPass = view.findViewById(R.id.edtConfirmPassW);
         btnDMK = view.findViewById(R.id.btnDMK);
         btnHuy = view.findViewById(R.id.btnHuyDMK);
         //lấy dữ liệu từ intent

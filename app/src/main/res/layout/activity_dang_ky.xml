@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtNamSinhDK" />
 
     <EditText
-        android:id="@+id/edtPaswordDK"
+        android:id="@+id/edtPasswordDK"
         android:layout_width="344dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtUserNameDK" />
 
     <EditText
-        android:id="@+id/edtNhapLaiPaswordDK"
+        android:id="@+id/edtNhapLaiPW"
         android:layout_width="344dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
@@ -62,9 +62,9 @@
         android:paddingLeft="15dp"
         android:textAlignment="viewStart"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/edtPaswordDK"
-        app:layout_constraintStart_toStartOf="@+id/edtPaswordDK"
-        app:layout_constraintTop_toBottomOf="@+id/edtPaswordDK" />
+        app:layout_constraintEnd_toEndOf="@+id/edtPasswordDK"
+        app:layout_constraintStart_toStartOf="@+id/edtPasswordDK"
+        app:layout_constraintTop_toBottomOf="@+id/edtPasswordDK" />
 
     <Button
         android:id="@+id/btnDangKy"
@@ -73,11 +73,11 @@
         android:layout_marginStart="116dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/custom_buttom_them_nha_dat"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/chakrapetch"
         android:text="Đăng ký"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="24dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtVeDangNhap" />
@@ -184,7 +184,7 @@
         android:text="Đã có tài khoản"
         android:textColor="@android:color/holo_red_dark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNhapLaiPaswordDK" />
+        app:layout_constraintTop_toBottomOf="@+id/edtNhapLaiPW" />
 
     <ImageView
         android:id="@+id/imgQuayLaiDN"
