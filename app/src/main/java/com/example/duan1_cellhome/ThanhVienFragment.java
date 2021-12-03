@@ -2,7 +2,9 @@ package com.example.duan1_cellhome;
 
 import static java.time.LocalDate.now;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -46,10 +48,40 @@ public class ThanhVienFragment extends Fragment {
         adapter = new ThanhvienAdapter(getContext(),thanhvienList);
         gridViewThanhVien.setNumColumns(1);
         gridViewThanhVien.setAdapter(adapter);
+        gridViewThanhVien.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //xóa thành viên
+                Thanhvien thanhvien= (Thanhvien) adapter.getItem(i);
+                DiaLogXoaThanhVien(thanhvien.getMatv());
 
+                return false;
+            }
+        });
 
 
         return view;
+
+    }
+    public void DiaLogXoaThanhVien(String ten){
+        AlertDialog.Builder dialogXoa=new AlertDialog.Builder(getContext());
+        dialogXoa.setMessage("Bạn có muốn xóa thành viên"+ten+" này không");
+        dialogXoa.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ThanhvienDao dao=new ThanhvienDao(getContext());
+                dao.delete(ten);
+
+            }
+        });
+        dialogXoa.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        dialogXoa.show();
 
     }
 
