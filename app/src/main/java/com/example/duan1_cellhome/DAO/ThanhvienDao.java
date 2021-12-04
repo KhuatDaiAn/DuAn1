@@ -115,6 +115,13 @@ public class ThanhvienDao implements IThanhVienDAO {
         cursor.close();
         return count>0;
     }
-
+    public Boolean kiemTraDangKy(String tenTK) {
+        SQLiteDatabase database=myDatabase.getReadableDatabase();
+        String sql = "SELECT * FROM ThanhVien WHERE tenTK = ? ";
+        Cursor cursor=database.rawQuery(sql,new String[]{tenTK});
+        int count=cursor.getCount();
+        cursor.close();
+        return count>0;
+    }
 
 }
