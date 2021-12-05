@@ -91,7 +91,7 @@ public class ThongKeDoanhThuFragment extends Fragment {
                     doanhthu=new ThongKeDao(getContext()).getDoanhThu(tungay,denngay);
                     int doanhthuTienNha=new ThongKeDao(getContext()).getTienNhaTheoNgay(tungay,denngay);
                     int doanhthuTienDat=new ThongKeDao(getContext()).getTienDatTheoNgay(tungay,denngay);
-                    txt.setText(formatter.format(doanhthu)+"");
+                    txt.setText(formatter.format(doanhthu)+"$");
                     ArrayList<PieEntry> visitors=new ArrayList<>();
                     visitors.add(new PieEntry(doanhthuTienNha,"Tiền bán nhà"));
                     visitors.add(new PieEntry(doanhthuTienDat,"Tiền bán đất"));
@@ -99,6 +99,7 @@ public class ThongKeDoanhThuFragment extends Fragment {
                     pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
                     pieDataSet.setValueTextColor(Color.BLACK);
                     pieDataSet.setValueTextSize(18f);
+                    pieDataSet.setLabel("Đơn vị tiền tệ:$ ");
                     PieData pieData=new PieData(pieDataSet);
                     pieChart.setData(pieData);
                     pieChart.getDescription().setEnabled(false);

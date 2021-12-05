@@ -14,13 +14,13 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.duan1_cellhome.XemNhaFragment"
-        android:label="@string/menu_gallery"
+        android:label="Nhà"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.duan1_cellhome.XemDatFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Đất"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_donHangNguoiDung"
