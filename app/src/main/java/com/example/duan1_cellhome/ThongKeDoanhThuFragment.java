@@ -1,5 +1,7 @@
 package com.example.duan1_cellhome;
 
+import static java.time.LocalDate.now;
+
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.os.Build;
@@ -40,7 +42,9 @@ public class ThongKeDoanhThuFragment extends Fragment {
     Button btnTinh;
     TextView txt;
     int doanhthu;
-
+    int sosanh;
+    int sosanhNgayHienTai1;
+    int sosanhNgayHienTai2;
     @RequiresApi(api = Build.VERSION_CODES.O)
 
     @Override
@@ -88,23 +92,44 @@ public class ThongKeDoanhThuFragment extends Fragment {
                 }else{
                     //tính doanh thu
                     DecimalFormat formatter = new DecimalFormat("#,###,###");
-                    doanhthu=new ThongKeDao(getContext()).getDoanhThu(tungay,denngay);
-                    int doanhthuTienNha=new ThongKeDao(getContext()).getTienNhaTheoNgay(tungay,denngay);
-                    int doanhthuTienDat=new ThongKeDao(getContext()).getTienDatTheoNgay(tungay,denngay);
-                    txt.setText(formatter.format(doanhthu)+"$");
-                    ArrayList<PieEntry> visitors=new ArrayList<>();
-                    visitors.add(new PieEntry(doanhthuTienNha,"Tiền bán nhà"));
-                    visitors.add(new PieEntry(doanhthuTienDat,"Tiền bán đất"));
-                    PieDataSet pieDataSet=new PieDataSet(visitors,"");
-                    pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-                    pieDataSet.setValueTextColor(Color.BLACK);
-                    pieDataSet.setValueTextSize(18f);
-                    pieDataSet.setLabel("Đơn vị tiền tệ:$ ");
-                    PieData pieData=new PieData(pieDataSet);
-                    pieChart.setData(pieData);
-                    pieChart.getDescription().setEnabled(false);
-                    pieChart.setCenterText("Thống Kê");
-                    pieChart.animate();
+                    try {
+                        Date date1=sdf.parse(tungay);
+                        Date ngayHienTai = java.sql.Date.valueOf(String.valueOf(now()));
+                        Date date2=sdf.parse(denngay);
+                        sosanh = date1.compareTo(date2);
+                        sosanhNgayHienTai1=date1.compareTo(ngayHienTai);
+                        sosanhNgayHienTai2=date2.compareTo(ngayHienTai);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (sosanh>0){
+                        Toast.makeText(getContext(), "Ngày bắt đầu phải nhỏ hơn ngày kết thúc", Toast.LENGTH_SHORT).show();
+
+                    }else if (sosanhNgayHienTai1>0||sosanhNgayHienTai2>0){
+                        Toast.makeText(getContext(), "Nhập ngày phải nhỏ hơn ngày hiện tại", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        doanhthu=new ThongKeDao(getContext()).getDoanhThu(tungay,denngay);
+                        int doanhthuTienNha=new ThongKeDao(getContext()).getTienNhaTheoNgay(tungay,denngay);
+                        int doanhthuTienDat=new ThongKeDao(getContext()).getTienDatTheoNgay(tungay,denngay);
+                        txt.setText(formatter.format(doanhthu)+"$");
+                        ArrayList<PieEntry> visitors=new ArrayList<>();
+                        visitors.add(new PieEntry(doanhthuTienNha,"Tiền bán nhà"));
+                        visitors.add(new PieEntry(doanhthuTienDat,"Tiền bán đất"));
+                        PieDataSet pieDataSet=new PieDataSet(visitors,"");
+                        pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+                        pieDataSet.setValueTextColor(Color.WHITE);
+                        pieDataSet.setValueTextSize(18f);
+                        pieDataSet.setLabel("Đơn vị tiền tệ:$ ");
+                        PieData pieData=new PieData(pieDataSet);
+                        pieChart.setData(pieData);
+                        pieChart.getDescription().setEnabled(false);
+                        pieChart.setCenterText("Thống Kê");
+                        pieChart.animate();
+                    }
+
+
                 }
 
             }
