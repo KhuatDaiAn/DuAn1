@@ -72,7 +72,7 @@ public class XemDatFragment extends Fragment {
                     gridViewNhaDat.setNumColumns(2);
                     gridViewNhaDat.setAdapter(adapter);
                 }else{
-                    list=new NhaDatDAO(getContext()).hienThiTheoTinhThanh(selectedTinhThanh);
+                    list=new NhaDatDAO(getContext()).hienThiDatTheoTinhThanh(selectedTinhThanh);
                     adapter=new NhaDatAdapter(getContext(),list);
                     gridViewNhaDat.setNumColumns(2);
                     gridViewNhaDat.setAdapter(adapter);
