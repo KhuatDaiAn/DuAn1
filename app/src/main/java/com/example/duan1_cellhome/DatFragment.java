@@ -120,7 +120,13 @@ public class DatFragment extends Fragment {
                     Toast.makeText(getContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
                 }else if(tenNhaDat.equals(" ")||tinhThanh.equals(" ")||diachi.equals(" ")||giatien.equals(" ")||dientich.equals(" ")||mota.equals(" ")) {
                     Toast.makeText(getContext(), "Không được nhập khoảng cách không", Toast.LENGTH_SHORT).show();
-                }else if(check==true){
+                }else if(tenNhaDat.length()<3){
+                    Toast.makeText(getContext(), "Tên giới thiệu nhà không được quá ngắn", Toast.LENGTH_SHORT).show();
+                }else if(diachi.length()<5){
+                    Toast.makeText(getContext(), "Địa chỉ không được quá ngắn", Toast.LENGTH_SHORT).show();
+                }else if(giatien.length()<5){
+                    Toast.makeText(getContext(), "Giá tiền không quá nhỏ", Toast.LENGTH_SHORT).show();
+                } else if(check==true){
                     Toast.makeText(getContext(), "Sản phẩm đã có rồi", Toast.LENGTH_SHORT).show();
                 }else{
                     int giaTien = Integer.parseInt(giatien);
