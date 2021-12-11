@@ -286,33 +286,57 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
                     boolean check=new NhaDatDAO(getApplicationContext()).kiemTra(tenNhaDat);
                     if (tenNhaDat.isEmpty()||tinhThanh.isEmpty()||diachi.isEmpty()||giatien.isEmpty()||dientich.isEmpty()||mota.isEmpty()){
                         Toast.makeText(getApplicationContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
-                    }else if(check==true){
+                    }else if(tenNhaDat.equals(" ")||tinhThanh.equals(" ")||diachi.equals(" ")||giatien.equals(" ")||dientich.equals(" ")||mota.equals(" ")){
+                        Toast.makeText(getApplicationContext(), "Không được nhập khoảng cách không", Toast.LENGTH_SHORT).show();
+                    }else if(tenNhaDat.length()<3){
+                        Toast.makeText(getApplicationContext(), "Tên giới thiệu nhà không được quá ngắn", Toast.LENGTH_SHORT).show();
+                    }else if(diachi.length()<5){
+                        Toast.makeText(getApplicationContext(), "Địa chỉ không được quá ngắn", Toast.LENGTH_SHORT).show();
+                    }else if(giatien.length()<5){
+                        Toast.makeText(getApplicationContext(), "Giá tiền không quá nhỏ", Toast.LENGTH_SHORT).show();
+                    } else if(check==true){
                         Toast.makeText(getApplicationContext(), "Sản phẩm đã có rồi", Toast.LENGTH_SHORT).show();
                     }else{
                         int giaTien = Integer.parseInt(giatien);
-                        Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
-                        //sửa thông tin nhà đất
-                        NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,0);
-                        NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
-                        dao.update(nhaDat);
-                        dialog.dismiss();
-                        ganDuLieu();
+                        if (giaTien==0){
+                            Toast.makeText(getApplicationContext(), "Không được nhập giá là 0", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Date ngayDang = java.sql.Date.valueOf(String.valueOf(now()));
+                            //sửa thông tin nhà đất
+                            NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang, diachi, giaTien, dientich, mota, 0);
+                            NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
+                            dao.update(nhaDat);
+                            dialog.dismiss();
+                            ganDuLieu();
+                        }
                     }
                 }else if (nhaDat1.getLoaiNha()==1){
                     boolean check=new NhaDatDAO(getApplicationContext()).kiemTra(tenNhaDat);
                     if (tenNhaDat.isEmpty()||tinhThanh.isEmpty()||diachi.isEmpty()||giatien.isEmpty()||dientich.isEmpty()||mota.isEmpty()){
                         Toast.makeText(getApplicationContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
+                    }else if(tenNhaDat.equals(" ")||tinhThanh.equals(" ")||diachi.equals(" ")||giatien.equals(" ")||dientich.equals(" ")||mota.equals(" ")){
+                        Toast.makeText(getApplicationContext(), "Không được nhập khoảng cách không", Toast.LENGTH_SHORT).show();
+                    }else if(tenNhaDat.length()<3){
+                        Toast.makeText(getApplicationContext(), "Tên giới thiệu nhà không được quá ngắn", Toast.LENGTH_SHORT).show();
+                    }else if(diachi.length()<5){
+                        Toast.makeText(getApplicationContext(), "Địa chỉ không được quá ngắn", Toast.LENGTH_SHORT).show();
+                    }else if(giatien.length()<5){
+                        Toast.makeText(getApplicationContext(), "Giá tiền không quá nhỏ", Toast.LENGTH_SHORT).show();
                     }else if(check==true){
                         Toast.makeText(getApplicationContext(), "Sản phẩm đã có rồi", Toast.LENGTH_SHORT).show();
                     }else{
                         int giaTien = Integer.parseInt(giatien);
-                        Date ngayDang= java.sql.Date.valueOf(String.valueOf(now()));
-                        //sửa thông tin nhà đất
-                        NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang,diachi,giaTien,dientich,mota,1);
-                        NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
-                        dao.update(nhaDat);
-                        dialog.dismiss();
-                        ganDuLieu();
+                        if (giaTien==0){
+                            Toast.makeText(getApplicationContext(), "Không được nhập giá là 0", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Date ngayDang = java.sql.Date.valueOf(String.valueOf(now()));
+                            //sửa thông tin nhà đất
+                            NhaDat nhaDat = new NhaDat(maNhaDat, tenNhaDat, null, tinhThanh, ngayDang, diachi, giaTien, dientich, mota, 1);
+                            NhaDatDAO dao = new NhaDatDAO(getApplicationContext());
+                            dao.update(nhaDat);
+                            dialog.dismiss();
+                            ganDuLieu();
+                        }
                     }
                 }
 
