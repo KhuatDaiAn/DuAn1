@@ -124,7 +124,7 @@ public class NhaFragment extends Fragment {
         EditText edtmoTa=dialog.findViewById(R.id.edtMoTa);
         Button btnThem=dialog.findViewById(R.id.btnThemNhaDat);
         Button btnCancel=dialog.findViewById(R.id.btnCancel);
-        addTinhThanh();
+        
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
