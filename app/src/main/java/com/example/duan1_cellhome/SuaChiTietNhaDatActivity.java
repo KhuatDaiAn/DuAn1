@@ -30,6 +30,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.duan1_cellhome.Adapter.HinhAdapter;
@@ -132,8 +133,9 @@ public class SuaChiTietNhaDatActivity extends AppCompatActivity {
         });
         //load hình lên recycleview
         adapter=new UpNhiuHinhAdapter(this);
-        @SuppressLint("WrongConstant") GridLayoutManager gridLayoutManager=new GridLayoutManager(this,10, LinearLayout.VERTICAL,false);
-        recyclerView.setLayoutManager(gridLayoutManager);
+       // @SuppressLint("WrongConstant") GridLayoutManager gridLayoutManager=new GridLayoutManager(this,10, LinearLayout.VERTICAL,false);
+        LinearLayoutManager linearLayout=new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
+        recyclerView.setLayoutManager(linearLayout);
         recyclerView.setFocusable(false);
         recyclerView.setAdapter(adapter);
         //load hình lên gridview
